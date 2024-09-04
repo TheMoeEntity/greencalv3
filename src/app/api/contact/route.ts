@@ -36,7 +36,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   let htmlToSend = createHTMLToSend(emailPath, replacements);
   let mailData = {
     from: "Greencal foundation",
-    to: "mosesnwigberi@gmail.com",
+    to: "greencalfoundation@gmail.com",
     subject: `New message from ${fullName} in your Greencal foundation website contact form`,
     html: htmlToSend,
     text: message + "| Sent from: " + email,
