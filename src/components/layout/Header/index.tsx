@@ -101,10 +101,12 @@ const Header = () => {
 
         <div>
           <div>
-            <i className="fa-brands fa-twitter"></i>
-            <i className="fa-brands fa-instagram"></i>
-            <i className="fa-brands fa-facebook"></i>
-            <i className="fa-brands fa-pinterest"></i>
+            {/* <i className="fa-brands fa-twitter"></i> */}
+            <a href="https://instagram.com/greencalfoundation1" target="_blank">
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            {/* <i className="fa-brands fa-facebook"></i>
+            <i className="fa-brands fa-pinterest"></i> */}
           </div>
         </div>
       </div>

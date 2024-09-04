@@ -9,7 +9,7 @@ const Assay = () => {
   return (
     <section className="mx-auto max-w-7xl text-[#405777] p-3 md:p-5 flex flex-col gap-8">
       <div className="py-10 xl:w-[75%] mx-auto flex flex-col text-center gap-8 ">
-        <h1 className=" text-3xl text-black md:text-[45px] font-semibold leading-normal ">
+        <h1 className=" text-2xl text-black md:text-[45px] font-semibold leading-normal ">
           Greencal Foundation Uplifts Students Through Annual Essay Competition
         </h1>
         <div className="font-light">
@@ -27,14 +27,14 @@ const Assay = () => {
             className="object-cover w-full h-auto "
           />
         </div>
-        <article className="leading-[1.4] text-justify flex flex-col gap-5">
+        <article className="leading-loose text-sm text-justify flex flex-col gap-5">
           <p>
             Greencal Foundation is delighted to announce the successful hosting
             of its first official event — an annual essay competition aimed at
             providing educational support and rewarding academic excellence
             among students in Abakaliki, Ebonyi State. The event represents a
-            significant milestone in the{` Foundation's`} mission to empower young
-            minds through education and to foster a culture of academic
+            significant milestone in the{` Foundation's`} mission to empower
+            young minds through education and to foster a culture of academic
             excellence. This program follows a two-pronged approach, offering
             unique opportunities for both SSCE/NECO candidates and students in
             other classes.
@@ -46,14 +46,15 @@ const Assay = () => {
             well-developed arguments, thereby cultivating a love of learning
             that transcends the classroom. This approach equips students with
             valuable skills that will serve them throughout their academic
-            careers and in life, embodying the {`spirit of doing "things that have
+            careers and in life, embodying the{" "}
+            {`spirit of doing "things that have
             never been done before" — a true testament to the essence of living.`}
           </p>
         </article>
 
-        <article className="leading-[1.4] text-justify flex flex-col gap-5">
+        <article className="leading-loose text-sm text-justify flex flex-col gap-5">
           <p>
-            <strong>Building a Brighter Future</strong> — Greencal Foundation
+            <strong className="text-lg">Building a Brighter Future</strong> — Greencal Foundation
             firmly believes that education is the cornerstone of both individual
             growth and societal development. By investing in the next generation
             of scholars, the Foundation empowers students to overcome
@@ -70,7 +71,7 @@ const Assay = () => {
           </p>
         </article>
 
-        <article className="leading-[1.4] text-justify flex flex-col gap-5">
+        <article className="leading-loose text-sm text-justify flex flex-col gap-5">
           <p>
             <strong className="text-lg">
               Investing in the Future: Scholarships for SSCE/NECO Exams
@@ -88,23 +89,23 @@ const Assay = () => {
           <p>
             Greencal Foundation is dedicated to investing in the future of young
             Nigerians, ensuring that no student is left behind due to financial
-            constraints. This initiative reflects the {`Foundation's`} belief that
-            every child deserves the chance to achieve their dreams, regardless
-            of their economic background.
+            constraints. This initiative reflects the {`Foundation's`} belief
+            that every child deserves the chance to achieve their dreams,
+            regardless of their economic background.
           </p>
         </article>
 
-        <article className="leading-[1.4] text-justify flex flex-col gap-5">
+        <article className="leading-loose text-sm text-justify flex flex-col gap-5">
           <p>
-            <strong>Encouraging a Love of Learning: School Fee Support</strong>{" "}
+            <strong className="text-lg">Encouraging a Love of Learning: School Fee Support</strong>{" "}
             — Understanding the importance of nurturing a passion for learning
-            throughout a {`student's`} academic journey, Greencal Foundation extends
-            its essay competition to students at all class levels. Winners in
-            this category receive scholarships to help cover their school fees,
-            thus easing the financial burden on families and ensuring
-            uninterrupted education for the students. This support encourages
-            students to remain focused on their studies and fosters a love of
-            learning that lasts a lifetime.
+            throughout a {`student's`} academic journey, Greencal Foundation
+            extends its essay competition to students at all class levels.
+            Winners in this category receive scholarships to help cover their
+            school fees, thus easing the financial burden on families and
+            ensuring uninterrupted education for the students. This support
+            encourages students to remain focused on their studies and fosters a
+            love of learning that lasts a lifetime.
           </p>
           <p>
             The Foundation believes that education is a lifelong journey and
@@ -115,9 +116,9 @@ const Assay = () => {
           </p>
         </article>
 
-        <article className="leading-[1.4] text-justify flex flex-col gap-5">
+        <article className="leading-loose text-sm text-justify flex flex-col gap-5">
           <p>
-            <strong>Celebrating Success: Disbursement Ceremony</strong> — On
+            <strong className="text-lg">Celebrating Success: Disbursement Ceremony</strong> — On
             February 21st, 2024, Greencal Foundation hosted a ceremony to
             disburse funds to the winners of the 2023 essay competition. The
             event took place at New Covenant College, Odomoke, Ishieke, Ebonyi
@@ -136,18 +137,18 @@ const Assay = () => {
           </p>
         </article>
 
-        <article className="leading-[1.4] text-justify flex flex-col gap-5">
+        <article className="leading-loose text-sm text-justify flex flex-col gap-5">
           <p>
-            <strong>A Commitment to Education and Community Development</strong>{" "}
-            — Greencal {`Foundation's`} annual essay competition is a testament to
-            its unwavering commitment to education and community development. By
-            providing scholarships and fostering a culture of academic
+            <strong className="text-lg">A Commitment to Education and Community Development</strong>{" "}
+            — Greencal {`Foundation's`} annual essay competition is a testament
+            to its unwavering commitment to education and community development.
+            By providing scholarships and fostering a culture of academic
             excellence, Greencal Foundation empowers students to reach their
             full potential and lays the groundwork for a brighter future.
           </p>
           <p>
-            The{` Foundation's`} mission is clear: to go places and do things that
-            have never been done before, providing the next generation with
+            The{` Foundation's`} mission is clear: to go places and do things
+            that have never been done before, providing the next generation with
             opportunities to dream, achieve, and excel. Greencal Foundation is
             dedicated to supporting young minds in their educational pursuits,
             ensuring that the dreams of today become the realities of tomorrow.
@@ -183,8 +184,6 @@ const Assay = () => {
             />
           </div>
         </div> */}
-
-
 
         <div className="flex items-center gap-3">
           <span> Share this post: </span>

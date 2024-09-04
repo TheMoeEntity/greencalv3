@@ -4,12 +4,15 @@ import event from "../../../../public/images/sickle-cell.jpg";
 import event2 from "../../../../public/images/sickle-cell-outreach.jpg";
 import event3 from "../../../../public/images/sickle-cell-outreach-2.jpg";
 import event4 from "../../../../public/images/sickle-cell-outreach-3.jpg";
+import event5 from "../../../../public/images/sickle-cell-infographic.jpg";
+import event6 from "../../../../public/images/cake-cutting-on-sickle-cell-day.jpg";
+import event7 from "../../../../public/images/sickle-cell-plaque.jpg";
 
 const Blog_Details = () => {
   return (
     <section className="mx-auto max-w-7xl text-[#405777] p-3 md:p-5 flex flex-col gap-8">
       <div className="py-10 xl:w-[75%] mx-auto flex flex-col text-center gap-8 ">
-        <h1 className=" text-3xl text-black md:text-[45px] font-semibold leading-normal ">
+        <h1 className=" text-2xl text-black md:text-[45px] font-semibold leading-normal ">
           Greencal Foundation in collaboration with MWAN Ebonyi State celebrates
           World Sickle Cell Day with donation at AEFUTHA
         </h1>
@@ -24,11 +27,12 @@ const Blog_Details = () => {
             src={event4}
             alt="Banner of event"
             quality={100}
+            priority={true}
             sizes={"100vw"}
             className="object-cover w-full h-auto "
           />
         </div>
-        <article className="leading-[1.4] text-justify flex flex-col gap-5">
+        <article className="leading-loose text-sm text-justify flex flex-col gap-5">
           <p>
             As part of the activities to mark{" "}
             <strong>World Sickle Cell Day 2024</strong>, the Alex Ekwueme
@@ -52,7 +56,7 @@ const Blog_Details = () => {
           </p>
         </article>
 
-        <article className="leading-[1.4] text-justify flex flex-col gap-5">
+        <article className="leading-loose text-sm text-justify flex flex-col gap-5">
           <p>
             The event was further enriched by the cutting of{" "}
             {`a "Warrior's Cake,"`}
@@ -75,7 +79,7 @@ const Blog_Details = () => {
           </p>
         </article>
 
-        <article className="leading-[1.4] text-justify flex flex-col gap-5">
+        <article className="leading-loose text-sm text-justify flex flex-col gap-5">
           <p>
             One of the greatest challenges in managing SCD is the lack of
             accurate information, leading to numerous myths and misconceptions.
@@ -139,7 +143,7 @@ const Blog_Details = () => {
             </ol>
           </div>
         </article>
-        <div className="flex w-full gap-3">
+        <div className="flex flex-col md:flex-row w-full gap-3">
           <div className="flex-1">
             <Image
               src={event}
@@ -169,7 +173,7 @@ const Blog_Details = () => {
           </div>
         </div>
 
-        <article className="leading-[1.4] text-justify flex flex-col gap-5">
+        <article className="leading-loose text-sm text-justify flex flex-col gap-5">
           <p>
             The complications of SCD are many and varied, stemming from the
             blockage of blood flow caused by sickled cells. These include
@@ -188,6 +192,36 @@ const Blog_Details = () => {
             Cell Disorder.
           </p>
         </article>
+
+        <div className="flex flex-col md:flex-row w-full gap-3">
+          <div className="flex-1">
+            <Image
+              src={event5}
+              alt="Banner of event"
+              quality={100}
+              sizes={"100vw"}
+              className="object-cover w-full h-auto "
+            />
+          </div>
+          <div className="flex-1">
+            <Image
+              src={event7}
+              alt="Banner of event"
+              quality={100}
+              sizes={"100vw"}
+              className="object-cover w-full h-auto "
+            />
+          </div>
+          <div className="flex-1">
+            <Image
+              src={event6}
+              alt="Banner of event"
+              quality={100}
+              sizes={"100vw"}
+              className="object-cover w-full h-auto "
+            />
+          </div>
+        </div>
 
         <div className="flex items-center gap-3">
           <span> Share this post: </span>

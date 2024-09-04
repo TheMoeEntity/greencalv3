@@ -5,7 +5,7 @@ import "./globals.css";
 import AppLayout from "@/components/layout/AppLayout";
 
 const inter = Inter({ subsets: ["latin"] });
-const overpass = Poppins({ subsets: ["latin"], weight: ["400"] });
+const overpass = Poppins({ subsets: ["latin"], weight: ["100","200","300","400"] });
 
 export const metadata: Metadata = {
   title: "Greencal Foundation - Empowering Lives for a Brighter Future",

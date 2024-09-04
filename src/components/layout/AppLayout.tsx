@@ -5,11 +5,13 @@ import Footer from "./Footer";
 import Script from "next/script";
 import { SnackbarProvider } from "notistack";
 import { useScrollTop } from "@/hooks";
+import Loader from "../shared/Loader";
 
 const AppLayout = ({ children }: { children: ReactNode }) => {
   const { scrollBtn, scrollTop } = useScrollTop();
   return (
     <React.Fragment>
+      <Loader />
       <SnackbarProvider
         classes={{ containerRoot: "z-alert" }}
         anchorOrigin={{ horizontal: "left", vertical: "bottom" }}

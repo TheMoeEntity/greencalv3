@@ -124,15 +124,38 @@ const About_Us = () => {
         </div>
         <div className="flex flex-col md:flex-row gap-5 pb-8">
           <div className="flex-1 flex flex-col gap-3">
-            <h1 className="font-semibold text-2xl">Adum Obinna</h1>
+            <h1 className="font-semibold text-2xl">Adum Abraham Obinna</h1>
             <h2>Founder</h2>
             <p className="text-sm leading-loose">
               Adum Obinna, a passionate philanthropist, Economics student and
-              owner of BrillX, in Ebonyi State, established Greencal Foundation
-              in memory of his inspiring mother. Witnessing her dedication to
-              helping others ignited a fire in him to continue her legacy of
-              giving back to the community.
+              owner of{" "}
+              <a
+                className="font-bold underline"
+                href="https://brillxchange.com"
+                target="_blank"
+              >
+                BrillX
+              </a>
+              , in Ebonyi State, established Greencal Foundation in memory of
+              his inspiring mother. Witnessing her dedication to helping others
+              ignited a fire in him to continue her legacy of giving back to the
+              community.
             </p>
+            <div className="flex items-center gap-3">
+              {" "}
+              <a
+                href="https://instagram.com/thenameisbrill"
+                target="_blank"
+              >
+                <i className="fa-brands fa-instagram"></i>
+              </a>{" "}
+              <a
+                href="https://twitter.com/thenameisbrill"
+                target="_blank"
+              >
+                <i className="fa-brands fa-twitter"></i>
+              </a>
+            </div>
           </div>
           <div className="flex-1 flex flex-col gap-3">
             <h1 className="font-semibold  text-2xl">Kepha</h1>
