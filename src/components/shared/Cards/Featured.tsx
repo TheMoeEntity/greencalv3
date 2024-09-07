@@ -20,7 +20,7 @@ const FeaturedCard = ({
     <div className={styles.featured}>
       <div className={styles.img}>
         <Image
-          alt="Image of our event and initiatives"
+          alt={`Image of Greencal foundation event titled: ${title}`}
           style={{ objectFit: "cover" }}
           src={img}
           fill

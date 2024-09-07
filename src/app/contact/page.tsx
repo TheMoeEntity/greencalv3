@@ -6,16 +6,16 @@ const Contact_Us = () => {
   return (
     <div>
       <Hero_Shared text={"Contact Us"} page="contact" />
-      <div className="w-full mx-auto max-w-[1450px] flex gap-10 py-10 lg:py-20 px-5 md:px-8 flex-wrap">
-        <div className="flex basis-full lg:basis-[30%] md:px-5 flex-col gap-5">
-          <div className="">
+      <div className="w-full mx-auto max-w-[1450px] flex flex-col lg:flex-row gap-10 py-10 lg:py-20 px-3 md:px-8">
+        <div className="flex flex-col basis-full lg:basis-[30%] gap-5 md:px-5">
+          <div>
             <h2 className="font-semibold text-2xl">GREENCAL FOUNDATION</h2>
-            <p className="py-3 text-sm text-justify">
+            <p className="py-3 text-sm">
               We are dedicated to improving the lives of those facing illness,
               hardship, and limited opportunities.
             </p>
           </div>
-          <div className=" py-1">
+          <div className="py-1">
             <h2 className="font-semibold text-2xl">CONTACT INFORMATION</h2>
             <p className="py-3 text-sm">
               Opinion Nigeria LTD prince and princess ishieke Abakaliki, UNILAG,
@@ -23,8 +23,8 @@ const Contact_Us = () => {
             </p>
             <div className="text-sm mt-3">
               <span className="flex items-center gap-2">
-                <i className="fa-solid fa-phone"></i> (+234) 811 617 7509, (234)
-                803 656 5354
+                <i className="fa-solid fa-phone"></i> (+234) 811 617 7509,
+                (+234) 803 656 5354
               </span>
             </div>
             <div className="text-sm mt-3">
@@ -40,16 +40,8 @@ const Contact_Us = () => {
               </span>
             </div>
           </div>
-          {/* <div className="">
-            <h2 className="font-semibold text-2xl">SOCIAL LINKS</h2>
-            <div className="flex gap-3 text-2xl mt-5">
-              <i className="fa-brands fa-facebook"></i>
-              <i className="fa-brands fa-twitter"></i>
-              <i className="fa-brands fa-linkedin"></i>
-            </div>
-          </div> */}
         </div>
-        <div className="flex flex-1 lg:px-5">
+        <div className="flex flex-1 w-full lg:px-5">
           <ContactForm />
         </div>
       </div>

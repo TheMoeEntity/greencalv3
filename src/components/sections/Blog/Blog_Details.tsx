@@ -25,7 +25,7 @@ const Blog_Details = () => {
         <div className="w-full">
           <Image
             src={event4}
-            alt="Banner of event"
+            alt="Banner of event. Adum Obinna, founder of Greencal, with other volunteers AEFUTHA in celebration of world sickle cell day."
             quality={100}
             priority={true}
             sizes={"100vw"}
@@ -147,7 +147,7 @@ const Blog_Details = () => {
           <div className="flex-1">
             <Image
               src={event}
-              alt="Banner of event"
+              alt="Banner of event. Adum Obinna, founder of Greencal, with other volunteers AEFUTHA in celebration of world sickle cell day."
               quality={100}
               sizes={"100vw"}
               className="object-cover w-full h-auto "
@@ -156,7 +156,7 @@ const Blog_Details = () => {
           <div className="flex-1">
             <Image
               src={event2}
-              alt="Banner of event"
+              alt="Banner of event. Adum Obinna, founder of Greencal, with other volunteers AEFUTHA in celebration of world sickle cell day."
               quality={100}
               sizes={"100vw"}
               className="object-cover w-full h-auto "
@@ -165,7 +165,7 @@ const Blog_Details = () => {
           <div className="flex-1">
             <Image
               src={event3}
-              alt="Banner of event"
+              alt="Banner of event. Adum Obinna, founder of Greencal, with other volunteers AEFUTHA in celebration of world sickle cell day."
               quality={100}
               sizes={"100vw"}
               className="object-cover w-full h-auto "
@@ -197,7 +197,7 @@ const Blog_Details = () => {
           <div className="flex-1">
             <Image
               src={event5}
-              alt="Banner of event"
+              alt="Banner of event. Adum Obinna, founder of Greencal, with other volunteers AEFUTHA in celebration of world sickle cell day."
               quality={100}
               sizes={"100vw"}
               className="object-cover w-full h-auto "
@@ -206,7 +206,7 @@ const Blog_Details = () => {
           <div className="flex-1">
             <Image
               src={event7}
-              alt="Banner of event"
+              alt="Banner of event. Adum Obinna, founder of Greencal, with other volunteers AEFUTHA in celebration of world sickle cell day."
               quality={100}
               sizes={"100vw"}
               className="object-cover w-full h-auto "
@@ -215,7 +215,7 @@ const Blog_Details = () => {
           <div className="flex-1">
             <Image
               src={event6}
-              alt="Banner of event"
+              alt="Banner of event. Adum Obinna, founder of Greencal, with other volunteers AEFUTHA in celebration of world sickle cell day."
               quality={100}
               sizes={"100vw"}
               className="object-cover w-full h-auto "
