@@ -14,7 +14,7 @@ export default function Testimonials() {
   const buttonStyles: CSSProperties = {
     background: "#0C4949",
     color: "white",
-    padding: "6px 10px",
+    padding: "12px 12px",
     border: "none",
     borderRadius: "4px",
     marginTop: "5px",

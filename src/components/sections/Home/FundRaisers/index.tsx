@@ -21,13 +21,14 @@ const FundRaisers = () => {
       img: medical,
       title:
         "Greencal Foundation in collaboration with MWAN Ebonyi State celebrates World Sickle Cell Day with donation at AEFUTHA",
-      content: "As part of the activities to mark World Sickle Cell Day 2024, the Alex Ekwueme Federal University Teaching Hospital Abakaliki (AEFUTHA) celebrated...",
+      content:
+        "As part of the activities to mark World Sickle Cell Day 2024, the Alex Ekwueme Federal University Teaching Hospital Abakaliki (AEFUTHA) celebrated...",
       comingSoon: false,
-      slug:'sickle-cell-day'
+      slug: "sickle-cell-day",
     },
   ];
   return (
-    <div id="events" className={styles.funds}>
+    <div id="events" className={`${styles.funds} pb-8`}>
       <div className="container">
         <div className="row mb-3 justify-content-center">
           <div className="col-md-8 text-center">
@@ -54,6 +55,11 @@ const FundRaisers = () => {
           ))}
         </ul>
       </div>
+      <Link href="/events" className="">
+        <div className="w-fit  py-3 px-3 bg-[#0C4949] text-white  mx-auto justify-center">
+          View more &rarr;
+        </div>
+      </Link>
     </div>
   );
 };

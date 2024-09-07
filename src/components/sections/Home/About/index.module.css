@@ -1,6 +1,6 @@
 .about {
   width: 100%;
-  background-image: url("/images/about-bg.jpeg");
+  /* background-image: url("/images/about-bg.jpeg"); */
   background-size: cover;
   height: auto;
   display: flex;

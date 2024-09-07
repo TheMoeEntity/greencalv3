@@ -1,7 +1,6 @@
 .featured {
   width: 510px;
   height: auto;
-  cursor: pointer;
 }
 
 .featured .img {
@@ -23,7 +22,7 @@
 }
 
 .featured .deets p {
-  line-height: 2.2;
+  line-height: 1.8;
 }
 
 .featured .deets button {
