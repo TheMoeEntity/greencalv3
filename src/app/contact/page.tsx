@@ -1,5 +1,6 @@
 import ContactForm from "@/components/shared/ContactForm";
 import Hero_Shared from "@/components/shared/Hero_Shared";
+import Icon from "@/components/shared/Icons";
 import React from "react";
 
 const Contact_Us = () => {
@@ -23,20 +24,20 @@ const Contact_Us = () => {
             </p>
             <div className="text-sm mt-3">
               <span className="flex items-center gap-2">
-                <i className="fa-solid fa-phone"></i> (+234) 811 617 7509,
-                (+234) 803 656 5354
+                <Icon name="bx-phone-call" color="#71CD6D" size="20px" />{" "}
+                (+234) 811 617 7509, (+234) 803 656 5354
               </span>
             </div>
             <div className="text-sm mt-3">
               <span className="flex items-center gap-2">
-                <i className="fa-solid fa-envelope"></i>{" "}
+                <Icon name="bx-envelope" color="#71CD6D" size="20px" />{" "}
                 greencalfoundation@gmail.com
               </span>
             </div>
             <div className="text-sm mt-3">
               <span className="flex items-center gap-2">
-                <i className="fas fa-clock"></i> Monday - Fridays 8:00 AM to
-                6:00 PM
+                <Icon name="bx-time" color="#71CD6D" size="20px" />{" "}
+                Monday - Fridays 8:00 AM to 6:00 PM
               </span>
             </div>
           </div>

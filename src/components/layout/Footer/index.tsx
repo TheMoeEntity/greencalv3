@@ -1,6 +1,8 @@
 import styles from "./index.module.css";
 import logo from "../../../../public/images/greencal_white.png";
 import Image from "next/image";
+import Icon from "@/components/shared/Icons";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
 
 const Footer = () => {
   return (
@@ -24,7 +26,7 @@ const Footer = () => {
           <strong>Opening Hours :</strong> Monday Sat: 8am to 5pm
           <div className={styles.icons}>
             <a href="https://instagram.com/greencalfoundation1" target="_blank">
-              <i className="fa-brands fa-instagram"></i>
+              <Icon name="bxl-instagram" color="#71CD6D" size="20px" />
             </a>
           </div>
         </div>
@@ -32,52 +34,49 @@ const Footer = () => {
           <h2 style={{ marginLeft: "30px" }}>CONTACT INFO</h2>
           <div>
             <div>
-              <i style={{ fontSize: "20px" }} className="fas fa-map-marker"></i>
+              <Icon name="bxs-map-pin" color="#71CD6D" size="20px" />
             </div>
             <div>Opinion Nigeria LTD prince and princess ishieke Abakaliki</div>
           </div>
 
           <div>
             <div>
-              <i style={{ fontSize: "20px" }} className="fa-solid fa-phone"></i>
+              <Icon name="bxs-phone-call" color="#71CD6D" size="20px" />
             </div>
             <div>(+234) 811 617 7509 &nbsp; (234) 803 656 5354</div>
           </div>
           <div>
             <div style={{ width: "50px" }} className={styles.footerIcons}>
-              <i
-                style={{ fontSize: "20px" }}
-                className="fa-solid fa-envelope"
-              ></i>
+              <Icon name="bx-envelope" color="#71CD6D" size="20px" />
             </div>
             <div>greencalfoundation@gmail.com</div>
           </div>
         </div>
         <div>
           <h2>OUR SERVICES</h2>
-          <div>
-            <i className="fa fa-angle-right"></i>
-            Grants and Scholarships
+          <div className="flex items-center gap-3">
+            <ChevronRightIcon className="text-sm size-4" />
+            Grants and Eductation
           </div>
-          <div>
-            <i className="fa fa-angle-right"></i>
+          <div className="flex items-center gap-3">
+            <ChevronRightIcon className="text-sm size-4" />
             Food and Education
           </div>
-          <div>
-            <i className="fa fa-angle-right"></i>
+          <div className="flex items-center gap-3">
+            <ChevronRightIcon className="text-sm size-4" />
             Outreach
           </div>
-          <div>
-            <i className="fa fa-angle-right"></i>
+          <div className="flex items-center gap-3">
+            <ChevronRightIcon className="text-sm size-4" />
             International Collaboration
           </div>
-          <div>
-            <i className="fa fa-angle-right"></i>
-            Donations
+          <div className="flex items-center gap-3">
+            <ChevronRightIcon className="text-sm size-4" />
+            Donation
           </div>
-          <div>
-            <i className="fa fa-angle-right"></i>
-            Medical outreach
+          <div className="flex items-center gap-3">
+            <ChevronRightIcon className="text-sm size-4" />
+           Medical Outreach
           </div>
         </div>
       </div>

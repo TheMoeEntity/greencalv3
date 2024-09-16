@@ -6,6 +6,7 @@ import Script from "next/script";
 import { SnackbarProvider } from "notistack";
 import { useScrollTop } from "@/hooks";
 import Loader from "../shared/Loader";
+import { ChevronUpIcon } from "@heroicons/react/24/solid";
 
 const AppLayout = ({ children }: { children: ReactNode }) => {
   const { scrollBtn, scrollTop } = useScrollTop();
@@ -20,7 +21,7 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
         {children}
         <Footer />
         <div ref={scrollBtn} onClick={scrollTop} className="scrollTop">
-          <i className="fa-solid fa-angle-up"></i>
+          <ChevronUpIcon className="text-white size-6" />
         </div>
         <Script
           src="https://kit.fontawesome.com/4ef8c63dd7.js"

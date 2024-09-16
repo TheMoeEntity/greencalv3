@@ -6,6 +6,8 @@ import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useLinks } from "@/hooks";
+import Icon from "@/components/shared/Icons";
+import { EnvelopeIcon, MapPinIcon, Bars3Icon } from "@heroicons/react/24/solid";
 
 const Header = () => {
   const { push } = useRouter();
@@ -87,12 +89,12 @@ const Header = () => {
         className={styles.headerOne}
       >
         <div>
-          <div>
-            <i className="fa fa-envelope"></i> greencalfoundation@gmail.com
+          <div className='flex items-center gap-2'>
+            <EnvelopeIcon className=" size-4" /> greencalfoundation@gmail.com
             &nbsp;&nbsp;&nbsp;&nbsp;|
           </div>
-          <div>
-            <i className="fas fa-map-marker"></i>Opinion Nigeria LTD prince and
+          <div className='flex items-center gap-2'>
+            <MapPinIcon  className=" size-4" /> Opinion Nigeria LTD prince and
             princess ishieke Abakaliki &nbsp;&nbsp;&nbsp;
           </div>
         </div>
@@ -101,7 +103,7 @@ const Header = () => {
           <div>
             {/* <i className="fa-brands fa-twitter"></i> */}
             <a href="https://instagram.com/greencalfoundation1" target="_blank">
-              <i className="fa-brands fa-instagram"></i>
+              <Icon name="bxl-instagram" size="20px" />
             </a>
             {/* <i className="fa-brands fa-facebook"></i>
             <i className="fa-brands fa-pinterest"></i> */}
@@ -151,7 +153,7 @@ const Header = () => {
           </div>
         </div>
         <div onClick={show} className={styles.bars}>
-          <i className="fa-solid fa-bars"></i>
+          <Bars3Icon className="size-6" />
         </div>
       </div>
     </div>

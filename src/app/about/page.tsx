@@ -2,6 +2,7 @@ import Hero_Shared from "@/components/shared/Hero_Shared";
 import React from "react";
 import outreach from "../../../public/images/sickle-cell-outreach-3.jpg";
 import Image from "next/image";
+import Icon from "@/components/shared/Icons";
 
 const About_Us = () => {
   return (
@@ -143,17 +144,11 @@ const About_Us = () => {
             </p>
             <div className="flex items-center gap-3">
               {" "}
-              <a
-                href="https://instagram.com/thenameisbrill"
-                target="_blank"
-              >
-                <i className="fa-brands fa-instagram"></i>
+              <a href="https://instagram.com/thenameisbrill" target="_blank">
+                <Icon name="bxl-instagram" size="20px" />
               </a>{" "}
-              <a
-                href="https://twitter.com/thenameisbrill"
-                target="_blank"
-              >
-                <i className="fa-brands fa-twitter"></i>
+              <a href="https://twitter.com/thenameisbrill" target="_blank">
+                <Icon name="bxl-twitter" size="20px" />
               </a>
             </div>
           </div>

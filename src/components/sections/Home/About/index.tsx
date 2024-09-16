@@ -3,12 +3,13 @@ import styles from "./index.module.css";
 import Image from "next/image";
 import man from "../../../../../public/images/outreach6.jpg";
 import man2 from "../../../../../public/images/outreach5.jpg";
+import { UsersIcon, AcademicCapIcon, UserGroupIcon, LightBulbIcon } from "@heroicons/react/24/solid";
 
 import { useRouter } from "next/navigation";
 import shape from "../../../../../public/images/shape-1.png";
 import { useInView } from "react-intersection-observer";
-
 import { useReveal } from "@/hooks";
+import Icon from "@/components/shared/Icons";
 const About = () => {
   const { push, visible, ref } = useReveal(useInView);
 
@@ -17,7 +18,7 @@ const About = () => {
       <div className={styles.cards}>
         <div>
           <div style={{ width: "60px", height: "60px", fontSize: "40px" }}>
-            <i className="fa-solid fa-hands-helping"></i>
+            <LightBulbIcon className="h-10 w-10" />
           </div>
           <div>
             <strong>Empowering Communities </strong>
@@ -32,7 +33,7 @@ const About = () => {
 
         <div>
           <div style={{ width: "60px", height: "60px", fontSize: "40px" }}>
-            <i className="fa-solid fa-seedling"></i>
+            <UserGroupIcon className="h-10 w-10" />
           </div>
           <div>
             <strong>Outreach</strong>
@@ -46,7 +47,7 @@ const About = () => {
         </div>
         <div>
           <div style={{ width: "60px", height: "60px", fontSize: "40px" }}>
-            <i className="fa-solid fa-graduation-cap"></i>
+            <AcademicCapIcon className="h-10 w-10" />
           </div>
           <div>
             <strong>Grants & Scholarships</strong>

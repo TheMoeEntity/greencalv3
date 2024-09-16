@@ -185,14 +185,14 @@ const Assay = () => {
           </div>
         </div> */}
 
-        <div className="flex items-center gap-3">
+        {/* <div className="flex items-center gap-3">
           <span> Share this post: </span>
           <div className="flex gap-3 text-2xl">
             <i className="fa-brands fa-facebook"></i>
             <i className="fa-brands fa-twitter"></i>
             <i className="fa-brands fa-linkedin"></i>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
