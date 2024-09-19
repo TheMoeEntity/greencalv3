@@ -5,6 +5,7 @@ import essay from "../../../../../public/images/essay.jpg";
 import medical from "../../../../../public/images/sickle-cell.jpg";
 import { eventCard } from "@/types";
 import FeaturedCard from "@/components/shared/Cards/Featured";
+import hygiene from '../../../../../public/images/Greencal Menstrual Hygiene Awareness.jpg'
 
 const FundRaisers = () => {
   const content: eventCard[] = [
@@ -20,11 +21,20 @@ const FundRaisers = () => {
     {
       img: medical,
       title:
-        "Greencal Foundation in collaboration with MWAN Ebonyi State celebrates World Sickle Cell Day with donation at AEFUTHA",
+        "GREENCAL Foundation in collaboration with MWAN Ebonyi State celebrates World Sickle Cell Day with donation at AEFUTHA",
       content:
         "As part of the activities to mark World Sickle Cell Day 2024, the Alex Ekwueme Federal University Teaching Hospital Abakaliki (AEFUTHA) celebrated...",
       comingSoon: false,
       slug: "sickle-cell-day",
+    },
+    {
+      img: hygiene,
+      title:
+        "UPCOMING EVENT: GREENCAL Foundation partners NAESMS for Education and awareness on menstrual hygiene.",
+      content:
+        "Event coming soon..",
+      comingSoon: true,
+      slug: "menstual-hygiene-awareness",
     },
   ];
   return (

@@ -32,7 +32,7 @@ const Hero = () => {
         showDots={true}
         draggable={true}
         autoPlaySpeed={1000}
-        transitionDuration={7000}
+        transitionDuration={10000}
       >
         <div className="p-8 h-[1000px] md:h-[1300px] lg:h-[auto] md:p-16 md:pb-28 bg-[#FBF8F3] flex flex-col lg:flex-row w-full">
           <div className="basis-full flex-1 flex flex-col gap-3 md:gap-10 md:basis-1/2">
@@ -49,18 +49,19 @@ const Hero = () => {
             <div className="w-full flex mt-5 flex-row gap-3">
               <div
                 style={{
-                  backgroundImage: "url('/images/sickle-cell-outreach.jpg')",
+                  backgroundImage:
+                    "url('/images/Greencal Menstrual Hygiene Awareness.jpg')",
                   backgroundSize: "cover",
+                  backgroundPosition:'center'
                 }}
-                className="w-[130px] basis-1/2 md:basis-auto rounded-md h-[130px]"
+                className="w-[170px] basis-1/2 md:basis-auto rounded-md h-[90px] md:h-[170px]"
               ></div>
-              <div className="flex flex-col gap-4">
-                <h2 className="text-xl md:text-2xl font-bold  leading-[1.2]">
-                  Our Most Recent <br /> Event
+              <div className="flex flex-col justify-center gap-2 md:gap-4">
+                <h2 className="text-xl md:text-2xl font-bold  leading-[1.2]">Upcoming <br /> Event
                 </h2>
                 <h3 className="text-xs md:text-sm text-[#525252]">
-                  Greencal Foundation celebrates World Sickle Cell Day <br />{" "}
-                  with donation
+                  GREENCAL Foundation partners NAESMS for Education <br /> and
+                  awareness on menstrual hygiene.
                 </h3>
               </div>
             </div>
@@ -89,13 +90,14 @@ const Hero = () => {
         <div className="p-8 h-[1000px] md:h-[1300px] lg:h-[auto] md:p-16 md:pb-28 bg-[#FBF8F3] flex flex-col lg:flex-row w-full">
           <div className="basis-full flex-1 flex flex-col gap-3 md:gap-10 md:basis-1/2">
             <h1 className="text-[#A2CA62] pt-5 w-full font-bold text-lg md:text-3xl">
-             Building a Stronger community.
+              Building a Stronger community.
             </h1>
             <h2 className="text-[40px] w-full md:text-5xl font-medium leading-[1.2] md:leading-[1.3]">
               Where Compassion Meets Need.
             </h2>
             <h3 className=" md:text-xl text-sm leading-loose text-[#525252]">
-              Greencal Foundation provides hope and support through medical assitance, education, and community outreach.
+              Greencal Foundation provides hope and support through medical
+              assitance, education, and community outreach.
             </h3>
             <div className="w-full flex mt-5 flex-row gap-3">
               <div
