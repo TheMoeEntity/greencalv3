@@ -5,11 +5,11 @@ import { IPost } from "@/types";
 const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
   return (
     <section className="mx-auto max-w-7xl text-[#405777] p-3 md:p-5 flex flex-col gap-8">
-      <div className="py-10 xl:w-[75%] mx-auto flex flex-col text-center gap-8 ">
-        <h1 className=" text-2xl text-black md:text-[45px] font-semibold leading-normal ">
+      <div className="py-10 xl:w-[75%] mx-auto flex flex-col gap-8 ">
+        <h1 className=" text-2xl text-center text-black md:text-[45px] font-semibold leading-normal ">
           {post.title}
         </h1>
-        <div className="font-light">
+        <div className="font-light text-center">
           {post.date}
           <span className="pl-3 border-l-[0.5px] border-l-black mx-3">
             GREENCAL FOUNDATION{" "}
