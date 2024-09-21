@@ -5,7 +5,7 @@ import essay from "../../../../../public/images/essay.jpg";
 import medical from "../../../../../public/images/sickle-cell.jpg";
 import { eventCard } from "@/types";
 import FeaturedCard from "@/components/shared/Cards/Featured";
-import hygiene from '../../../../../public/images/Greencal Menstrual Hygiene Awareness.jpg'
+import hygiene from '../../../../../public/images/Greencal Web Size.jpg'
 
 const FundRaisers = () => {
   const content: eventCard[] = [
