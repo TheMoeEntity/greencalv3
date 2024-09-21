@@ -3,37 +3,20 @@ import styles from "../../../../app/page.module.css";
 import Link from "next/link";
 import essay from "../../../../../public/images/essay.jpg";
 import medical from "../../../../../public/images/sickle-cell.jpg";
-import { eventCard } from "@/types";
+import { eventCard, IPost } from "@/types";
 import FeaturedCard from "@/components/shared/Cards/Featured";
-import hygiene from '../../../../../public/images/Greencal Web Size.jpg'
+import hygiene from "../../../../../public/images/Greencal Web Size.jpg";
 
-const FundRaisers = () => {
-  const content: eventCard[] = [
+const FundRaisers: React.FC<{ events: IPost[] }> = ({ events }) => {
+  const blogs = [
+    ...events,
     {
-      img: essay,
-      title:
-        "Greencal Foundation Uplifts Students Through Annual Essay Competition",
-      content:
-        "For graduating secondary school students preparing for their SSCE or NECO exams, Greencal Foundation's essay competition provides a unique opportunity...",
-      comingSoon: false,
-      slug: "annual-essay-competition",
-    },
-    {
-      img: medical,
-      title:
-        "GREENCAL Foundation in collaboration with MWAN Ebonyi State celebrates World Sickle Cell Day with donation at AEFUTHA",
-      content:
-        "As part of the activities to mark World Sickle Cell Day 2024, the Alex Ekwueme Federal University Teaching Hospital Abakaliki (AEFUTHA) celebrated...",
-      comingSoon: false,
-      slug: "sickle-cell-day",
-    },
-    {
-      img: hygiene,
+      media: {
+        banner: hygiene,
+      },
       title:
         "UPCOMING EVENT: GREENCAL Foundation partners NAESMS for Education and awareness on menstrual hygiene.",
-      content:
-        "Event coming soon..",
-      comingSoon: true,
+      explainer: "Event coming soon.",
       slug: "menstual-hygiene-awareness",
     },
   ];
@@ -51,15 +34,15 @@ const FundRaisers = () => {
       </div>
 
       <div className={styles.grid}>
-        <ul className="px-0 py-0 list-group list-group-horizontal position-relative overflow-scroll d-flex w-100 mb-5">
-          {content.map((x, i) => (
+        <ul className="px-0 py-0 list-group no-scrollbar list-group-horizontal position-relative overflow-scroll d-flex w-100 mb-5">
+          {blogs.map((x, i) => (
             <li className="list-group-item mx-3 px-0 py-o border-0" key={i}>
               <FeaturedCard
                 title={x.title}
-                comingSoon={x.comingSoon}
-                img={x.img}
+                comingSoon={i === blogs.length - 1}
+                img={x.media.banner}
                 slug={x.slug}
-                content={x.content}
+                content={x.explainer}
               />
             </li>
           ))}

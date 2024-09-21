@@ -3,7 +3,8 @@ import { FormEvent } from "react";
 import { EnqueueSnackbar } from "notistack";
 import essay from "../../public/images/essay.jpg";
 import medical from "../../public/images/medical.jpeg";
-import { eventCard, linkType } from "@/types";
+import { eventCard, IPost, linkType } from "@/types";
+import { getDocuments } from "./lib/firebase";
 
 export class Helpers {
   static leaders = [
@@ -137,5 +138,13 @@ export class Helpers {
       setDone(false);
       setStatus("SEND MESSAGE");
     }
+  };
+  static getBlogPost = async (slug: string) => {
+    const events = (await getDocuments()) as IPost[];
+    const post = events.find((event) => event.slug === slug);
+    if (!post) {
+      return null;
+    }
+    return post;
   };
 }

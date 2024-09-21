@@ -146,6 +146,7 @@ const Header = () => {
               rel="noopener noreferrer"
               href="https://wa.me/+2348116177509?text=Hello,%20I%20am%20reaching%20out%20from%20the%20GreenCal%20Foundation%20website.%20I%20would%20love%20to%20learn%20more%20about%20your%20initiatives%20and%20explore%20ways%20we%20can%20collaborate%20or%20support%20your%20mission.%20Looking%20forward%20to%20hearing%20from%20you!"
               target="_blank"
+              className="text-white"
               style={{ color: "white !important" }}
             >
               {`LETS`} TALK

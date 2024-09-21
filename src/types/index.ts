@@ -5,6 +5,24 @@ export type nomSingle = {
   nomination: string;
   isWinner?: boolean;
 };
+ export type Props = {
+  params: { slug: string };
+}
+export interface IPost {
+  slug: string;
+  title: string;
+  explainer:string
+  date: string;
+  content: {
+    first: string;
+    two: string;
+  };
+  media: {
+    banner: string;
+    media_one: string[];
+    media_two: string[];
+  };
+}
 export type blogPostType = {
   banner: string[];
   title: string;
@@ -35,10 +53,6 @@ export type nominees = {
   isActive: boolean;
   id: number;
   nominees: nomSingle[];
-};
-export type Props = {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
 };
 export type execType = {
   name: string;

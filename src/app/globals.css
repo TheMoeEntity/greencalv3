@@ -47,6 +47,11 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+  }
 }
 .spinner {
   position: absolute;

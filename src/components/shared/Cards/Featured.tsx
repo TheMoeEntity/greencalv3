@@ -12,7 +12,7 @@ const FeaturedCard = ({
 }: {
   title: string;
   comingSoon: boolean;
-  img: StaticImageData;
+  img: StaticImageData|string;
   content: string;
   slug?: string;
 }) => {
