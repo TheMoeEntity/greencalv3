@@ -4,24 +4,24 @@ import styles from "../page.module.css";
 import { content } from "@/constants";
 import FeaturedCard from "@/components/shared/Cards/Featured";
 import { getDocuments } from "@/helpers/lib/firebase";
-import hygiene from '../../../public/images/Greencal Web Size.jpg'
+import hygiene from "../../../public/images/Greencal Web Size.jpg";
 import { IPost } from "@/types";
 
-const AllEvents = async() => {
-   const events = await getDocuments();
-   const allEvents = events as IPost[];
-     const blogs = [
-       ...allEvents,
-       {
-         media: {
-           banner: hygiene,
-         },
-         title:
-           "UPCOMING EVENT: GREENCAL Foundation partners NAESMS for Education and awareness on menstrual hygiene.",
-         explainer: "Event coming soon.",
-         slug: "menstual-hygiene-awareness",
-       },
-     ];
+const AllEvents = async () => {
+  const events = await getDocuments();
+  const allEvents = events as IPost[];
+  const blogs = [
+    ...allEvents,
+    //  {
+    //    media: {
+    //      banner: hygiene,
+    //    },
+    //    title:
+    //      "UPCOMING EVENT: GREENCAL Foundation partners NAESMS for Education and awareness on menstrual hygiene.",
+    //    explainer: "Event coming soon.",
+    //    slug: "menstual-hygiene-awareness",
+    //  },
+  ];
   return (
     <div>
       <Hero_Shared page="events" text="Our Events" />
@@ -43,7 +43,7 @@ const AllEvents = async() => {
             <li className="list-group-item mx-3 px-0 py-o border-0" key={i}>
               <FeaturedCard
                 title={x.title}
-                comingSoon={i === blogs.length - 1}
+                comingSoon={false}
                 img={x.media.banner}
                 slug={x.slug}
                 content={x.explainer}

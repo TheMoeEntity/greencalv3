@@ -10,15 +10,15 @@ import hygiene from "../../../../../public/images/Greencal Web Size.jpg";
 const FundRaisers: React.FC<{ events: IPost[] }> = ({ events }) => {
   const blogs = [
     ...events,
-    {
-      media: {
-        banner: hygiene,
-      },
-      title:
-        "UPCOMING EVENT: GREENCAL Foundation partners NAESMS for Education and awareness on menstrual hygiene.",
-      explainer: "Event coming soon.",
-      slug: "menstual-hygiene-awareness",
-    },
+    // {
+    //   media: {
+    //     banner: hygiene,
+    //   },
+    //   title:
+    //     "UPCOMING EVENT: GREENCAL Foundation partners NAESMS for Education and awareness on menstrual hygiene.",
+    //   explainer: "Event coming soon.",
+    //   slug: "menstual-hygiene-awareness",
+    // },
   ];
   return (
     <div id="events" className={`${styles.funds} pb-8`}>
@@ -39,7 +39,7 @@ const FundRaisers: React.FC<{ events: IPost[] }> = ({ events }) => {
             <li className="list-group-item mx-3 px-0 py-o border-0" key={i}>
               <FeaturedCard
                 title={x.title}
-                comingSoon={i === blogs.length - 1}
+                comingSoon={false}
                 img={x.media.banner}
                 slug={x.slug}
                 content={x.explainer}

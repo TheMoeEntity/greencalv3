@@ -44,22 +44,26 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
           ))}
         </div>
 
-        <div dangerouslySetInnerHTML={{ __html: post.content.two }} />
+        <div
+          className="p-1"
+          dangerouslySetInnerHTML={{ __html: post.content.two }}
+        />
 
-        <div className="flex bg-red-400 flex-col md:flex-row w-full gap-3">
-          {post.media.media_two.length > 1 && post.media.media_two.map((media) => (
-            <div key={media} className="flex-1">
-              <Image
-                src={media}
-                alt="Banner of event. Adum Obinna, founder of Greencal, with other volunteers AEFUTHA in celebration of world sickle cell day."
-                quality={100}
-                sizes={"100vw"}
-                width={300}
-                height={300}
-                className="object-cover w-full h-auto "
-              />
-            </div>
-          ))}
+        <div className="flex flex-col md:flex-row w-full gap-3 gap-y-4">
+          {post.media.media_two.length > 1 &&
+            post.media.media_two.map((media) => (
+              <div key={media} className="flex-1">
+                <Image
+                  src={media}
+                  alt="Banner of event. Adum Obinna, founder of Greencal, with other volunteers AEFUTHA in celebration of world sickle cell day."
+                  quality={100}
+                  sizes={"100vw"}
+                  width={300}
+                  height={300}
+                  className="object-cover w-full h-auto "
+                />
+              </div>
+            ))}
         </div>
       </div>
     </section>

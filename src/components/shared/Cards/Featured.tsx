@@ -12,7 +12,7 @@ const FeaturedCard = ({
 }: {
   title: string;
   comingSoon: boolean;
-  img: StaticImageData|string;
+  img: StaticImageData | string;
   content: string;
   slug?: string;
 }) => {
@@ -33,7 +33,7 @@ const FeaturedCard = ({
           <h5 className="text-xl font-bold">{title}</h5>
         </div>
         <div className="text-sm">
-          <p>{content}</p>
+          <p dangerouslySetInnerHTML={{ __html: content }} />
         </div>
         <div style={{ color: "gray" }}>
           {/* $23,000 raised */}
