@@ -20,7 +20,6 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
     notFound();
   }
   const blog = response;
-  console.log(response.media.media_two.length);
   return (
     <main>
       <BlogPostDetails post={blog} />
