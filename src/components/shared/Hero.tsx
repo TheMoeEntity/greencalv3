@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -52,12 +52,13 @@ const Hero = () => {
                   backgroundImage:
                     "url('/images/Greencal Menstrual Hygiene Awareness.jpg')",
                   backgroundSize: "cover",
-                  backgroundPosition:'center'
+                  backgroundPosition: "center",
                 }}
                 className="w-[170px] basis-1/2 md:basis-auto rounded-md h-[90px] md:h-[170px]"
               ></div>
               <div className="flex flex-col justify-center gap-2 md:gap-4">
-                <h2 className="text-xl md:text-2xl font-bold  leading-[1.2]">Upcoming <br /> Event
+                <h2 className="text-xl md:text-2xl font-bold  leading-[1.2]">
+                  Most Recent Event
                 </h2>
                 <h3 className="text-xs md:text-sm text-[#525252]">
                   GREENCAL Foundation partners NAESMS for Education <br /> and
@@ -99,21 +100,23 @@ const Hero = () => {
               Greencal Foundation provides hope and support through medical
               assitance, education, and community outreach.
             </h3>
-            <div className="w-full flex mt-5 flex-row gap-3">
+            <div className="w-full invisible flex mt-5 flex-row gap-3">
               <div
                 style={{
-                  backgroundImage: "url('/images/sickle-cell-outreach.jpg')",
+                  backgroundImage:
+                    "url('/images/Greencal Menstrual Hygiene Awareness.jpg')",
                   backgroundSize: "cover",
+                  backgroundPosition: "center",
                 }}
-                className="w-[130px] basis-1/2 md:basis-auto rounded-md h-[130px]"
+                className="w-[170px] basis-1/2 md:basis-auto rounded-md h-[90px] md:h-[170px]"
               ></div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col justify-center gap-2 md:gap-4">
                 <h2 className="text-xl md:text-2xl font-bold  leading-[1.2]">
-                  Our Most Recent <br /> Event
+                  Most Recent <br /> Event
                 </h2>
                 <h3 className="text-xs md:text-sm text-[#525252]">
-                  Greencal Foundation celebrates World Sickle Cell Day <br />{" "}
-                  with donation
+                  GREENCAL Foundation partners NAESMS for Education <br /> and
+                  awareness on menstrual hygiene.
                 </h3>
               </div>
             </div>
