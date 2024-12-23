@@ -1,88 +1,92 @@
-import styles from "./index.module.css";
-import logo from "../../../../public/images/greencal_white.png";
 import Image from "next/image";
+import React from "react";
+import logo from "../../../../public/images/greencal_white.png";
 import Icon from "@/components/shared/Icons";
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
-      <div className={styles.grid}>
-        <div>
-          <div className={styles.logo}>
-            <Image
-              src={logo}
-              style={{
-                objectFit: "cover",
-              }}
-              alt="Greencal-foundation logo"
-              fill
-              quality={100}
-              priority={true}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
+    <div>
+      <footer className="w-full text-white bg-[var(--greencal-main)] p-10">
+        <div className="container flex flex-wrap space-x-16 mx-auto w-full md:w-[85%] p-4">
+          <div className="flex-1 flex font-light flex-col gap-4">
+            <span className="w-full md:w-[80%]">
+              <Image
+                alt="Greencal Logo"
+                src={logo}
+                className="object-contain w-full h-auto"
+              />
+            </span>
+            <span className="-mt-9">
+              Greencal Foundation: Where Compassion Meets Needs
+            </span>
+            <span>Opening Hours : Monday Sat: 8am to 5pm</span>
           </div>
-          <p> Greencal Foundation: Where Compassion Meets Need</p>
-          <strong>Opening Hours :</strong> Monday Sat: 8am to 5pm
-          <div className={styles.icons}>
-            <a href="https://instagram.com/greencalfoundation1" target="_blank">
-              <Icon name="bxl-instagram" color="#71CD6D" size="20px" />
-            </a>
+          <div className="flex-1 flex flex-col gap-3 md:pt-16">
+            <h3 className="font-bold text-2xl">Our Services</h3>
+            <div className="flex font-light text-sm flex-col gap-3">
+              <span>Grants and Education</span>
+              <span>Food and Education</span>
+              <span>Outreach</span>
+              <span>International Collaboration</span>
+              <span>Donations</span>
+              <span>Medical Outreach</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 md:pt-16">
+            <h3 className="font-bold text-2xl">Contact Info</h3>
+            <div className="flex font-light flex-col gap-7">
+              <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-full bg-[var(--greencal-primary)] flex justify-center items-center">
+                  <Icon
+                    name="bxs-phone-call"
+                    color="var(--greencal-main)"
+                    size="25px"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <b>Call us</b>
+                  <span className="text-xs">(+234) 811 617 7509 </span>
+                  <span className="text-xs">(+234) 803 656 5354</span>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-full bg-[var(--greencal-primary)] flex justify-center items-center">
+                  <Icon
+                    name="bxs-envelope"
+                    color="var(--greencal-main)"
+                    size="25px"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <b>Mail us</b>
+                  <span className="text-xs">
+                    <a href="mailto:greencalfoundation@gmail.com">
+                      greencalfoundation@gmail.com
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-full bg-[var(--greencal-primary)] flex justify-center items-center">
+                  <Icon
+                    name="bxs-map"
+                    color="var(--greencal-main)"
+                    size="25px"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <b>Visit us</b>
+                  <span className="whitespace-nowra text-xs">
+                    Opinion Nigeria LTD prince and princess ishieke Abakaliki
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div>
-          <h2 style={{ marginLeft: "30px" }}>CONTACT INFO</h2>
-          <div>
-            <div>
-              <Icon name="bxs-map-pin" color="#71CD6D" size="20px" />
-            </div>
-            <div>Opinion Nigeria LTD prince and princess ishieke Abakaliki</div>
-          </div>
-
-          <div>
-            <div>
-              <Icon name="bxs-phone-call" color="#71CD6D" size="20px" />
-            </div>
-            <div>(+234) 811 617 7509 &nbsp; (234) 803 656 5354</div>
-          </div>
-          <div>
-            <div style={{ width: "50px" }} className={styles.footerIcons}>
-              <Icon name="bx-envelope" color="#71CD6D" size="20px" />
-            </div>
-            <div>greencalfoundation@gmail.com</div>
-          </div>
-        </div>
-        <div>
-          <h2>OUR SERVICES</h2>
-          <div className="flex items-center gap-3">
-            <ChevronRightIcon className="text-sm size-4" />
-            Grants and Eductation
-          </div>
-          <div className="flex items-center gap-3">
-            <ChevronRightIcon className="text-sm size-4" />
-            Food and Education
-          </div>
-          <div className="flex items-center gap-3">
-            <ChevronRightIcon className="text-sm size-4" />
-            Outreach
-          </div>
-          <div className="flex items-center gap-3">
-            <ChevronRightIcon className="text-sm size-4" />
-            International Collaboration
-          </div>
-          <div className="flex items-center gap-3">
-            <ChevronRightIcon className="text-sm size-4" />
-            Donation
-          </div>
-          <div className="flex items-center gap-3">
-            <ChevronRightIcon className="text-sm size-4" />
-           Medical Outreach
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.copyright}>
-        <div>© {new Date().getFullYear()} Greencal Foundation.</div>
+      </footer>
+      <div className="w-full text-center bg-[var(--greencal-primary)] text-[var(--greencal-main)] p-3">
+        &copy; {new Date().getFullYear()} Greencal Foundation.
       </div>
     </div>
   );

@@ -83,7 +83,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      <div
+      {/* <div
         ref={headerRef}
         style={{ display: "flex" }}
         className={styles.headerOne}
@@ -101,15 +101,12 @@ const Header = () => {
 
         <div>
           <div>
-            {/* <i className="fa-brands fa-twitter"></i> */}
             <a href="https://instagram.com/greencalfoundation1" target="_blank">
               <Icon name="bxl-instagram" size="20px" />
             </a>
-            {/* <i className="fa-brands fa-facebook"></i>
-            <i className="fa-brands fa-pinterest"></i> */}
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={`${styles.headerTwo} ${sticky}`}>
         <div>
           <Link href={`/`}>
@@ -141,17 +138,17 @@ const Header = () => {
           {/* <div>
             <i className="fa-solid fa-magnifying-glass"></i>
           </div> */}
-          <div>
+          <button>
             <a
               rel="noopener noreferrer"
               href="https://wa.me/+2348116177509?text=Hello,%20I%20am%20reaching%20out%20from%20the%20GreenCal%20Foundation%20website.%20I%20would%20love%20to%20learn%20more%20about%20your%20initiatives%20and%20explore%20ways%20we%20can%20collaborate%20or%20support%20your%20mission.%20Looking%20forward%20to%20hearing%20from%20you!"
               target="_blank"
-              className="text-white"
+              className="text-white rounded-full bg-[#135342] py-3 px-4"
               style={{ color: "white !important" }}
             >
-              {`LETS`} TALK
+              Chat Us
             </a>
-          </div>
+          </button>
         </div>
         <div onClick={show} className={styles.bars}>
           <Bars3Icon className="size-6" />

@@ -1,8 +1,8 @@
 .footer {
   width: 100%;
   height: auto;
-  background-image: url("/images/footer-bg.jpeg");
-  background-size: cover;
+  /* background-image: url("/images/footer-bg.jpeg");
+  background-size: cover; */
   background-position: center;
   padding: 40px 60px;
   color: white;

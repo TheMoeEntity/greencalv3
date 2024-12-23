@@ -29,11 +29,12 @@
   margin-bottom: 120px;
   z-index: 1000;
   transition: 0.5s;
-  box-shadow: 5px 9px 15px 0 rgba(143, 143, 143, 0.2),
+  box-shadow:
+    5px 9px 15px 0 rgba(143, 143, 143, 0.2),
     2.5px -9px 35px 0 rgba(143, 143, 143, 0.2);
 }
 
-.cards>div {
+.cards > div {
   height: 100%;
   transition: 0.5s;
   height: 300px;
@@ -45,20 +46,20 @@
   justify-content: center;
 }
 
-.cards>div>div {
+.cards > div > div {
   position: relative;
   margin: 10px 0;
   font-size: 20px;
   transition: 1.7s;
 }
 
-.cards>div>div p {
+.cards > div > div p {
   font-size: 16.5px;
   line-height: 1.7;
 }
 
-.cards>div:nth-child(2) {
-  background-color: #0C4949;
+.cards > div:nth-child(2) {
+  background-color: #0c4949;
   color: white;
 }
 
@@ -67,13 +68,12 @@
 } */
 
 @media (hover: hover) {
-  .cards>div>div:nth-child(1):hover {
+  .cards > div > div:nth-child(1):hover {
     animation: bounce2 1.2s infinite;
   }
 }
 
 @keyframes bounce2 {
-
   0%,
   20%,
   50%,
@@ -99,7 +99,7 @@
   justify-content: space-between;
 }
 
-.main>div {
+.main > div {
   width: 48%;
   height: 100%;
   position: relative;
@@ -115,33 +115,33 @@
   top: 2px;
 }
 
-.img>div {
+.img > div {
   position: relative;
   width: 13px;
   height: 13px;
 }
 
-.main>div:nth-child(1) {
+.main > div:nth-child(1) {
   height: 500px;
   transition: 0.88s;
   transform: translateY(-300px);
   opacity: 0;
 }
 
-.main>div:nth-child(2) {
+.main > div:nth-child(2) {
   transition: 0.88s;
   transform: translateY(-300px);
   opacity: 0;
 }
 
-.main>div:nth-child(1).animClass {
+.main > div:nth-child(1).animclassName {
   animation-name: animateIn;
   animation-delay: 0.4s;
   animation-duration: 1.01s;
   animation-fill-mode: forwards;
 }
 
-.main>div:nth-child(2).animClass2 {
+.main > div:nth-child(2).animclassName2 {
   animation-name: animateIn2;
   animation-delay: 0.65s;
   animation-duration: 1.01s;
@@ -172,20 +172,21 @@
   }
 }
 
-.main>div h2 {
+.main > div h2 {
   font-size: xx-large;
   margin-top: 30px;
   line-height: 1.23;
 }
 
-.sign {}
+.sign {
+}
 
-.main>div p {
+.main > div p {
   margin-top: 30px;
 }
 
 .main i {
-  color: #0C4949;
+  color: #0c4949;
 }
 
 .abzt {
@@ -194,7 +195,7 @@
   flex-flow: row wrap;
 }
 
-.abzt>div:nth-child(1) {
+.abzt > div:nth-child(1) {
   position: relative;
   width: 165px;
   height: 130px;
@@ -205,7 +206,7 @@
   width: 200px;
 }
 
-.check>div {
+.check > div {
   margin: 15px;
   display: flex;
 }
@@ -214,7 +215,7 @@
   margin-top: 50px;
   padding: 15px 30px;
   border: none;
-  background: #0C4949;
+  background: #0c4949;
   font-weight: bolder;
   display: block;
 }
@@ -229,11 +230,12 @@
   .cards {
     width: 80%;
     /* margin-bottom:750px; */
-    box-shadow: 5px 9px 15px 0 rgba(143, 143, 143, 0.2),
+    box-shadow:
+      5px 9px 15px 0 rgba(143, 143, 143, 0.2),
       2.5px -9px 35px 0 rgba(143, 143, 143, 0.2);
   }
 
-  .cards>div {
+  .cards > div {
     flex: 100%;
   }
 }
@@ -256,13 +258,13 @@
     width: 96%;
   }
 
-  .main>div {
+  .main > div {
     width: 48%;
   }
 }
 
 @media screen and (max-width: 961px) {
-  .main>div {
+  .main > div {
     flex: 100%;
   }
 
@@ -270,7 +272,7 @@
     width: 75%;
   }
 
-  .main>div:nth-child(1) {
+  .main > div:nth-child(1) {
     height: 600px;
     margin-bottom: 50px;
   }
@@ -281,12 +283,12 @@
     width: 85%;
   }
 
-  .main>div:nth-child(1) {
+  .main > div:nth-child(1) {
     height: 450px;
     margin-bottom: 50px;
   }
 
-  .abzt>div:nth-child(1) {
+  .abzt > div:nth-child(1) {
     flex: 100%;
     height: 300px;
     width: 100%;
@@ -299,7 +301,7 @@
     width: 90%;
   }
 
-  .main>div:nth-child(1) {
+  .main > div:nth-child(1) {
     height: 350px;
     margin-bottom: 50px;
   }
@@ -308,7 +310,7 @@
     background-position: center;
   }
 
-  .main>div h2 {
+  .main > div h2 {
     font-size: 20px;
   }
 }

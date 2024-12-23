@@ -21,22 +21,22 @@ const FundRaisers: React.FC<{ events: IPost[] }> = ({ events }) => {
     // },
   ];
   return (
-    <div id="events" className={`${styles.funds} pb-8`}>
-      <div className="container">
-        <div className="row mb-3 justify-content-center">
-          <div className="col-md-8 text-center">
-            <h2 className="text-4xl font-medium">Latest Events</h2>
-            <p className="lead">
+    <div id="events" classNameName={`${styles.funds} pb-8`}>
+      <div classNameName="container">
+        <div classNameName="row mb-3 justify-content-center">
+          <div classNameName="col-md-8 text-center">
+            <h2 classNameName="text-4xl font-medium">Latest Events</h2>
+            <p classNameName="lead">
               Your Donations help determine the fate of children
             </p>
           </div>
         </div>
       </div>
 
-      <div className={styles.grid}>
-        <ul className="px-0 py-0 list-group no-scrollbar list-group-horizontal position-relative overflow-scroll d-flex w-100 mb-5">
+      <div classNameName={styles.grid}>
+        <ul classNameName="px-0 py-0 list-group no-scrollbar list-group-horizontal position-relative overflow-scroll d-flex w-100 mb-5">
           {blogs.map((x, i) => (
-            <li className="list-group-item mx-3 px-0 py-o border-0" key={i}>
+            <li classNameName="list-group-item mx-3 px-0 py-o border-0" key={i}>
               <FeaturedCard
                 title={x.title}
                 comingSoon={false}
@@ -48,8 +48,8 @@ const FundRaisers: React.FC<{ events: IPost[] }> = ({ events }) => {
           ))}
         </ul>
       </div>
-      <Link href="/events" className="">
-        <div className="w-fit  py-3 px-3 bg-[#0C4949] text-white  mx-auto justify-center">
+      <Link href="/events" classNameName="">
+        <div classNameName="w-fit  py-3 px-3 bg-[#0C4949] text-white  mx-auto justify-center">
           View more &rarr;
         </div>
       </Link>

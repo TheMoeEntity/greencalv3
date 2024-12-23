@@ -22,7 +22,7 @@ const Hero = () => {
     },
   };
   return (
-    <div>
+    <div className="bg-white">
       <Carousel
         responsive={responsive}
         // customButtonGroup={<CustomSliderButtons />}
@@ -34,7 +34,7 @@ const Hero = () => {
         autoPlaySpeed={1000}
         transitionDuration={10000}
       >
-        <div className="p-8 h-[1000px] md:h-[1300px] lg:h-[auto] md:p-16 md:pb-28 bg-[#FBF8F3] flex flex-col lg:flex-row w-full">
+        <div className="p-8 h-[1000px] md:h-[1300px] lg:h-[auto] md:p-16 md:pb-28 flex flex-col lg:flex-row w-full">
           <div className="basis-full flex-1 flex flex-col gap-3 md:gap-10 md:basis-1/2">
             <h1 className="text-[#A2CA62] pt-5 w-full font-bold text-lg md:text-3xl">
               Helping Hands, Brighter Futures.

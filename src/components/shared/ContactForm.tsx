@@ -25,7 +25,7 @@ const ContactForm = () => {
           </label>
           <input
             type="text"
-            className="py-4 px-2 rounded-md z bg-[#F1F1F1] outline-none"
+            className="py-4 px-2 rounded-md border outline-none"
             placeholder="Enter your full name"
           />
         </div>
@@ -35,7 +35,7 @@ const ContactForm = () => {
           </label>
           <input
             type="text"
-            className="py-4 px-2 rounded-md bg-[#F1F1F1] outline-none"
+            className="py-4 px-2 rounded-md border outline-none"
             placeholder="Enter your email address"
           />
         </div>
@@ -47,7 +47,7 @@ const ContactForm = () => {
           </label>
           <input
             type="number"
-            className="py-4 px-2 bg-[#F1F1F1] rounded-md outline-none"
+            className="py-4 px-2 rounded-md border outline-none"
             placeholder="Enter your phone number"
           />
         </div>
@@ -55,7 +55,7 @@ const ContactForm = () => {
           <label htmlFor="" className="text-xl">
             Subject <span className="text-red-700">*</span>
           </label>
-          <select className="bg-[#F1F1F1] outline-none py-4 px-2 text-gray-700 w-full">
+          <select className="rounded-md border outline-none py-4 px-2 text-gray-700 w-full">
             <option value="--Choose--">--Choose--</option>
             <option value="Sponsorship">Sponsorship</option>
             <option value="Enquiries">Enquiries</option>
@@ -72,13 +72,13 @@ const ContactForm = () => {
         <textarea
           value={val}
           onChange={(e) => setVal(e.target.value)}
-          className="bg-[#F1F1F1] rounded-md  min-h-40 py-4 px-2 border-none outline-none"
+          className="rounded-md border min-h-40 py-4 px-2 border-none outline-none"
           placeholder="Your Message"
           cols={30}
         ></textarea>
       </div>
-      <div className="mt-3">
-        <button className="text-white bg-[#71cd6c] px-8 rounded-md py-3">
+      <div className="mt-3 w-full">
+        <button className="text-white w-full bg-[#A0C861] px-8 rounded-md py-3">
           {status}
         </button>
       </div>
