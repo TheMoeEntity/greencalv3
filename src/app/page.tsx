@@ -1,7 +1,6 @@
 import About from "@/components/sections/Home/About";
 import All_Events from "@/components/sections/Home/All_Events";
 import FAQ from "@/components/sections/Home/FAQ";
-import FundRaisers from "@/components/sections/Home/FundRaisers";
 import Hero_V2 from "@/components/sections/Home/Hero";
 import Objectives from "@/components/sections/Home/Objectives";
 import Testimonials from "@/components/sections/Home/Testimonials";
