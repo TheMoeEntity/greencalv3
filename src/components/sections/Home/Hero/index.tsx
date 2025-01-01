@@ -1,5 +1,9 @@
 import Icon from "@/components/shared/Icons";
+import Image from "next/image";
 import React from "react";
+import logo from "../../../../../public/images/Placeholder.png";
+import card from "../../../../../public/images/Card.png";
+import hearts from "../../../../../public/images/heart.png";
 
 const Hero_V2 = () => {
   return (
@@ -25,11 +29,38 @@ const Hero_V2 = () => {
               </div>
             </div>
           </div>
-          <div className="mt-5 lg:col-span-5 lg:flex">
-            <img
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
-              alt="mockup"
-            />
+          <div className=" lg:col-span-5 lg:flex lg:flex-col gap-3">
+            <span className="w-[90%] relative">
+              <div className="absolute -top-8 -right-12">
+                {" "}
+                <Image
+                  alt="Hearts"
+                  src={hearts}
+                  className="object-cover w-full h-auto"
+                />
+              </div>
+              <Image
+                alt="Greencal Logo"
+                src={logo}
+                className="object-cover w-full h-auto"
+              />
+            </span>
+            <div className="flex flex-1 gap-2">
+              <div className="px-4 py-6 flex-1 flex-col gap-3 flex rounded-xl font-semibold bg-[var(--greencal-main)] text-white">
+                <span> Together, We Empower Our Communities</span>
+                <p className="text-xs text-gray-500">
+                  Supporting healthcare, education, and faith-based initiatives
+                  in Abakaliki, Ebonyi State.
+                </p>
+              </div>
+              <div className="lg:basis-[55%] -mt-12">
+                <Image
+                  alt="Greencal Logo"
+                  src={card}
+                  className="object-cover w-full h-auto"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

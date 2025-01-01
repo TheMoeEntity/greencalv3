@@ -5,13 +5,19 @@ export type nomSingle = {
   nomination: string;
   isWinner?: boolean;
 };
- export type Props = {
+export type FAQType = {
+  isActive: boolean;
+  text: string;
+  reply: string;
+};
+export type Props = {
   params: { slug: string };
-}
+};
 export interface IPost {
   slug: string;
   title: string;
-  explainer:string
+  category: string;
+  explainer: string;
   date: string;
   content: {
     first: string;

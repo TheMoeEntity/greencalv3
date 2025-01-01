@@ -9,14 +9,14 @@ const Footer = () => {
       <footer className="w-full text-white bg-[var(--greencal-main)] p-10">
         <div className="container flex flex-wrap space-x-16 mx-auto w-full md:w-[85%] p-4">
           <div className="flex-1 flex font-light flex-col gap-4">
-            <span className="w-full md:w-[80%]">
+            <span className="w-full md:w-[70%]">
               <Image
                 alt="Greencal Logo"
                 src={logo}
                 className="object-contain w-full h-auto"
               />
             </span>
-            <span className="-mt-9">
+            <span className="-mt-16">
               Greencal Foundation: Where Compassion Meets Needs
             </span>
             <span>Opening Hours : Monday Sat: 8am to 5pm</span>
