@@ -3,7 +3,6 @@ import All_Events from "@/components/sections/Home/All_Events";
 import FAQ from "@/components/sections/Home/FAQ";
 import Hero_V2 from "@/components/sections/Home/Hero";
 import Objectives from "@/components/sections/Home/Objectives";
-import Testimonials from "@/components/sections/Home/Testimonials";
 // import Hero from "@/components/shared/Hero";
 import { getDocuments } from "@/helpers/lib/firebase";
 import { IPost } from "@/types";
