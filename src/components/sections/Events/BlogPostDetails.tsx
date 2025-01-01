@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { IPost } from "@/types";
+import Icon from "@/components/shared/Icons";
 
 const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
   const [imgSrc, setImgSrc] = useState<string>("");
@@ -32,15 +33,6 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
         </div>
       )}
       <div className="py-10 xl:w-[75%] mx-auto flex flex-col gap-8 ">
-        <h1 className=" text-2xl text-center text-black md:text-[45px] font-medium leading-normal ">
-          {post.title}
-        </h1>
-        <div className="font-light text-center">
-          {post.date}
-          <span className="pl-3 border-l-[0.5px] border-l-black mx-3">
-            GREENCAL FOUNDATION{" "}
-          </span>
-        </div>
         <div className="w-full">
           <Image
             src={post.media.banner}
@@ -50,9 +42,44 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
             width={300}
             height={300}
             sizes={"100vw"}
-            className="object-cover w-full h-auto "
+            className="object-cover rounded-xl w-full h-auto "
           />
         </div>
+        <div className="w-full flex justify-between">
+          <div className="flex items-center gap-3">
+            <div
+              style={{
+                backgroundImage: "url('/images/brill.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              className="w-10 mx-auto rounded-full h-10"
+            ></div>
+            <span>
+              Headed By{" "}
+              <span className="text-[var(--greencal-primary)]">Kepha</span>
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="flex items-center gap-1">
+              <Icon
+                name="bx-calendar"
+                color="var(--greencal-primary)"
+                size="25px"
+              />
+              <span>{post.date}</span>
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="flex items-center gap-1">
+              <Icon name="bx-map" color="var(--greencal-primary)" size="25px" />
+              <span>{post.location}</span>
+            </span>
+          </div>
+        </div>
+        <h1 className=" text-2xl text-black md:text-[35px] font-medium leading-[1.1]">
+          {post.title}
+        </h1>
         <div dangerouslySetInnerHTML={{ __html: post.content.first }} />
         <div className="flex flex-col md:flex-row w-full gap-3">
           {post.media.media_one.map((media) => (

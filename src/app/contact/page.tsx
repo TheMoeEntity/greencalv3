@@ -7,7 +7,7 @@ const Contact_Us = () => {
   return (
     <div>
       <Hero_Shared text={"Contact Us"} page="contact" />
-      <div className="w-full mx-auto max-w-[1450px] flex flex-col lg:flex-row gap-10 py-10 lg:py-20 px-3 md:px-5 lg:px-20">
+      <div className="w-[90%] mx-auto max-w-[1450px] flex flex-col lg:flex-row gap-10 py-10 lg:py-20 px-3 md:px-5 lg:px-20">
         <div className="flex flex-col basis-full lg:basis-[50%] gap-5 md:px-5">
           <div>
             <h2 className="font-semibold text-2xl md:text-4xl text-[#0C3429]">
@@ -21,8 +21,8 @@ const Contact_Us = () => {
           </div>
           <div className="py-1 flex flex-col gap-5">
             <div className="text-sm flex gap-3">
-              <span className="flex w-20 h-20 justify-center rounded-full bg-[#A0C861] items-center gap-2">
-                <Icon name="bx-phone-call" color="white" size="35px" />
+              <span className="flex w-20 h-20 justify-center items-center rounded-full bg-[#A0C861]">
+                <Icon name="bxs-phone-call" color="white" size="35px" />
               </span>
               <div className="flex flex-col justify-center gap-2">
                 <h4 className="font-semibold text-xl">Call Us</h4>
@@ -30,8 +30,8 @@ const Contact_Us = () => {
               </div>
             </div>
             <div className="text-sm flex gap-3">
-              <span className="flex w-20 h-20 justify-center rounded-full bg-[#A0C861] items-center gap-2">
-                <Icon name="bx-envelope" color="#ffff" size="35px" />{" "}
+              <span className="flex w-20 h-20 justify-center items-center rounded-full bg-[#A0C861]">
+                <Icon name="bxs-envelope" color="#ffff" size="35px" />
               </span>
               <div className="flex flex-col justify-center gap-2">
                 <h4 className="font-semibold text-xl">Mail Us</h4>
@@ -39,13 +39,14 @@ const Contact_Us = () => {
               </div>
             </div>
             <div className="text-sm flex gap-3">
-              <span className="flex w-20 h-20 justify-center rounded-full bg-[#A0C861] items-center gap-2">
-                <Icon name="bx-map" color="#ffff" size="35px" />{" "}
+              <span className="flex w-20 h-20 min-w-20 max-w-20 min-h-20 max-h-20 justify-center items-center rounded-full bg-[#A0C861]">
+                <Icon name="bxs-map" color="#ffff" size="35px" />
               </span>
               <div className="flex flex-col justify-center gap-2">
                 <h4 className="font-semibold text-xl">Visit Us</h4>
                 <span>
-                  Opinion Nigeria LTD prince and princess ishieke Abakaliki, Ebonyi State, Nigeria.
+                  Opinion Nigeria LTD prince and princess ishieke Abakaliki,
+                  Ebonyi State, Nigeria.
                 </span>
               </div>
             </div>

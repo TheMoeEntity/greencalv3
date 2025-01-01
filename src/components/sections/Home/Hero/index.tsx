@@ -4,6 +4,7 @@ import React from "react";
 import logo from "../../../../../public/images/Placeholder.png";
 import card from "../../../../../public/images/Card.png";
 import hearts from "../../../../../public/images/heart.png";
+import Link from "next/link";
 
 const Hero_V2 = () => {
   return (
@@ -16,12 +17,15 @@ const Hero_V2 = () => {
             </h1>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">
               Greencal Foundation provides hope and support through medical
-              assitance, education, and community outreach.
+              assistance, education, and community outreach.
             </p>
             <div className="flex items-center">
-              <button className="bg-[#0C3429] text-white rounded-full py-3 px-[28px] text-sm">
+              <Link
+                href="/about"
+                className="bg-[#0C3429] text-white rounded-full py-3 px-[28px] text-sm"
+              >
                 Know More
-              </button>
+              </Link>
               <div className="bg-[#A0C861] flex items-center justify-center -ml-4 text-white rounded-full w-10 h-10 text-sm">
                 <span className="flex justify-center items-center rotate-45">
                   <Icon name="bx-up-arrow-alt" />

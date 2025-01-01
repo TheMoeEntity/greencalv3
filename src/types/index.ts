@@ -16,8 +16,10 @@ export type Props = {
 export interface IPost {
   slug: string;
   title: string;
+  headedBy: string;
   category: string;
   explainer: string;
+  location: string;
   date: string;
   content: {
     first: string;
