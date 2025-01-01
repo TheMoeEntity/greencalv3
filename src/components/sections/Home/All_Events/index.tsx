@@ -8,18 +8,19 @@ import Link from "next/link";
 const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
   return (
     <div>
-      <div className="w-full bg-[var(--greencal-main)] p-10 flex gap-8 flex-col items-center text-center">
+      <div className="w-full bg-[var(--greencal-main)] p-4 md:p-10 flex gap-8 flex-col items-center text-center">
         <h2 className="text-4xl pt-5 pb-3 md:text-5xl font-semibold text-white">
           Upcoming Events
         </h2>
         <div className="w-16 h-1 bg-[var(--greencal-primary)]"></div>
-        <div className="mt-10 flex gap-4">
+        <div className="mt-10 grid mb-20 gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {[...Array(3)].map((_x, i) => (
             <div
               key={i}
-              className="max-w-sm overflow-hidden bg-white rounded-xl shadow"
+              className="overflow-hidden max-w-sm bg-white rounded-xl shadow"
             >
-              <div className="overflow-hidden relative">
+              {/* Image Section */}
+              <div className="relative">
                 <div className="absolute top-3 right-3 py-2 px-3 text-sm rounded-lg bg-[var(--greencal-primary)] text-white">
                   Health Care
                 </div>
@@ -29,42 +30,46 @@ const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
                 <Image
                   alt="Greencal event"
                   src={event}
-                  className="object-cover overflow-hidden w-full h-auto"
+                  className="object-cover w-full h-auto"
                 />
               </div>
-              <div className="p-3">
-                <div className="w-full mb-2 flex gap-3">
-                  <div className="flex items-center gap-1">
-                    <span className="flex justify-center items-center">
-                      <Icon name="bx-time" color="#B6E4CE" size="15px" />
-                    </span>
-                    <span className="text-xs">09:00 AM</span>
+
+              {/* Content Section */}
+              <div className="p-4">
+                {/* Event Details */}
+                <div className="mb-2 flex gap-4 text-xs">
+                  <div className="flex items-center gap-2">
+                    <Icon name="bx-time" color="#B6E4CE" size="15px" />
+                    <span>09:00 AM</span>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <span className="flex justify-center items-center">
-                      <Icon name="bx-map" color="#B6E4CE" size="15px" />
-                    </span>
-                    <span className="text-xs">FETHA Abakaliki, Ebonyi.</span>
+                  <div className="flex items-center gap-2">
+                    <Icon name="bx-map" color="#B6E4CE" size="15px" />
+                    <span>FETHA Abakaliki, Ebonyi.</span>
                   </div>
                 </div>
-                <p className="mb-3 font-bold text-left text-2xl text-gray-700 ">
+
+                {/* Event Title */}
+                <p className="mb-3 font-bold text-left text-xl text-gray-700">
                   End of Year Festivities
                 </p>
-                <button className="flex text-[#49BA82] text-lg gap-2 items-center">
-                  Read More{" "}
-                  <span className="flex justify-center items-center">
-                    <Icon name="bx-chevron-right" color="#49BA82" size="30px" />
-                  </span>
+
+                {/* Read More Button */}
+                <button className="flex items-center text-lg text-[#49BA82] gap-2">
+                  Read More
+                  <Icon name="bx-chevron-right" color="#49BA82" size="30px" />
                 </button>
-                <div className="w-full my-3 rounded-full h-3 bg-[var(--greencal-main)] relative">
-                  <div className="w-[65%] h-full rounded-full bg-[var(--greencal-primary)]"></div>
+
+                {/* Progress Bar */}
+                <div className="relative my-4 w-full h-3 bg-[var(--greencal-main)] rounded-full">
+                  <div className="absolute top-0 left-0 h-full w-[65%] bg-[var(--greencal-primary)] rounded-full"></div>
                 </div>
+
+                {/* Fundraising Details */}
                 <div className="flex items-center justify-between">
-                  <p className="mb-3 font-light text-left text-gray-700 ">
-                    <b className="font-bold text-black">N 1,780,550 </b>
-                    of N2,000,000 goal
+                  <p className="text-sm text-gray-700">
+                    <b className="text-black">N 1,780,550</b> of N2,000,000 goal
                   </p>
-                  <Icon name="bx-hand" size="13px" />
+                  <Icon name="bx-hand" size="20px" />
                 </div>
               </div>
             </div>
@@ -72,12 +77,12 @@ const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
         </div>
       </div>
       {events && events.length > 0 && (
-        <div className="w-full bg-white p-10 flex gap-8 flex-col items-center text-center">
+        <div className="w-full bg-white p-4 md:p-10 flex gap-8 flex-col items-center text-center">
           <h2 className="text-4xl pt-5 md:text-5xl font-semibold">
             Previous Events
           </h2>
           <div className="w-16 h-1 bg-[var(--greencal-primary)]"></div>
-          <div className="mt-10 justify-center flex gap-4 flex-wrap">
+          <div className="mt-10 justify-center flex flex-col md:flex-row gap-4 flex-wrap">
             {events.map((x, i) => (
               <div
                 key={i}

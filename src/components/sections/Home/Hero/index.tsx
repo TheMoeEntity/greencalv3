@@ -10,7 +10,7 @@ const Hero_V2 = () => {
   return (
     <div className="min-h-[600px] max-h-auto">
       <section className="bg-white ">
-        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 gap-y-12 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
             <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
               Where Compassion Meets Need.
@@ -33,9 +33,9 @@ const Hero_V2 = () => {
               </div>
             </div>
           </div>
-          <div className=" lg:col-span-5 lg:flex lg:flex-col gap-3">
-            <span className="w-[90%] relative">
-              <div className="absolute -top-8 -right-12">
+          <div className=" lg:col-span-5 flex justify-center flex-col md:flex-row lg:flex gap-y-10 lg:flex-col gap-3">
+            <span className="w-full md:w-[90%] relative">
+              <div className="absolute hidden lg:block -top-8 -right-12">
                 {" "}
                 <Image
                   alt="Hearts"
@@ -49,15 +49,15 @@ const Hero_V2 = () => {
                 className="object-cover w-full h-auto"
               />
             </span>
-            <div className="flex flex-1 gap-2">
-              <div className="px-4 py-6 flex-1 flex-col gap-3 flex rounded-xl font-semibold bg-[var(--greencal-main)] text-white">
+            <div className="flex flex-1 gap-2 flex-wrap">
+              <div className="px-4 md:mt-0 basis-full py-6 flex-1 flex-col gap-3 flex rounded-xl font-semibold bg-[var(--greencal-main)] text-white">
                 <span> Together, We Empower Our Communities</span>
                 <p className="text-xs text-gray-500">
                   Supporting healthcare, education, and faith-based initiatives
                   in Abakaliki, Ebonyi State.
                 </p>
               </div>
-              <div className="lg:basis-[55%] -mt-12">
+              <div className="basis-full lg:basis-[55%] md:-mt-12">
                 <Image
                   alt="Greencal Logo"
                   src={card}

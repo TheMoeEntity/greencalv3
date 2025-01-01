@@ -21,12 +21,12 @@ const FAQ = () => {
   };
   return (
     <>
-      <div className="w-full bg-white p-10 flex gap-8 flex-col items-center text-center">
+      <div className="w-full bg-white p-3 md:p-10 flex gap-8 flex-col items-center text-center">
         <h2 className="text-4xl pt-5 md:text-5xl font-semibold text-[var(--greencal-main)]">
           Frequently Asked Questions
         </h2>
         <div className="w-16 h-1 bg-[var(--greencal-primary)]"></div>
-        <div className="flex items-center mt-8 gap-3">
+        <div className="flex flex-col lg:flex-row items-center mt-8 gap-3">
           <div className="flex-1">
             {" "}
             <Image
@@ -49,7 +49,7 @@ const FAQ = () => {
                         : "bg-[#F5F5F5]")
                     }
                   >
-                    <span className="text-left font-extrabold text-lg">
+                    <span className="text-left font-extrabold text-sm md:text-lg">
                       {x.text}
                     </span>
                     {x.isActive ? (
@@ -116,7 +116,7 @@ const FAQ = () => {
           />
         </div>
       </div>
-      <div className="w-full lg:w-[95%] mx-auto my-16 flex gap-6 lg:flex-row flex-col p-5 md:p-5">
+      <div className="w-full lg:w-[95%] mx-auto my-16 flex gap-6 lg:flex-row flex-col p-3 md:p-5">
         <div className="flex lg:px-0 flex-col gap-3 flex-1 flex-wrap basis-full md:basis-[55%]">
           <h1 className="font-semibold text-3xl lg:text-[35px]">Kepha</h1>
           <div className="w-11 mt-2 h-[3px] bg-[#71CD6C]"></div>

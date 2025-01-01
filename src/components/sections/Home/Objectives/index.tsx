@@ -4,12 +4,12 @@ import React from "react";
 const Objectives = () => {
   return (
     <div className="flex flex-col gap-5">
-      <div className="p-10 flex gap-8 flex-col items-center text-center">
+      <div className="p-3 md:p-10 flex gap-8 flex-col items-center text-center">
         <h2 className="text-4xl pt-5 pb-8 md:text-5xl font-semibold text-[var(--greencal-primary)]">
           Our Objectives
         </h2>
         <div className="w-16 h-1 bg-[var(--greencal-primary)]"></div>
-        <div className="flex justify-center gap-10 max-w-full lg:w-[65%]">
+        <div className="flex flex-wrap justify-center gap-10 max-w-full lg:w-[65%]">
           <div className="flex-1 px-3 gap-5 bg-[var(--greencal-primary)] py-8 rounded-2xl flex flex-col items-center">
             <div className="w-20 text-[var(--greencal-main)] flex items-center justify-center h-20 rounded-full bg-[var(--greencal-secondary)]">
               <Icon name="bx-group" size="45px" />
