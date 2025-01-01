@@ -67,19 +67,22 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
                 color="var(--greencal-primary)"
                 size="25px"
               />
-              <span>{post.date}</span>
+              <span className="whitespace-nowrap">{post.date}</span>
             </span>
           </div>
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
               <Icon name="bx-map" color="var(--greencal-primary)" size="25px" />
-              <span>{post.location}</span>
+              <span className="text-sm">{post.location}</span>
             </span>
           </div>
         </div>
         <h1 className=" text-2xl text-black md:text-[35px] font-medium leading-[1.1]">
           {post.title}
         </h1>
+        <span className="text-[var(--greencal-primary)] font-medium text-lg">
+          {post.category}
+        </span>
         <div dangerouslySetInnerHTML={{ __html: post.content.first }} />
         <div className="flex flex-col md:flex-row w-full gap-3">
           {post.media.media_one.map((media) => (
