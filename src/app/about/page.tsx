@@ -64,7 +64,7 @@ const About_Us = () => {
           <div className="leading-loose flex-1 text-sm">
             <div>
               <h1 className="font-semibold text-3xl lg:text-[35px]">
-                Our Mision
+                Our Mission
               </h1>
               <div className="w-11 mt-2 h-[3px] bg-[#71CD6C]"></div>
             </div>
