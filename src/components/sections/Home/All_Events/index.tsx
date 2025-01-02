@@ -8,12 +8,12 @@ import Link from "next/link";
 const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
   return (
     <div>
-      <div className="w-full bg-[var(--greencal-main)] p-4 md:p-10 flex gap-8 flex-col items-center text-center">
+      {/* <div className="w-full bg-[var(--greencal-main)] p-4 md:p-10 flex gap-8 flex-col items-center text-center">
         <h2 className="text-4xl pt-5 pb-3 md:text-5xl font-semibold text-white">
           Upcoming Events
         </h2>
         <div className="w-16 h-1 bg-[var(--greencal-primary)]"></div>
-        {/* <div className="mt-10 grid mb-20 gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid mb-20 gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {[...Array(3)].map((_x, i) => (
             <div
               key={i}
@@ -66,8 +66,8 @@ const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
               </div>
             </div>
           ))}
-        </div> */}
-      </div>
+        </div>
+      </div> */}
       {events && events.length > 0 && (
         <div className="w-full bg-white p-4 md:p-10 flex gap-8 flex-col items-center text-center">
           <h2 className="text-4xl pt-5 md:text-5xl font-semibold">

@@ -4,32 +4,73 @@ import medical from "../../public/images/sickle-cell.jpg";
 
 export const faqs: FAQType[] = [
   {
-    text: "How much time do I need to Volunteer?",
+    text: "How can I support the Greencal Foundation?",
     isActive: false,
-    reply: `To register your community on smart X kindly <a href='/signup' class='highlight'>create account</a> or <a class='highlight' href='mailto:contactsales@pepnops.com'>contact sales</a> (for customization) and we will reach out to you with all the necessary information.`,
+    reply: `You can support us by making a donation, volunteering, or spreading the word about our mission. To learn more or get involved, kindly <a
+              rel="noopener noreferrer"
+              href="https://wa.me/+2348116177509?text=Hello,%20I%20am%20interested%20in%20supporting%20the%20GreenCal%20Foundation.%20Could%20you%20please%20provide%20details%20on%20how%20I%20can%20help?"
+              target="_blank"
+               class="highlight underline"
+            >
+              chat with us on WhatsApp</a>.`,
   },
   {
-    text: "How Will My Donations Be Used?",
+    text: "Where do donations go?",
     isActive: false,
-    reply: `We offer 2 subscription models, General and premium. For the general subscription kindly register here. While for premium subscription kindly <a href='mailto:contactsales@pepnops.com' class='highlight'>contact sales</a> or <a href='#demo' class='highlight'>request demo.</a>`,
+    reply: `Donations are used to fund our education initiatives, medical outreaches, and other community programs. For a detailed breakdown or to ask questions about our projects, please <a
+              rel="noopener noreferrer"
+              href="https://wa.me/+2348116177509?text=Hello,%20I%20would%20like%20to%20know%20how%20my%20donation%20to%20the%20GreenCal%20Foundation%20is%20used.%20Could%20you%20provide%20more%20details?"
+              target="_blank"
+               class="highlight underline"
+            >
+              chat with us on WhatsApp</a>.`,
   },
   {
-    text: "How Can I Apply for a Job with You?",
+    text: "Can I volunteer for your programs?",
     isActive: false,
-    reply: `Kindly fill out the <a href='#service' class='highlight'>contact form</a> to request for a subscription upgrade.`,
+    reply: `Yes, we welcome volunteers! To find out how you can get involved, kindly <a
+              rel="noopener noreferrer"
+              href="https://wa.me/+2348116177509?text=Hello,%20I%20am%20interested%20in%20volunteering%20for%20GreenCal%20Foundation.%20Can%20you%20share%20more%20details%20about%20current%20opportunities?"
+              target="_blank"
+              class="highlight underline"
+            >
+              chat with us on WhatsApp</a>.`,
   },
   {
-    text: "What Can I Participate",
+    text: "How are beneficiaries selected for your programs?",
     isActive: false,
-    reply: `If you experience any technical difficulties with any of our products, please reach out to our support team via the support form in app or via <a href='mailto:support@pepnops.com' class='highlight'>support@pepnops.com.</a> We'll be happy to assist you.`,
+    reply: `Beneficiaries are chosen based on need and specific criteria for each program. To learn more about our selection process, please <a
+              rel="noopener noreferrer"
+              href="https://wa.me/+2348116177509?text=Hello,%20I%20would%20like%20to%20know%20about%20the%20selection%20criteria%20for%20GreenCal%20Foundation%20programs.%20Could%20you%20provide%20more%20details?"
+              target="_blank"
+              class="highlight underline"
+            >
+              chat with us on WhatsApp</a>.`,
   },
   {
-    text: "We Help Non Profits Become More Effective",
+    text: "Do you collaborate with other organizations?",
     isActive: false,
-    reply:
-      "All our products are absolutely customizable to suite your personal and business needs. We offer various customization packages to enable you add more personalized features in line with your specific needs.",
+    reply: `Yes, we are open to collaborations! If your organization is interested in partnering with us, please <a
+              rel="noopener noreferrer"
+              href="https://wa.me/+2348116177509?text=Hello,%20I%20represent%20an%20organization%20interested%20in%20collaborating%20with%20GreenCal%20Foundation.%20Could%20you%20share%20more%20details?"
+              target="_blank"
+              class="highlight underline"
+            >
+              chat with us on WhatsApp</a>.`,
+  },
+  {
+    text: "How can I stay updated on your activities?",
+    isActive: false,
+    reply: `You can stay updated by following us on social media. For more details, kindly <a
+              rel="noopener noreferrer"
+              href="https://wa.me/+2348116177509?text=Hello,%20I%20would%20like%20to%20know%20how%20to%20stay%20updated%20on%20GreenCal%20Foundation%27s%20activities.%20Could%20you%20provide%20more%20details?"
+              target="_blank"
+              class="highlight underline"
+            >
+              chat with us on WhatsApp</a>.`,
   },
 ];
+
 export const content: eventCard[] = [
   {
     img: essay,

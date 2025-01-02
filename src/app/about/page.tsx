@@ -7,7 +7,7 @@ import Icon from "@/components/shared/Icons";
 const About_Us = () => {
   return (
     <div className="flex flex-col gap-10">
-      <Hero_Shared text={"About US"} page={"about"} />
+      <Hero_Shared text={"About Us"} page={"about"} />
       <div className="w-full flex gap-10 lg:flex-row flex-col p-3 md:p-8">
         <div className="flex lg:px-10 flex-col gap-3 flex-wrap flex-1 basis-full md:basis-[47%]">
           <h1 className="font-semibold text-3xl lg:text-[35px]">
@@ -182,7 +182,7 @@ const About_Us = () => {
           <div className="flex-1 flex flex-col gap-3">
             <div
               style={{
-                backgroundImage: "url('/images/brill.jpg')",
+                backgroundImage: "url('/images/Kepha_alt.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -197,7 +197,7 @@ const About_Us = () => {
               firsthand fuels his drive to improve access to quality healthcare
               in underserved communities.
             </p>
-            <div className="flex justify-center items-center gap-3">
+            {/* <div className="flex justify-center items-center gap-3">
               {" "}
               <a href="https://instagram.com/thenameisbrill" target="_blank">
                 <Icon name="bxl-instagram" color="#A0C861" size="40px" />
@@ -208,7 +208,7 @@ const About_Us = () => {
               <a href="https://twitter.com/thenameisbrill" target="_blank">
                 <Icon name="bxl-facebook" color="#A0C861" size="40px" />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
