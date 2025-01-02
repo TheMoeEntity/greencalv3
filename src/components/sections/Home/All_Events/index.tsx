@@ -113,7 +113,7 @@ const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
                   <p className="text-gray-500 text-left">{x.explainer}</p>
                   <Link
                     href={"/events/" + x.slug}
-                    className="flex mt-5 text-[var(--greencal-primary)] text-lg gap-2 items-center"
+                    className="flex mt-4 text-[var(--greencal-primary)] text-lg gap-2 items-center"
                   >
                     Read More{" "}
                     <span className="flex justify-center items-center">
