@@ -83,44 +83,15 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      {/* <div
-        ref={headerRef}
-        style={{ display: "flex" }}
-        className={styles.headerOne}
-      >
-        <div>
-          <div className="flex items-center gap-2">
-            <EnvelopeIcon className=" size-4" /> greencalfoundation@gmail.com
-            &nbsp;&nbsp;&nbsp;&nbsp;|
-          </div>
-          <div className="flex items-center gap-2">
-            <MapPinIcon className=" size-4" /> Opinion Nigeria LTD prince and
-            princess ishieke Abakaliki &nbsp;&nbsp;&nbsp;
-          </div>
-        </div>
-
-        <div>
-          <div>
-            <a href="https://instagram.com/greencalfoundation1" target="_blank">
-              <Icon name="bxl-instagram" size="20px" />
-            </a>
-          </div>
-        </div>
-      </div> */}
       <div className={`${styles.headerTwo} ${sticky}`}>
-        <div>
-          <Link href={`/`}>
-            <Image
-              src={logo}
-              alt="greencal logo"
-              style={{ objectFit: "cover" }}
-              fill
-              quality={100}
-              priority={true}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </Link>
-        </div>
+        <span
+          style={{
+            backgroundImage: "url('/images/greencal_logo.png')",
+            backgroundSize: "180px",
+            backgroundPosition: "center",
+          }}
+          className="w-[130px] rounded-full h-[130px]"
+        ></span>
         <div className={styles.links}>
           <ul>
             {links.map((x, i) => (
@@ -151,7 +122,12 @@ const Header = () => {
           </button>
         </div>
         <div onClick={show} className={styles.bars}>
-          <Bars3Icon className="size-6" />
+          <Icon
+            name="bx-menu-alt-right"
+            color="var(--greencal-main)"
+            size="40px"
+          />
+          {/* <Bars3Icon className="size-6" /> */}
         </div>
       </div>
     </div>

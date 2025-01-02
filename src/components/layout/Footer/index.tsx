@@ -6,18 +6,19 @@ import Icon from "@/components/shared/Icons";
 const Footer = () => {
   return (
     <div>
-      <footer className="w-full text-white bg-[var(--greencal-main)] p-4 md:p-10">
-        <div className="container mx-auto w-full md:w-[85%] flex flex-col lg:flex-row flex-wrap gap-10 p-4">
+      <footer className="w-full text-white bg-[var(--greencal-main)] py-5 p-3 md:p-10">
+        <div className="container mx-auto w-full md:w-[85%] flex flex-col lg:flex-row flex-wrap gap-10">
           {/* Logo and Intro Section */}
           <div className="flex-1 flex flex-col gap-4 text-left">
-            {/* <span className="w-full md:w-[30%]">
-              <Image
-                alt="Greencal Logo"
-                src={logo}
-                className="object-contain w-full h-auto"
-              />
-            </span> */}
-            <p className="text-sm mt-4">
+            <div
+              style={{
+                backgroundImage: "url('/images/greencal_white.png')",
+                backgroundSize: "250px",
+                backgroundPosition: "center",
+              }}
+              className="w-[130px] rounded-full h-[130px]"
+            ></div>
+            <p className="text-sm -mt-7">
               Greencal Foundation: Where Compassion Meets Needs
             </p>
             <p className="text-sm font-light">
@@ -27,7 +28,7 @@ const Footer = () => {
 
           {/* Services Section */}
           <div className="flex-1 flex flex-col gap-4">
-            <h3 className="font-bold text-xl md:text-2xl text-left">
+            <h3 className="font-bold mt-4 text-xl md:text-2xl text-left">
               Our Services
             </h3>
             <ul className="text-sm font-light space-y-2">
@@ -42,7 +43,7 @@ const Footer = () => {
 
           {/* Contact Info Section */}
           <div className="flex-1 flex flex-col gap-6">
-            <h3 className="font-bold text-xl md:text-2xl text-left">
+            <h3 className="font-bold mt-4 text-xl md:text-2xl text-left">
               Contact Info
             </h3>
             <div className="flex items-center gap-4">
@@ -55,8 +56,8 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold">Call us</p>
-                <p className="text-sm">(+234) 811 617 7509</p>
-                <p className="text-sm">(+234) 803 656 5354</p>
+                <p className="text-sm font-light">(+234) 811 617 7509</p>
+                <p className="text-sm font-light">(+234) 803 656 5354</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -71,7 +72,7 @@ const Footer = () => {
                 <p className="font-semibold">Mail us</p>
                 <a
                   href="mailto:greencalfoundation@gmail.com"
-                  className="text-sm underline"
+                  className="text-sm font-light"
                 >
                   greencalfoundation@gmail.com
                 </a>
@@ -83,22 +84,18 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold">Visit us</p>
-                <p className="text-sm">
+                <p className="text-sm font-light">
                   Opinion Nigeria LTD, Prince and Princess Ishieke Abakaliki
                 </p>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Footer Bottom */}
-        <div className="text-center mt-10 text-sm font-light">
-          &copy; {new Date().getFullYear()} Greencal Foundation. All Rights
-          Reserved.
-        </div>
       </footer>
+      {/* Footer Bottom */}
       <div className="w-full text-center bg-[var(--greencal-primary)] text-[var(--greencal-main)] p-3">
-        &copy; {new Date().getFullYear()} Greencal Foundation.
+        &copy; {new Date().getFullYear()} Greencal Foundation. All Rights
+        Reserved.
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ const Contact_Us = () => {
   return (
     <div>
       <Hero_Shared text={"Contact Us"} page="contact" />
-      <div className="w-[90%] mx-auto max-w-[1450px] flex flex-col lg:flex-row gap-10 py-10 lg:py-20 px-3 md:px-5 lg:px-20">
+      <div className="w-full md:w-[90%] mx-auto max-w-[1450px] flex flex-col lg:flex-row gap-10 py-10 lg:py-20 px-3 md:px-5 lg:px-20">
         <div className="flex flex-col basis-full lg:basis-[50%] gap-5 md:px-5">
           <div>
             <h2 className="font-semibold text-2xl md:text-4xl text-[#0C3429]">
@@ -21,7 +21,7 @@ const Contact_Us = () => {
           </div>
           <div className="py-1 flex flex-col gap-5">
             <div className="text-sm flex gap-3">
-              <span className="flex w-20 h-20 justify-center items-center rounded-full bg-[#A0C861]">
+              <span className="flex w-16 h-16 min-w-16 max-w-16 min-h-16 max-h-16 justify-center items-center rounded-full bg-[#A0C861]">
                 <Icon name="bxs-phone-call" color="white" size="35px" />
               </span>
               <div className="flex flex-col justify-center gap-2">
@@ -30,7 +30,7 @@ const Contact_Us = () => {
               </div>
             </div>
             <div className="text-sm flex gap-3">
-              <span className="flex w-20 h-20 justify-center items-center rounded-full bg-[#A0C861]">
+              <span className="flex w-16 h-16 min-w-16 max-w-16 min-h-16 max-h-16  justify-center items-center rounded-full bg-[#A0C861]">
                 <Icon name="bxs-envelope" color="#ffff" size="35px" />
               </span>
               <div className="flex flex-col justify-center gap-2">
@@ -39,7 +39,7 @@ const Contact_Us = () => {
               </div>
             </div>
             <div className="text-sm flex gap-3">
-              <span className="flex w-20 h-20 min-w-20 max-w-20 min-h-20 max-h-20 justify-center items-center rounded-full bg-[#A0C861]">
+              <span className="flex w-16 h-16 min-w-16 max-w-16 min-h-16 max-h-16 justify-center items-center rounded-full bg-[#A0C861]">
                 <Icon name="bxs-map" color="#ffff" size="35px" />
               </span>
               <div className="flex flex-col justify-center gap-2">
@@ -52,8 +52,8 @@ const Contact_Us = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-5 shadow-2xl pt-10 rounded-xl flex-1 w-full lg:px-5">
-          <h1 className="px-4 font-semibold text-3xl md:text-4xl">
+        <div className="flex flex-col gap-5 shadow-2xl pt-10 rounded-xl flex-1 w-full px-3 lg:px-5">
+          <h1 className="px-1 md:px-4 font-semibold text-3xl md:text-4xl">
             Fill The Form Below
           </h1>
           <ContactForm />

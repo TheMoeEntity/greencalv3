@@ -49,15 +49,15 @@ const Hero_V2 = () => {
                 className="object-cover w-full h-auto"
               />
             </span>
-            <div className="flex flex-1 gap-2 flex-wrap">
-              <div className="px-4 md:mt-0 basis-full py-6 flex-1 flex-col gap-3 flex rounded-xl font-semibold bg-[var(--greencal-main)] text-white">
+            <div className="flex flex-col md:flex-row flex-1 gap-2">
+              <div className="px-4 md:mt-0 py-6 flex-1 flex-col gap-3 flex rounded-xl font-semibold bg-[var(--greencal-main)] text-white">
                 <span> Together, We Empower Our Communities</span>
                 <p className="text-xs text-gray-500">
                   Supporting healthcare, education, and faith-based initiatives
                   in Abakaliki, Ebonyi State.
                 </p>
               </div>
-              <div className="basis-full lg:basis-[55%] md:-mt-12">
+              <div className="basis-full lg:basis-[55%] lg:-mt-12">
                 <Image
                   alt="Greencal Logo"
                   src={card}

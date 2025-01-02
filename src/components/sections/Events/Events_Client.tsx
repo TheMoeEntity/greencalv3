@@ -32,9 +32,9 @@ const Events_Client = ({ events }: { events: IPost[] }) => {
   };
 
   return (
-    <div className="w-full bg-white p-10 flex gap-8 flex-col items-center text-center">
+    <div className="w-full bg-white p-3 md:p-10 flex gap-8 flex-col items-center text-center">
       {/* Buttons */}
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap justify-center p-3 items-center gap-3">
         {buttons.map((button, index) => (
           <button
             key={button.label}
@@ -56,7 +56,7 @@ const Events_Client = ({ events }: { events: IPost[] }) => {
         {filteredEvents.map((x, i) => (
           <div
             key={i}
-            className="basis-[43%] flex flex-col overflow-hidden bg-white rounded-xl"
+            className="basis-full md:basis-[43%] flex flex-col overflow-hidden bg-white rounded-xl"
           >
             <div className="overflow-hidden relative">
               <div className="absolute top-3 right-3 py-2 px-3 text-sm rounded-lg bg-[var(--greencal-primary)] text-white">
