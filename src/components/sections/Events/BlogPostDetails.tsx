@@ -7,6 +7,10 @@ import Icon from "@/components/shared/Icons";
 const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
   const [imgSrc, setImgSrc] = useState<string>("");
   const [viewImg, setViewImg] = useState<boolean>(false);
+  const headedBy =
+    post.headedBy.toLowerCase() == "kepha"
+      ? "url('/images/Kepha_alt.jpg')"
+      : "url('/images/brill.jpg')";
   return (
     <section className="mx-auto max-w-7xl text-[#405777] p-3 md:p-5 flex flex-col gap-8">
       {viewImg && imgSrc && (
@@ -49,7 +53,7 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
           <div className="flex items-center gap-3">
             <div
               style={{
-                backgroundImage: "url('/images/brill.jpg')",
+                backgroundImage: headedBy,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -57,7 +61,9 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
             ></div>
             <span>
               Headed By{" "}
-              <span className="text-[var(--greencal-primary)]">Kepha</span>
+              <span className="text-[var(--greencal-primary)]">
+                {post.headedBy}
+              </span>
             </span>
           </div>
           <div className="flex items-center gap-3">
