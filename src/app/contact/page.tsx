@@ -1,13 +1,15 @@
 import ContactForm from "@/components/shared/ContactForm";
 import Hero_Shared from "@/components/shared/Hero_Shared";
 import Icon from "@/components/shared/Icons";
+import Image from "next/image";
 import React from "react";
+import gradient from "../../../public/images/Ellipse.png";
 
 const Contact_Us = () => {
   return (
     <div>
       <Hero_Shared text={"Contact Us"} page="contact" />
-      <div className="w-full md:w-[90%] mx-auto max-w-[1450px] flex flex-col lg:flex-row gap-10 py-10 lg:py-20 px-3 md:px-5 lg:px-20">
+      <div className="w-full relative md:w-[90%] mx-auto max-w-[1450px] flex flex-col lg:flex-row gap-10 py-10 lg:py-20 px-3 md:px-5 lg:px-20">
         <div className="flex flex-col basis-full lg:basis-[50%] gap-5 md:px-5">
           <div>
             <h2 className="font-semibold text-2xl md:text-4xl text-[#0C3429]">
@@ -53,7 +55,7 @@ const Contact_Us = () => {
           </div>
         </div>
         <div className="flex flex-col gap-5 shadow-2xl pt-10 rounded-xl flex-1 w-full px-3 lg:px-5">
-          <h1 className="px-1 md:px-4 font-semibold text-3xl md:text-4xl">
+          <h1 className="px-1 md:px-4 font-semibold text-2xl md:text-3xl">
             Fill The Form Below
           </h1>
           <ContactForm />

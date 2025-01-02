@@ -2,11 +2,19 @@ import Image from "next/image";
 import React from "react";
 import logo from "../../../../public/images/greencal_white.png";
 import Icon from "@/components/shared/Icons";
+import gradient from "../../../../public/images/Mask group.png";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="w-full text-white bg-[var(--greencal-main)] py-5 p-3 md:p-10">
+    <div className="relative">
+      <footer
+        className="w-full text-white bg-[var(--greencal-main)] py-5 p-3 md:px-10 md:py-12"
+        style={{
+          backgroundImage: "url('/images/Mask group-1.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container mx-auto w-full md:w-[85%] flex flex-col lg:flex-row flex-wrap gap-10">
           {/* Logo and Intro Section */}
           <div className="flex-1 flex flex-col gap-4 text-left">
@@ -56,8 +64,8 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold">Call us</p>
-                <p className="text-sm font-light">(+234) 811 617 7509</p>
-                <p className="text-sm font-light">(+234) 803 656 5354</p>
+                <p className="text-xs my-1 font-light">(+234) 811 617 7509</p>
+                <p className="text-xs my-1 font-light">(+234) 803 656 5354</p>
               </div>
             </div>
             <div className="flex items-center gap-4">

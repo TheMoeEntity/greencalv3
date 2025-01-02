@@ -139,10 +139,10 @@ const FAQ = () => {
             </span>
           </button>
         </div>
-        <div className="basis-full overflow-hidden md:basis-[40%] flex justify-center items-center">
+        <div className="basis-full order-1 md:order-2 overflow-hidden md:basis-[40%] flex justify-center items-center">
           <div
             style={{
-              backgroundImage: "url('/images/brill.jpg')",
+              backgroundImage: "url('/images/Kepha_alt.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}

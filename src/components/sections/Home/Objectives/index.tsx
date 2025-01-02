@@ -4,7 +4,14 @@ import React from "react";
 const Objectives = () => {
   return (
     <div className="flex flex-col gap-5">
-      <div className="p-3 md:p-10 pb-16 mb-10 flex gap-8 flex-col items-center text-center">
+      <div
+        style={{
+          backgroundImage: "url('/images/Mask group.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className="p-3 md:p-10 pb-16 mb-10 flex gap-8 flex-col items-center text-center"
+      >
         <h2 className="text-4xl pt-5 pb-2 md:text-5xl font-semibold text-[var(--greencal-primary)]">
           Our Objectives
         </h2>
