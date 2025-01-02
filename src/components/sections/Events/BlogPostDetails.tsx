@@ -49,15 +49,15 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
             className="object-cover rounded-xl w-full h-auto "
           />
         </div>
-        <div className="w-full flex justify-between">
-          <div className="flex items-center gap-3">
+        <div className="w-full flex-wrap flex flex-col gap-y-4 md:flex-row gap-3">
+          <div className="flex w-fit items-center gap-2">
             <div
               style={{
                 backgroundImage: headedBy,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              className="w-10 mx-auto rounded-full h-10"
+              className="w-8 h-8 md:w-10 mx-auto rounded-full md:h-10"
             ></div>
             <span>
               Headed By{" "}
@@ -71,15 +71,15 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
               <Icon
                 name="bx-calendar"
                 color="var(--greencal-primary)"
-                size="25px"
+                size="30px"
               />
               <span className="whitespace-nowrap">{post.date}</span>
             </span>
           </div>
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
-              <Icon name="bx-map" color="var(--greencal-primary)" size="25px" />
-              <span className="text-sm">{post.location}</span>
+              <Icon name="bx-map" color="var(--greencal-primary)" size="30px" />
+              <span className="lg:te">{post.location}</span>
             </span>
           </div>
         </div>

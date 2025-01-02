@@ -7,7 +7,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useLinks } from "@/hooks";
 import Icon from "@/components/shared/Icons";
-import { EnvelopeIcon, MapPinIcon, Bars3Icon } from "@heroicons/react/24/solid";
+import {
+  EnvelopeIcon,
+  MapPinIcon,
+  Bars3Icon,
+  LinkSlashIcon,
+} from "@heroicons/react/24/solid";
 
 const Header = () => {
   const { push } = useRouter();
@@ -84,14 +89,15 @@ const Header = () => {
         </div>
       </div>
       <div className={`${styles.headerTwo} ${sticky}`}>
-        <span
+        <Link
+          href={"/"}
           style={{
             backgroundImage: "url('/images/greencal_logo.png')",
             backgroundSize: "180px",
             backgroundPosition: "center",
           }}
           className="w-[130px] rounded-full h-[130px]"
-        ></span>
+        ></Link>
         <div className={styles.links}>
           <ul>
             {links.map((x, i) => (

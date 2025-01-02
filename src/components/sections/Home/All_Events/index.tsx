@@ -103,7 +103,7 @@ const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
                           size="25px"
                         />
                       </span>
-                      <span className="text-lg">23rd May, 2025</span>
+                      <span className="text-lg">{x.date}</span>
                     </div>
                   </div>
                   <p className="mb-3 font-bold text-left text-2xl text-gray-700 ">
