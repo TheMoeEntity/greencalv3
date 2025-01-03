@@ -16,8 +16,7 @@ import {
 
 const Header = () => {
   const { push } = useRouter();
-  const { links, sidebar, setSideBar } = useLinks();
-  const sideContent = useRef<HTMLDivElement>(null);
+  const { links, setSideBar } = useLinks();
   const [sticky, setSticky] = useState("");
   const headerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -39,104 +38,86 @@ const Header = () => {
   };
 
   const show = () => {
-    setSideBar(true);
-    setTimeout(() => {
-      if (!sideContent.current) {
-        return;
-      }
-      sideContent.current.style.width = "70%";
-      sideContent.current.style.visibility = "visible";
-    }, 700);
+    setDropDown(!dropDown);
   };
 
-  const hide = () => {
-    setSideBar(false);
-    setTimeout(() => {
-      if (!sideContent.current) {
-        return;
-      }
-      sideContent.current.style.width = "0%";
-      sideContent.current.style.visibility = "hidden";
-    }, 400);
-  };
-
+  const [dropDown, setDropDown] = useState(false);
   const linkAction = (link?: string): void => {
     setSideBar(false);
     link === "home" ? push("/") : push("/" + link);
   };
-
   return (
-    <div className={styles.header}>
-      <div
-        style={{ right: sidebar ? "0%" : "-100%" }}
-        className={styles.sidebar}
-      >
-        <div ref={sideContent} className={styles.sidecontent}>
-          <div onClick={hide} className={styles.close}>
-            &times;
+    <header>
+      <div className={styles.header}>
+        <div className={`${styles.headerTwo} ${sticky}`}>
+          <Link
+            href={"/"}
+            style={{
+              backgroundImage: "url('/images/greencal_logo.png')",
+              backgroundSize: "180px",
+              backgroundPosition: "center",
+            }}
+            className="w-[130px] rounded-full h-[130px]"
+          ></Link>
+          <div className={styles.links}>
+            <ul>
+              {links.map((x, i) => (
+                <li
+                  className={x.isActive ? styles.active : ""}
+                  onClick={() => linkAction(x.href)}
+                  key={i}
+                >
+                  {x.name}
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul>
-            {links.map((x, i) => (
-              <li
-                className={x.isActive ? styles.active : ""}
-                onClick={() => linkAction(x.href)}
-                key={i}
-              >
-                {x.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className={`${styles.headerTwo} ${sticky}`}>
-        <Link
-          href={"/"}
-          style={{
-            backgroundImage: "url('/images/greencal_logo.png')",
-            backgroundSize: "180px",
-            backgroundPosition: "center",
-          }}
-          className="w-[130px] rounded-full h-[130px]"
-        ></Link>
-        <div className={styles.links}>
-          <ul>
-            {links.map((x, i) => (
-              <li
-                className={x.isActive ? styles.active : ""}
-                onClick={() => linkAction(x.href)}
-                key={i}
-              >
-                {x.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.search}>
-          {/* <div>
+          <div className={styles.search}>
+            {/* <div>
             <i className="fa-solid fa-magnifying-glass"></i>
           </div> */}
-          <button>
-            <a
-              rel="noopener noreferrer"
-              href="https://wa.me/+2348116177509?text=Hello,%20I%20am%20reaching%20out%20from%20the%20GreenCal%20Foundation%20website.%20I%20would%20love%20to%20learn%20more%20about%20your%20initiatives%20and%20explore%20ways%20we%20can%20collaborate%20or%20support%20your%20mission.%20Looking%20forward%20to%20hearing%20from%20you!"
-              target="_blank"
-              className="text-white rounded-full bg-[#135342] py-3 px-4"
-              style={{ color: "white !important" }}
-            >
-              Chat Us
-            </a>
-          </button>
-        </div>
-        <div onClick={show} className={styles.bars}>
-          <Icon
-            name="bx-menu-alt-right"
-            color="var(--greencal-main)"
-            size="40px"
-          />
-          {/* <Bars3Icon className="size-6" /> */}
+            <button>
+              <a
+                rel="noopener noreferrer"
+                href="https://wa.me/+2348116177509?text=Hello,%20I%20am%20reaching%20out%20from%20the%20GreenCal%20Foundation%20website.%20I%20would%20love%20to%20learn%20more%20about%20your%20initiatives%20and%20explore%20ways%20we%20can%20collaborate%20or%20support%20your%20mission.%20Looking%20forward%20to%20hearing%20from%20you!"
+                target="_blank"
+                className="text-white rounded-full bg-[#135342] py-3 px-4"
+                style={{ color: "white !important" }}
+              >
+                Chat Us
+              </a>
+            </button>
+          </div>
+          <div onClick={show} className={styles.bars}>
+            <Icon
+              name="bx-menu-alt-right"
+              color="var(--greencal-main)"
+              size="40px"
+            />
+            {/* <Bars3Icon className="size-6" /> */}
+          </div>
         </div>
       </div>
-    </div>
+      <div
+        className={`lg:hidden transition-all z-[999] duration-700 overflow-x-hidden ${
+          dropDown ? "max-h-96 py-1" : "max-h-0"
+        }`}
+      >
+        <div className="bg-[var(--greencal-primary)] overflow-y-scroll w-full p-5 flex flex-col gap-8">
+          <ul className="flex text-center font-semibold text-[white] flex-col gap-3">
+            {links.map((x, i) => (
+              <li
+                className={x.isActive ? styles.active : ""}
+                onClick={() => linkAction(x.href)}
+                key={i}
+              >
+                {x.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </header>
   );
 };
 
