@@ -64,8 +64,12 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold">Call us</p>
-                <p className="text-xs my-1 font-light">(+234) 811 617 7509</p>
-                <p className="text-xs my-1 font-light">(+234) 803 656 5354</p>
+                <p className="text-xs my-1 font-light">
+                  <a href="tel:+2348116177509">(+234) 811 617 7509</a>
+                </p>
+                <p className="text-xs my-1 font-light">
+                  <a href="tel:+2348036565354">(+234) 803 656 5354</a>
+                </p>
               </div>
             </div>
             <div className="flex items-center gap-4">

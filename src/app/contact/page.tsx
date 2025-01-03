@@ -28,7 +28,10 @@ const Contact_Us = () => {
               </span>
               <div className="flex flex-col justify-center gap-2">
                 <h4 className="font-semibold text-xl">Call Us</h4>
-                <span>(+234) 811 617 7509, (+234) 803 656 5354</span>
+                <span>
+                  <a href="tel:+2348116177509">(+234) 811 617 7509,</a>
+                  <a href="tel:+2348036565354"> (+234) 803 656 5354</a>{" "}
+                </span>
               </div>
             </div>
             <div className="text-sm flex gap-3">
@@ -37,7 +40,9 @@ const Contact_Us = () => {
               </span>
               <div className="flex flex-col justify-center gap-2">
                 <h4 className="font-semibold text-xl">Mail Us</h4>
-                <span>greencalfoundation@gmail.com</span>
+                <a href="mailto:greencalfoundation@gmail.com">
+                  greencalfoundation@gmail.com
+                </a>
               </div>
             </div>
             <div className="text-sm flex gap-3">
