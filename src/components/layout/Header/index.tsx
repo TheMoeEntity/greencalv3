@@ -89,11 +89,15 @@ const Header = () => {
             </button>
           </div>
           <div onClick={show} className={styles.bars}>
-            <Icon
-              name="bx-menu-alt-right"
-              color="var(--greencal-main)"
-              size="40px"
-            />
+            {dropDown ? (
+              <Icon name="bx-x" color="var(--greencal-main)" size="40px" />
+            ) : (
+              <Icon
+                name="bx-menu-alt-right"
+                color="var(--greencal-main)"
+                size="40px"
+              />
+            )}
             {/* <Bars3Icon className="size-6" /> */}
           </div>
         </div>

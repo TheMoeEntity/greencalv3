@@ -116,7 +116,7 @@ const FAQ = () => {
           />
         </div>
       </div>
-      <div className="w-full lg:w-[95%] mx-auto my-16 flex gap-6 lg:flex-row flex-col p-3 md:p-5">
+      <div className="w-full lg:w-[95%] mx-auto my-16 flex gap-6 md:flex-row flex-col p-3 md:p-5">
         <div className="flex lg:px-0 flex-col gap-3 flex-1 flex-wrap basis-full md:basis-[55%]">
           <h1 className="font-semibold text-3xl lg:text-[35px]">Kepha</h1>
           <div className="w-11 mt-2 h-[3px] bg-[#71CD6C]"></div>
@@ -146,7 +146,7 @@ const FAQ = () => {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="w-[270px] rounded-full h-[270px] lg:w-[450px] lg:h-[450px]"
+            className="w-[270px] rounded-full h-[270px] xl:w-[450px] xl:h-[450px] lg:w-[350px] lg:h-[350px]"
           ></div>
         </div>
       </div>
