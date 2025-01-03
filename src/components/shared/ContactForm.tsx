@@ -1,20 +1,16 @@
 "use client";
-
 import { Helpers } from "@/helpers";
-import { useSnackbar } from "notistack";
 import { useState } from "react";
 import Spinner from "./Spinner";
+import toast from "react-hot-toast";
 
 const ContactForm = () => {
   const [status, setStatus] = useState("SEND MESSAGE");
   const [val, setVal] = useState("");
   const [done, setDone] = useState<boolean>(false);
-  const { enqueueSnackbar } = useSnackbar();
   return (
     <form
-      onSubmit={(e) =>
-        Helpers.handleSubmit(setStatus, setDone, e, enqueueSnackbar)
-      }
+      onSubmit={(e) => Helpers.handleSubmit(setStatus, setDone, e, toast)}
       className="w-full flex flex-col gap-7 pb-10 md:px-4"
     >
       <Spinner done={!done} />

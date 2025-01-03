@@ -23,6 +23,7 @@
     "notistack": "^3.0.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-hot-toast": "^2.5.1",
     "react-intersection-observer": "^9.13.0",
     "react-multi-carousel": "^2.8.5",
     "simple-icons": "^13.10.0"

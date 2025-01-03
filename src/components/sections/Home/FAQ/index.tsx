@@ -7,6 +7,7 @@ import charity from "../../../../../public/images/donation_charity_alt.jpg";
 import brill from "../../../../../public/images/Brill-X.png";
 import potens from "../../../../../public/images/Potens.png";
 import dtcsi from "../../../../../public/images/DTCSI.png";
+import toast from "react-hot-toast";
 
 const FAQ = () => {
   const [faq, setFaqs] = useState(faqs);
@@ -132,7 +133,10 @@ const FAQ = () => {
             communities. Together, we&#39;re building a healthier Abakaliki, one
             step at a time.
           </p>
-          <button className="py-3 mt-4 rounded-lg px-4 w-fit flex text-white bg-[var(--greencal-primary)]">
+          <button
+            onClick={() => toast.error("Video is currently unavailable")}
+            className="py-3 mt-4 rounded-lg px-4 w-fit flex text-white bg-[var(--greencal-primary)]"
+          >
             Watch Video{" "}
             <span className="ml-2  flex items-center">
               <Icon name="bxs-heart" />

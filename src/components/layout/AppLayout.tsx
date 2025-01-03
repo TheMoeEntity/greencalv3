@@ -6,12 +6,49 @@ import Script from "next/script";
 import { SnackbarProvider } from "notistack";
 import { useScrollTop } from "@/hooks";
 import Loader from "../shared/Loader";
+import { Toaster } from "react-hot-toast";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
 
 const AppLayout = ({ children }: { children: ReactNode }) => {
   const { scrollBtn, scrollTop } = useScrollTop();
   return (
     <React.Fragment>
+      <Toaster
+        toastOptions={{
+          success: {
+            duration: 5000,
+            style: {
+              background: "#ffffff",
+              color: "#000",
+              padding: "20px",
+              borderRadius: "8px",
+              borderLeft: "5px solid #22c55e", // Green for success
+              minWidth: "280px",
+              maxWidth: "700px",
+              // wordWrap: "break-word",
+              // overflowWrap: "break-word",
+              // hyphens: "auto",
+              boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+            },
+          },
+          error: {
+            duration: 5000,
+            style: {
+              background: "#ffffff",
+              color: "#000",
+              padding: "20px",
+              borderRadius: "8px",
+              borderLeft: "5px solid #ef4444", // Red for error
+              minWidth: "280px",
+              maxWidth: "700px",
+              wordWrap: "break-word",
+              overflowWrap: "break-word",
+              hyphens: "auto",
+              boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+            },
+          },
+        }}
+      />
       <Loader />
       <SnackbarProvider
         classes={{ containerRoot: "z-alert" }}

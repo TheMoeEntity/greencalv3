@@ -79,7 +79,7 @@ export class Helpers {
     setStatus: any,
     setDone: any,
     e: FormEvent<HTMLFormElement>,
-    enqueueSnackbar: EnqueueSnackbar
+    toast: any
   ) => {
     e.preventDefault();
     const target = e.target as HTMLFormElement;
@@ -95,19 +95,13 @@ export class Helpers {
       message: (target[4] as HTMLTextAreaElement).value,
     };
     if (data.fullName.trim() === "") {
-      enqueueSnackbar("Full name cannot be empty", {
-        variant: "error",
-      });
+      toast.error("Full name cannot be empty");
       return;
     } else if (data.subject === "" || data.subject === "--Choose--") {
-      enqueueSnackbar("Specify a subject", {
-        variant: "error",
-      });
+      toast.error("Specify a subject");
       return;
     } else if (data.message.trim() === "" || data.message.length < 10) {
-      enqueueSnackbar("Message cannot be empty or short", {
-        variant: "error",
-      });
+      toast.error("Message cannot be empty or short");
       return;
     }
     console.log(data);
@@ -117,22 +111,14 @@ export class Helpers {
       const url = "/api/contact";
       const res = await axios.post(url, data);
 
-      res.status === 200 &&
-        enqueueSnackbar("Message successfully sent", {
-          variant: "success",
-        });
+      res.status === 200 && toast.error("Message successfully sent");
       setStatus("MESSAGE SENT");
       setTimeout(() => {
         target.reset();
       }, 3000);
     } catch (error) {
       setStatus("...ERROR SENDING MESSAGE");
-      enqueueSnackbar(
-        "There was an error sending message, try again. " + error,
-        {
-          variant: "error",
-        }
-      );
+      toast.error("There was an error sending message, try again. " + error);
       console.log(error);
     } finally {
       setDone(false);

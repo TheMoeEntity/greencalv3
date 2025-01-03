@@ -8,7 +8,7 @@ const About_Us = () => {
   return (
     <div className="flex flex-col gap-10">
       <Hero_Shared text={"About Us"} page={"about"} />
-      <div className="w-full flex gap-10 lg:flex-row flex-col p-3 md:p-8">
+      <div className="w-full flex gap-10 lg:gap-2 xl:gap-10 lg:flex-row flex-col p-3 md:p-8">
         <div className="flex lg:px-10 flex-col gap-3 flex-wrap flex-1 basis-full md:basis-[47%]">
           <h1 className="font-semibold text-3xl lg:text-[35px]">
             About GREENCAL FOUNDATION
@@ -40,22 +40,14 @@ const About_Us = () => {
             potential.
           </p>
         </div>
-        <div className="basis-full rounded-full overflow-hidden md:basis-[45%] flex justify-center items-center">
-          {/* <Image
-            src={outreach}
-            alt="Greencal outreach"
-            priority
-            quality={100}
-            sizes={"100vw"}
-            className="object-cover rounded-md w-full h-auto "
-          /> */}
+        <div className="basis-full rounded-full overflow-hidden md:basis-[48%] flex justify-center items-center">
           <div
             style={{
               backgroundImage: "url('/images/sickle-cell-outreach-3.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="w-[270px] rounded-full h-[270px] lg:w-[550px] lg:h-[550px]"
+            className="w-[270px] rounded-full h-[270px]  md:w-[420px] md:h-[420px] xl:w-[550px] xl:h-[550px]"
           ></div>
         </div>
       </div>
