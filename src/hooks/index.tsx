@@ -1,5 +1,12 @@
 import { usePathname, useRouter } from "next/navigation";
-import { CSSProperties, ChangeEvent, useEffect, useRef, useState } from "react";
+import {
+  CSSProperties,
+  ChangeEvent,
+  act,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Helpers } from "../helpers/index";
 import { linkType } from "@/types";
 
@@ -82,21 +89,22 @@ export const useLinks = () => {
   const [links, setLinks] = useState<linkType[]>(Helpers.links);
   const pathname = usePathname();
   useEffect(() => {
-    setLinks((currLink) => {
-      const newLink = currLink.map((x) =>
-        x.href === pathname.slice(1, pathname.length)
-          ? {
-              ...x,
-              isActive: true,
-            }
-          : {
-              ...x,
-              isActive: false,
-            }
-      );
-      return newLink;
+    setLinks((currLinks) => {
+      const newLinks = currLinks.map((link) => {
+        const isHome = link.href === ""; // Home corresponds to the root path "/"
+        const isActive =
+          (isHome && pathname === "/") ||
+          (!isHome && pathname.startsWith(`/${link.href}`));
+
+        return {
+          ...link,
+          isActive, // Update the isActive property
+        };
+      });
+      return newLinks;
     });
   }, [pathname]);
+
   const LinkAction = (page: string) => {
     setSideBar(false);
     setLinks((currLink) => {

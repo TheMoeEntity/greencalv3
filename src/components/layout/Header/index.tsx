@@ -1,18 +1,10 @@
 "use client";
 import styles from "./index.module.css";
-import logo from "../../../../public/images/greencal_logo.png";
-import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useLinks } from "@/hooks";
 import Icon from "@/components/shared/Icons";
-import {
-  EnvelopeIcon,
-  MapPinIcon,
-  Bars3Icon,
-  LinkSlashIcon,
-} from "@heroicons/react/24/solid";
 
 const Header = () => {
   const { push } = useRouter();
