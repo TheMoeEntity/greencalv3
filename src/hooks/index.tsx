@@ -82,7 +82,6 @@ export const useLinks = () => {
   const [links, setLinks] = useState<linkType[]>(Helpers.links);
   const pathname = usePathname();
   useEffect(() => {
-    console.log(pathname.slice(1, pathname.length));
     setLinks((currLink) => {
       const newLink = currLink.map((x) =>
         x.href === pathname.slice(1, pathname.length)

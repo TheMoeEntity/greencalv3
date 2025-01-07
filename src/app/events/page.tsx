@@ -14,18 +14,6 @@ import Events_Client from "@/components/sections/Events/Events_Client";
 const AllEvents = async () => {
   const events = await getDocuments();
   const allEvents = events as IPost[];
-  const blogs = [
-    ...allEvents,
-    //  {
-    //    media: {
-    //      banner: hygiene,
-    //    },
-    //    title:
-    //      "UPCOMING EVENT: GREENCAL Foundation partners NAESMS for Education and awareness on menstrual hygiene.",
-    //    explainer: "Event coming soon.",
-    //    slug: "menstual-hygiene-awareness",
-    //  },
-  ];
   return (
     <div>
       <Hero_Shared page="events" text="Events" />

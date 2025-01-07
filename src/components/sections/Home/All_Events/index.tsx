@@ -61,7 +61,9 @@ const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
                   <p className="text-sm text-gray-700">
                     <b className="text-black">N 1,780,550</b> of N2,000,000 goal
                   </p>
-                  <Icon name="bx-hand" size="20px" />
+                  <Link href="/donations/end-of-year-festivities">
+                    <Icon name="bx-donate-heart" size="25px" />
+                  </Link>
                 </div>
               </div>
             </div>

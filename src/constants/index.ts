@@ -8,7 +8,7 @@ export const faqs: FAQType[] = [
     isActive: false,
     reply: `You can support us by making a donation, volunteering, or spreading the word about our mission. To learn more or get involved, kindly <a
               rel="noopener noreferrer"
-              href="https://wa.me/+2348116177509?text=Hello,%20I%20am%20interested%20in%20supporting%20the%20GreenCal%20Foundation.%20Could%20you%20please%20provide%20details%20on%20how%20I%20can%20help?"
+              href="https://wa.me/+2348160988961?text=Hello,%20I%20am%20interested%20in%20supporting%20the%20GreenCal%20Foundation.%20Could%20you%20please%20provide%20details%20on%20how%20I%20can%20help?"
               target="_blank"
                class="highlight underline"
             >
@@ -19,7 +19,7 @@ export const faqs: FAQType[] = [
     isActive: false,
     reply: `Donations are used to fund our education initiatives, medical outreaches, and other community programs. For a detailed breakdown or to ask questions about our projects, please <a
               rel="noopener noreferrer"
-              href="https://wa.me/+2348116177509?text=Hello,%20I%20would%20like%20to%20know%20how%20my%20donation%20to%20the%20GreenCal%20Foundation%20is%20used.%20Could%20you%20provide%20more%20details?"
+              href="https://wa.me/+2348160988961?text=Hello,%20I%20would%20like%20to%20know%20how%20my%20donation%20to%20the%20GreenCal%20Foundation%20is%20used.%20Could%20you%20provide%20more%20details?"
               target="_blank"
                class="highlight underline"
             >
@@ -30,7 +30,7 @@ export const faqs: FAQType[] = [
     isActive: false,
     reply: `Yes, we welcome volunteers! To find out how you can get involved, kindly <a
               rel="noopener noreferrer"
-              href="https://wa.me/+2348116177509?text=Hello,%20I%20am%20interested%20in%20volunteering%20for%20GreenCal%20Foundation.%20Can%20you%20share%20more%20details%20about%20current%20opportunities?"
+              href="https://wa.me/+2348160988961?text=Hello,%20I%20am%20interested%20in%20volunteering%20for%20GreenCal%20Foundation.%20Can%20you%20share%20more%20details%20about%20current%20opportunities?"
               target="_blank"
               class="highlight underline"
             >
@@ -41,7 +41,7 @@ export const faqs: FAQType[] = [
     isActive: false,
     reply: `Beneficiaries are chosen based on need and specific criteria for each program. To learn more about our selection process, please <a
               rel="noopener noreferrer"
-              href="https://wa.me/+2348116177509?text=Hello,%20I%20would%20like%20to%20know%20about%20the%20selection%20criteria%20for%20GreenCal%20Foundation%20programs.%20Could%20you%20provide%20more%20details?"
+              href="https://wa.me/+2348160988961?text=Hello,%20I%20would%20like%20to%20know%20about%20the%20selection%20criteria%20for%20GreenCal%20Foundation%20programs.%20Could%20you%20provide%20more%20details?"
               target="_blank"
               class="highlight underline"
             >
@@ -52,7 +52,7 @@ export const faqs: FAQType[] = [
     isActive: false,
     reply: `Yes, we are open to collaborations! If your organization is interested in partnering with us, please <a
               rel="noopener noreferrer"
-              href="https://wa.me/+2348116177509?text=Hello,%20I%20represent%20an%20organization%20interested%20in%20collaborating%20with%20GreenCal%20Foundation.%20Could%20you%20share%20more%20details?"
+              href="https://wa.me/+2348160988961?text=Hello,%20I%20represent%20an%20organization%20interested%20in%20collaborating%20with%20GreenCal%20Foundation.%20Could%20you%20share%20more%20details?"
               target="_blank"
               class="highlight underline"
             >
@@ -63,7 +63,7 @@ export const faqs: FAQType[] = [
     isActive: false,
     reply: `You can stay updated by following us on social media. For more details, kindly <a
               rel="noopener noreferrer"
-              href="https://wa.me/+2348116177509?text=Hello,%20I%20would%20like%20to%20know%20how%20to%20stay%20updated%20on%20GreenCal%20Foundation%27s%20activities.%20Could%20you%20provide%20more%20details?"
+              href="https://wa.me/+2348160988961?text=Hello,%20I%20would%20like%20to%20know%20how%20to%20stay%20updated%20on%20GreenCal%20Foundation%27s%20activities.%20Could%20you%20provide%20more%20details?"
               target="_blank"
               class="highlight underline"
             >
