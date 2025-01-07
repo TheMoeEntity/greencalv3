@@ -56,6 +56,47 @@ body {
     scrollbar-width: none;
   }
 }
+.translateUp {
+  opacity: 0;
+  transform: translateY(120px);
+  transition: 1.5s ease-in-out;
+}
+
+.translateDown {
+  opacity: 0;
+  transform: translateY(-120px);
+  transition: 1.5s ease-in-out;
+}
+
+.translateRight {
+  opacity: 0;
+  transform: translateX(300px);
+  transition: 1.5s ease-in-out;
+}
+
+.translateLeft {
+  opacity: 0;
+  transform: translateX(-300px);
+  transition: 1.5s ease-in-out;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(120px) translateX(140px);
+  transition:
+    opacity 0.9s ease-in-out,
+    transform 0.9s ease-in-out;
+}
+
+.reveal.animateIn,
+.translateUp.animateIn,
+.translateRight.animateIn,
+.translateLeft.animateIn,
+.translateDown.animateIn {
+  opacity: 1;
+  transform: none;
+}
+
 .spinner {
   position: absolute;
   top: 50%;
