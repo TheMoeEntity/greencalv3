@@ -83,12 +83,32 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
             </span>
           </div>
         </div>
-        <h1 className=" text-2xl text-black md:text-[35px] font-medium leading-[1.1]">
+        <h1 className=" text-2xl text-black md:text-[35px] font-medium leading-[1.15]">
           {post.title}
         </h1>
-        <span className="text-[var(--greencal-primary)] font-medium text-lg">
-          {post.category}
-        </span>
+        <div className="flex gap-2 items-center">
+          {post.category.toLowerCase() == "education" ? (
+            <div className="flex items-center justify-center">
+              <Icon
+                name="bxs-graduation"
+                color="var(--greencal-primary)"
+                size="30px"
+              />
+            </div>
+          ) : (
+            <div className="flex items-center justify-center">
+              <Icon
+                name="bxs-first-aid"
+                color="var(--greencal-primary)"
+                size="30px"
+              />
+            </div>
+          )}
+          <span className="text-[var(--greencal-primary)] font-medium text-lg">
+            {post.category}
+          </span>
+        </div>
+
         <div dangerouslySetInnerHTML={{ __html: post.content.first }} />
         <div className="flex flex-col md:flex-row w-full gap-3">
           {post.media.media_one.map((media) => (
