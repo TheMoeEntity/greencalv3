@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import banner from "../../../../public/images/donation_charity_alt.jpg";
 import DonationForm from "@/components/shared/DonationsForm";
+import DonationsForm from "@/components/sections/Donations/DonationsForm";
 
 const DonationDonationsPage: React.FC = () => {
   return (
@@ -19,20 +20,26 @@ const DonationDonationsPage: React.FC = () => {
             className="object-cover rounded-xl w-full h-auto "
           />
         </div>
-        <div className="-mt-20 flex flex-col mx-auto gap-8 max-w-full w-[85%]">
-          <div className="w-full flex flex-col gap-3 mx-auto  bg-white py-10 px-5 shadow-lg z-[9999] rounded-lg">
-            <h1 className="font-semibold text-4xl text-[var(--greencal-main)]">
-              WAEC Assistance
-            </h1>
-            <div className="flex items-center space-between gap-5">
-              <div className="relative my-4 w-full h-2 bg-[#f5f5f5] rounded-full">
-                <div className="absolute top-0 left-0 h-full w-[65%] bg-[var(--greencal-primary)] rounded-full"></div>
+        <div className="-mt-20 flex flex-col mx-auto gap-8 max-w-full md:w-[80%] w-[95%]">
+          <div className="w-full bg-white md:px-5 rounded-lg shadow-lg z-[99]">
+            <div className="w-full flex flex-wrap flex-col gap-3 mx-auto bg-white py-10 px-3 md:px-10 rounded-lg">
+              <h1 className="font-semibold text-3xl md:text-4xl text-[var(--greencal-main)]">
+                WAEC Assistance
+              </h1>
+              <div className="flex flex-wrap items-center space-between gap-1 md:space-x-10">
+                <div className="relative md:grow-[1.5] flex-1 my-4 w-full h-2 bg-[#f5f5f5] rounded-full">
+                  <div className="absolute top-0 left-0 h-full w-[65%] bg-[var(--greencal-primary)] rounded-full"></div>
+                </div>
+                <p className="text-sm basis-full md:basis-[20%] whitespace-nowrap text-gray-700">
+                  <b className="text-[var(--greencal-primary)]">N 1,780,550</b>{" "}
+                  of{" "}
+                  <b className="text-[var(--greencal-primary)]">
+                    N2,000,000 goal
+                  </b>
+                </p>
               </div>
-              <p className="text-sm grow-[1.5] whitespace-nowrap text-gray-700">
-                <b className="text-black">N 1,780,550</b> of N2,000,000 goal
-              </p>
+              <DonationsForm />
             </div>
-            <DonationForm />
           </div>
           <div className="mt-10 flex flex-col gap-10">
             <div className="flex flex-col gap-3">

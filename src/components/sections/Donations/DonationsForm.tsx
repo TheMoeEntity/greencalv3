@@ -1,0 +1,176 @@
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+
+const DonationsForm = () => {
+  const [selectedAmount, setSelectedAmount] = useState<string>("₦10K");
+  const [customAmount, setCustomAmount] = useState<string>("");
+  const btcWallet = "your_btc_wallet_address";
+  const solWallet = "your_sol_wallet_address";
+
+  const handleAmountClick = (amount: string) => {
+    setSelectedAmount(amount);
+    setCustomAmount(""); // Clear custom input if a preset amount is selected
+  };
+
+  const handleCustomAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedAmount("");
+    setCustomAmount(e.target.value);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert(`Donation amount: ${customAmount || selectedAmount}`);
+  };
+
+  return (
+    <form className="flex flex-col gap-6">
+      {/* Donation Amount Section */}
+      <div className="flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-10">
+        <div className="flex flex-wrap gap-2 items-center">
+          {["₦10K", "₦50K", "₦100K", "₦500K", "₦1M"].map((amount) => (
+            <button
+              type="button"
+              key={amount}
+              onClick={() => handleAmountClick(amount)}
+              className={`py-2 px-3 border rounded-md text-sm md:text-base ${
+                selectedAmount === amount
+                  ? "bg-[var(--greencal-primary)] text-white"
+                  : "bg-white border-gray-300"
+              }`}
+            >
+              {amount}
+            </button>
+          ))}
+        </div>
+
+        <input
+          type="text"
+          placeholder="Insert Custom Value"
+          value={customAmount}
+          onChange={handleCustomAmountChange}
+          className="w-full sm:w-auto flex-grow py-2 px-4 border rounded-md border-gray-300 text-sm md:text-base"
+        />
+      </div>
+
+      {/* Personal Information Section */}
+      <div>
+        <h2 className="text-2xl font-semibold text-[var(--greencal-main)]">
+          Personal Information
+        </h2>
+        <div className="flex my-3 flex-col gap-8 md:flex-row md:justify-between">
+          <div className="flex flex-col gap-2 w-full md:w-[48%]">
+            <label htmlFor="firstName" className="text-lg">
+              First Name <span className="text-red-700">*</span>
+            </label>
+            <input
+              type="text"
+              id="firstName"
+              placeholder="First Name"
+              required
+              className="py-2 px-4 border rounded-md border-gray-300"
+            />
+          </div>
+          <div className="flex flex-col gap-2 w-full md:w-[48%]">
+            <label htmlFor="lastName" className="text-lg">
+              Last Name <span className="text-red-700">*</span>
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              placeholder="Last Name"
+              required
+              className="py-2 px-4 border rounded-md border-gray-300"
+            />
+          </div>
+        </div>
+        <div className="flex my-3 flex-col gap-8 md:flex-row md:justify-between">
+          <div className="flex flex-col gap-2 w-full">
+            <label htmlFor="email" className="text-lg">
+              Email <span className="text-red-700">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              required
+              className="py-2 px-4 border rounded-md border-gray-300"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Submit and Total Section */}
+      <div className="flex flex-wrap space-y-5 items-center justify-between">
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className="py-3 w-full md:w-fit px-6 bg-[var(--greencal-primary)] text-white font-semibold rounded-md hover:bg-[var(--greencal-main)]"
+        >
+          Donate Now 💚
+        </button>
+        <div className="w-full text-center md:w-fit md:text-right text-lg font-semibold">
+          Donation Total:{" "}
+          <span className="text-[var(--greencal-primary)]">
+            {customAmount || selectedAmount}
+          </span>
+        </div>
+      </div>
+
+      {/* Wallet Addresses Section */}
+      {/* <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-2">
+          <h2 className="text-xl font-semibold text-[var(--greencal-main)]">
+            Donate with Crypto
+          </h2>
+          <div className="w-10 h-10">
+            <Image
+              alt="Bitcoin Logo"
+              width={10}
+              height={10}
+              src={"https://www.vectorlogo.zone/logos/bitcoin/bitcoin-icon.svg"}
+              className="object-cover w-full h-auto"
+            />
+          </div>
+          <div className="w-20 flex items-center justify-center h-20">
+            <Image
+              alt="Solana Logo"
+              width={20}
+              height={20}
+              src={
+                "https://upload.wikimedia.org/wikipedia/commons/3/38/Solana-sol-logo-horizontal.svg"
+              }
+              className="object-cover w-full h-auto"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <span className="font-medium">BTC Wallet:</span>
+            <span className="text-gray-700 break-all">{btcWallet}</span>
+            <button
+              type="button"
+              onClick={() => navigator.clipboard.writeText(btcWallet)}
+              className="py-1 px-3 text-sm bg-[var(--greencal-primary)] text-white rounded-md hover:bg-[var(--greencal-main)]"
+            >
+              Copy
+            </button>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="font-medium">SOL Wallet:</span>
+            <span className="text-gray-700 break-all">{solWallet}</span>
+            <button
+              type="button"
+              onClick={() => navigator.clipboard.writeText(solWallet)}
+              className="py-1 px-3 text-sm bg-[var(--greencal-primary)] text-white rounded-md hover:bg-[var(--greencal-main)]"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+      </div> */}
+    </form>
+  );
+};
+
+export default DonationsForm;

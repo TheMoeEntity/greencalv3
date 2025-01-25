@@ -60,7 +60,7 @@ const Objectives = () => {
           2025 Roadmap
         </h2>
         <div className="w-16 h-1 bg-[var(--greencal-primary)]"></div>
-        <div className="w-full mt-10 rounded-full h-3 bg-[#F5F5F5] relative">
+        <div className="w-full mt-10 mx-auto rounded-full h-3 bg-[#F5F5F5] relative">
           <div className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center bg-[#e2efcf59] left-40 w-8 h-8 rounded-full">
             <div className="w-5 h-5  animate-pulse rounded-full bg-[var(--greencal-primary)]"></div>
             <div className="absolute whitespace-nowrap -bottom-40 p-5 text-center flex flex-col gap-3">
