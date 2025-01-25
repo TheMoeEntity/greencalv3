@@ -62,16 +62,16 @@ const Objectives = () => {
         <div className="w-16 h-1 bg-[var(--greencal-primary)]"></div>
         <div className="w-full mt-10 mx-auto rounded-full h-3 bg-[#F5F5F5] relative">
           <div className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center bg-[#e2efcf59] left-40 w-8 h-8 rounded-full">
-            <div className="w-5 h-5  animate-pulse rounded-full bg-[var(--greencal-primary)]"></div>
+            <div className="w-5 h-5 rounded-full  animate-pulse bg-[var(--greencal-primary)]"></div>
             <div className="absolute whitespace-nowrap -bottom-40 p-5 text-center flex flex-col gap-3">
-              <h4 className="text-xl font-bold">WAEC Assistance</h4>
-              <span>June 21, 2025 at 9 AM</span>
+              <h4 className="text-xl font-bold">Hospital Bills Clearance</h4>
+              <span>February 14, 2025 at 12 PM</span>
             </div>
           </div>
           <div className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center bg-[#e2efcf59] left-1/2 -translate-x-1/2 w-8 h-8 rounded-full">
             <div className="w-5 h-5 rounded-full  animate-pulse bg-[var(--greencal-primary)]"></div>
             <div className="absolute whitespace-nowrap -bottom-40 p-5 text-center flex flex-col gap-3">
-              <h4 className="text-xl font-bold">Hospital Bills Clearance</h4>
+              <h4 className="text-xl font-bold">Community Outreach</h4>
               <span>September 03, 2025 at 2 PM</span>
             </div>
           </div>
@@ -94,17 +94,15 @@ const Objectives = () => {
           <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center bg-[#e2efcf59] top-10 w-8 h-8 rounded-full">
             <div className="w-5 h-5 animate-pulse rounded-full bg-[var(--greencal-primary)]"></div>
             <div className="absolute w-full whitespace-nowrap -top-16 -right-16 p-5 text-center flex flex-col gap-3">
-              <h4 className="text-lg font-bold">WAEC Assistance</h4>
-              <span>June 21, 2025 at 9 AM</span>
+              <h4 className="text-lg font-bold">Hospital Bill Clearance</h4>
+              <span>February 14, 2025 at 12 PM</span>
             </div>
           </div>
           <div className="absolute left-1/2 -translate-x-1/2 flex items-center -translate-y-1/2 justify-center bg-[#e2efcf59] top-1/2 w-8 h-8 rounded-full">
             <div className="w-5 h-5 animate-pulse rounded-full bg-[var(--greencal-primary)]"></div>
             <div className="absolute w-full whitespace-nowrap -top-16 -right-16 p-5 text-center flex flex-col gap-3">
-              <h4 className="text-lg font-bold">
-                Hospital Bill Clearance 2025
-              </h4>
-              <span>September 03, 2025 at 12 PM</span>
+              <h4 className="text-lg font-bold">Community Outreach</h4>
+              <span>September 03, 2025 at 1 PM</span>
             </div>
           </div>
           <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center bg-[#e2efcf59] bottom-10 w-8 h-8 rounded-full">

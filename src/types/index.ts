@@ -10,6 +10,29 @@ export type FAQType = {
   text: string;
   reply: string;
 };
+export type donors = {
+  name: string;
+  email: string;
+  amount: number;
+  isAnonymous: true;
+};
+export type DonationsType = {
+  name: string;
+  image: string;
+  date: string;
+  location: string;
+  time: string;
+  goal: number;
+  slug: string;
+  category: string;
+  raised: number;
+  description: {
+    challenge: string;
+    work: string;
+  };
+  isGoalReached: boolean;
+  donors: donors[];
+};
 export type Props = {
   params: { slug: string };
 };

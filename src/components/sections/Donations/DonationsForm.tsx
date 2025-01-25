@@ -8,6 +8,7 @@ const DonationsForm = () => {
   const [customAmount, setCustomAmount] = useState<string>("");
   const btcWallet = "your_btc_wallet_address";
   const solWallet = "your_sol_wallet_address";
+  const [isAnon, setIsAnon] = useState<boolean>(false);
 
   const handleAmountClick = (amount: string) => {
     setSelectedAmount(amount);
@@ -129,7 +130,7 @@ const DonationsForm = () => {
           </div>
           <div className="flex flex-col gap-2 w-full md:w-[48%]">
             <label htmlFor="lastName" className="text-lg">
-              Last Name <span className="text-red-700">*</span>
+              Last Name
             </label>
             <input
               type="text"
@@ -153,6 +154,16 @@ const DonationsForm = () => {
               onChange={(e) => setMail(e.target.value)}
               className="py-2 px-4 border rounded-md border-gray-300"
             />
+          </div>
+        </div>
+        <div className="flex my-3 flex-col gap-8 md:flex-row md:justify-between">
+          <div className="flex gap-2 w-full">
+            <input
+              checked={isAnon}
+              onChange={(e) => setIsAnon(e.target.checked)}
+              type="checkbox"
+            />
+            <label className="">Keep me anonymous</label>
           </div>
         </div>
       </div>

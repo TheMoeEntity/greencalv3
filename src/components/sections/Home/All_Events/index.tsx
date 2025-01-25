@@ -3,32 +3,37 @@ import event from "../../../../../public/images/outreach.jpg";
 import event2 from "../../../../../public/images/medical.jpeg";
 import Image from "next/image";
 import Icon from "@/components/shared/Icons";
-import { IPost } from "@/types";
+import { DonationsType, donationType, IPost } from "@/types";
 import Link from "next/link";
-const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
+const All_Events: React.FC<{ events: IPost[]; donations: DonationsType[] }> = ({
+  events,
+  donations,
+}) => {
   return (
     <div>
-      {/* <div className="w-full bg-[var(--greencal-main)] p-4 md:p-10 flex gap-8 flex-col items-center text-center">
+      <div className="w-full bg-[var(--greencal-main)] p-4 md:p-10 flex gap-8 flex-col items-center text-center">
         <h2 className="text-4xl pt-5 pb-3 md:text-5xl font-semibold text-white">
           Upcoming Events
         </h2>
         <div className="w-16 h-1 bg-[var(--greencal-primary)]"></div>
         <div className="mt-10 grid mb-20 gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {[...Array(3)].map((_x, i) => (
+          {donations.map((x, i) => (
             <div
               key={i}
               className="overflow-hidden max-w-sm bg-white rounded-xl shadow"
             >
               <div className="relative">
                 <div className="absolute top-3 right-3 py-2 px-3 text-sm rounded-lg bg-[var(--greencal-primary)] text-white">
-                  Health Care
+                  {x.category}
                 </div>
                 <div className="absolute bottom-0 left-3 py-1 px-3 text-sm rounded-tl-lg rounded-tr-lg bg-[var(--greencal-main)] text-white">
-                  21 June 2025
+                  {x.date}
                 </div>
                 <Image
-                  alt="Greencal event"
-                  src={event}
+                  alt="Greencal upcoming event event"
+                  src={x.image}
+                  width={300}
+                  height={200}
                   className="object-cover w-full h-auto"
                 />
               </div>
@@ -37,16 +42,16 @@ const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
                 <div className="mb-2 flex gap-4 text-xs">
                   <div className="flex items-center gap-2">
                     <Icon name="bx-time" color="#B6E4CE" size="15px" />
-                    <span>09:00 AM</span>
+                    <span>{x.time}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Icon name="bx-map" color="#B6E4CE" size="15px" />
-                    <span>FETHA Abakaliki, Ebonyi.</span>
+                    <span>{x.location}</span>
                   </div>
                 </div>
 
                 <p className="mb-3 font-bold text-left text-xl text-gray-700">
-                  End of Year Festivities
+                  {x.name}
                 </p>
 
                 <button className="flex items-center text-lg text-[#49BA82] gap-2">
@@ -59,9 +64,10 @@ const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
                 </div>
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-gray-700">
-                    <b className="text-black">N 1,780,550</b> of N2,000,000 goal
+                    <b className="text-black">₦ {x.raised.toLocaleString()}</b>{" "}
+                    of ₦ {x.goal.toLocaleString()} goal
                   </p>
-                  <Link href="/donations/end-of-year-festivities">
+                  <Link href={"/donations/" + x.slug}>
                     <Icon name="bx-donate-heart" size="25px" />
                   </Link>
                 </div>
@@ -69,7 +75,7 @@ const All_Events: React.FC<{ events: IPost[] }> = ({ events }) => {
             </div>
           ))}
         </div>
-      </div> */}
+      </div>
       {events && events.length > 0 && (
         <div className="w-full bg-white p-4 md:p-10 flex gap-8 flex-col items-center text-center">
           <h2 className="text-4xl pt-5 md:text-5xl font-semibold">

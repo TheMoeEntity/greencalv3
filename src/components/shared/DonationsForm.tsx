@@ -69,12 +69,11 @@ const DonationForm: React.FC = () => {
           </div>
           <div className="flex flex-col gap-2 w-full md:w-[48%]">
             <label htmlFor="" className="text-lg">
-              Last name <span className="text-red-700">*</span>
+              Last name
             </label>
             <input
               type="text"
               placeholder="First Name"
-              required
               className="py-2 px-4 border rounded-md border-gray-300"
             />
           </div>

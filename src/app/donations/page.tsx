@@ -1,8 +1,12 @@
 import All_Donations from "@/components/sections/Donations/All_Donations";
 import Hero_Shared from "@/components/shared/Hero_Shared";
+import { getDonations } from "@/helpers/lib/firebase";
+import { DonationsType } from "@/types";
 import React from "react";
 
-const Donate = () => {
+const Donate = async () => {
+  const dons = await getDonations();
+  const allDonations = dons as DonationsType[];
   return (
     <section>
       <Hero_Shared text={"Donations"} page="donate" />
@@ -11,7 +15,7 @@ const Donate = () => {
           Supporting causes that transform communities
         </h2>
       </div>
-      <All_Donations />
+      <All_Donations donations={allDonations} />
     </section>
   );
 };

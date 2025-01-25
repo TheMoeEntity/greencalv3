@@ -3,8 +3,14 @@ import { FormEvent } from "react";
 import { EnqueueSnackbar } from "notistack";
 import essay from "../../public/images/essay.jpg";
 import medical from "../../public/images/medical.jpeg";
-import { eventCard, IPost, linkType } from "@/types";
-import { getDocuments } from "./lib/firebase";
+import {
+  DonationsType,
+  donationType,
+  eventCard,
+  IPost,
+  linkType,
+} from "@/types";
+import { getDocuments, getDonations } from "./lib/firebase";
 
 export class Helpers {
   static leaders = [
@@ -52,11 +58,11 @@ export class Helpers {
       isActive: false,
       href: "events",
     },
-    // {
-    //   name: "Donations",
-    //   isActive: false,
-    //   href: "donations",
-    // },
+    {
+      name: "Donations",
+      isActive: false,
+      href: "donations",
+    },
     {
       name: "Contact",
       isActive: false,
@@ -127,6 +133,14 @@ export class Helpers {
   };
   static getBlogPost = async (slug: string) => {
     const events = (await getDocuments()) as IPost[];
+    const post = events.find((event) => event.slug === slug);
+    if (!post) {
+      return null;
+    }
+    return post;
+  };
+  static getSingleDonation = async (slug: string) => {
+    const events = (await getDonations()) as DonationsType[];
     const post = events.find((event) => event.slug === slug);
     if (!post) {
       return null;
