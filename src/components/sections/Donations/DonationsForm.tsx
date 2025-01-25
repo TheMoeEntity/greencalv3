@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const DonationsForm = () => {
   const [selectedAmount, setSelectedAmount] = useState<string>("₦10K");
@@ -17,29 +18,84 @@ const DonationsForm = () => {
     setSelectedAmount("");
     setCustomAmount(e.target.value);
   };
-
+  const [mail, setMail] = useState<string>("");
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert(`Donation amount: ${customAmount || selectedAmount}`);
   };
+  const [donations, _] = useState<{ amount: number; text: string }[]>([
+    {
+      amount: 10000,
+      text: "₦10K",
+    },
+    {
+      amount: 50000,
+      text: "₦50K",
+    },
+    {
+      amount: 100000,
+      text: "₦100K",
+    },
+    {
+      amount: 500000,
+      text: "₦500K",
+    },
+    {
+      amount: 1000000,
+      text: "₦1M",
+    },
+  ]);
+  const payWithPaystack = () => {
+    const handler = (window as any).PaystackPop.setup({
+      key: process.env.NEXT_PUBLIC_PAYSTACK_API_KEY,
+      email: mail,
+      amount:
+        Number(customAmount || selectedAmount.replace(/[^0-9]/g, "")) * 100, // Convert to kobo
+      currency: "NGN",
+      onClose: () => {
+        toast.error("Transaction was not completed. Please try again.");
+      },
+      callback: (response: any) => {
+        toast.success(`Payment complete! Reference: ${response.reference}`, {
+          duration: 6000,
+        });
+        // alert(`Payment complete! Reference: ${response.reference}`);
+        console.log(response);
+      },
+    });
 
+    handler.openIframe(); // Open the Paystack payment modal
+  };
+  const [currAmount, setCurrAmount] = useState<{
+    amount: number;
+    text: string;
+  }>({
+    amount: 10000,
+    text: "₦10K",
+  });
   return (
-    <form className="flex flex-col gap-6">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        payWithPaystack();
+      }}
+      className="flex flex-col gap-6"
+    >
       {/* Donation Amount Section */}
       <div className="flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-10">
         <div className="flex flex-wrap gap-2 items-center">
-          {["₦10K", "₦50K", "₦100K", "₦500K", "₦1M"].map((amount) => (
+          {donations.map((amount) => (
             <button
               type="button"
-              key={amount}
-              onClick={() => handleAmountClick(amount)}
+              key={amount.text}
+              onClick={() => handleAmountClick(amount.text)}
               className={`py-2 px-3 border rounded-md text-sm md:text-base ${
-                selectedAmount === amount
+                selectedAmount === amount.text
                   ? "bg-[var(--greencal-primary)] text-white"
                   : "bg-white border-gray-300"
               }`}
             >
-              {amount}
+              {amount.text}
             </button>
           ))}
         </div>
@@ -94,6 +150,7 @@ const DonationsForm = () => {
               id="email"
               placeholder="Email"
               required
+              onChange={(e) => setMail(e.target.value)}
               className="py-2 px-4 border rounded-md border-gray-300"
             />
           </div>
@@ -104,7 +161,6 @@ const DonationsForm = () => {
       <div className="flex flex-wrap space-y-5 items-center justify-between">
         <button
           type="submit"
-          onClick={handleSubmit}
           className="py-3 w-full md:w-fit px-6 bg-[var(--greencal-primary)] text-white font-semibold rounded-md hover:bg-[var(--greencal-main)]"
         >
           Donate Now 💚

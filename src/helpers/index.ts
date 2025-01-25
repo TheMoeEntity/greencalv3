@@ -53,9 +53,9 @@ export class Helpers {
       href: "events",
     },
     // {
-    //   name: "Gallery",
+    //   name: "Donations",
     //   isActive: false,
-    //   href: "gallery",
+    //   href: "donations",
     // },
     {
       name: "Contact",

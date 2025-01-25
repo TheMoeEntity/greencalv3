@@ -3,9 +3,13 @@ import { Inter, Didact_Gothic, Montserrat, Poppins } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.css";
 import "./globals.css";
 import AppLayout from "@/components/layout/AppLayout";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
-const overpass = Poppins({ subsets: ["latin"], weight: ["100","200","300","400"] });
+const overpass = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400"],
+});
 
 export const metadata: Metadata = {
   title: "Greencal Foundation - Empowering Lives for a Brighter Future",
@@ -25,10 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      className={overpass.className}
-      >
+      <body className={overpass.className}>
         <AppLayout>{children}</AppLayout>
+        <Script src="https://js.paystack.co/v1/inline.js" />
       </body>
     </html>
   );
