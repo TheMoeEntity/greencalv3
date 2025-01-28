@@ -46,27 +46,7 @@ const DonationsForm = () => {
       text: "₦1M",
     },
   ]);
-  const payWithPaystack = () => {
-    const handler = (window as any).PaystackPop.setup({
-      key: process.env.NEXT_PUBLIC_PAYSTACK_API_KEY,
-      email: mail,
-      amount:
-        Number(customAmount || selectedAmount.replace(/[^0-9]/g, "")) * 100, // Convert to kobo
-      currency: "NGN",
-      onClose: () => {
-        toast.error("Transaction was not completed. Please try again.");
-      },
-      callback: (response: any) => {
-        toast.success(`Payment complete! Reference: ${response.reference}`, {
-          duration: 6000,
-        });
-        // alert(`Payment complete! Reference: ${response.reference}`);
-        console.log(response);
-      },
-    });
 
-    handler.openIframe(); // Open the Paystack payment modal
-  };
   const [currAmount, setCurrAmount] = useState<{
     amount: number;
     text: string;
@@ -78,7 +58,6 @@ const DonationsForm = () => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        payWithPaystack();
       }}
       className="flex flex-col gap-6"
     >
@@ -106,65 +85,65 @@ const DonationsForm = () => {
           placeholder="Insert Custom Value"
           value={customAmount}
           onChange={handleCustomAmountChange}
-          className="w-full sm:w-auto flex-grow py-2 px-4 border rounded-md border-gray-300 text-sm md:text-base"
+          className="w-full sm:w-auto flex-1 py-2 px-4 border rounded-md border-gray-300 text-sm md:text-base"
         />
       </div>
 
       {/* Personal Information Section */}
-      <div>
-        <h2 className="text-2xl font-semibold text-[var(--greencal-main)]">
-          Personal Information
-        </h2>
-        <div className="flex my-3 flex-col gap-8 md:flex-row md:justify-between">
-          <div className="flex flex-col gap-2 w-full md:w-[48%]">
-            <label htmlFor="firstName" className="text-lg">
-              First Name <span className="text-red-700">*</span>
-            </label>
-            <input
-              type="text"
-              id="firstName"
-              placeholder="First Name"
-              required
-              className="py-2 px-4 border rounded-md border-gray-300"
-            />
+      <div className="space-y-4">
+        <div className="w-full max-w-3xl mx-auto space-y-6">
+          <h2 className="text-2xl font-semibold text-[#2D4B3D]">
+            Personal Information
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label htmlFor="firstName" className="text-base text-gray-700">
+                First Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="firstName"
+                placeholder="First Name"
+                className="w-full p-2 rounded-md bg-white border border-gray-200"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="lastName" className="text-base text-gray-700">
+                Last Name
+              </label>
+              <input
+                id="lastName"
+                placeholder="Last Name"
+                className="w-full p-2 rounded-md bg-white border border-gray-200"
+              />
+            </div>
           </div>
-          <div className="flex flex-col gap-2 w-full md:w-[48%]">
-            <label htmlFor="lastName" className="text-lg">
-              Last Name
+
+          <div className="space-y-2">
+            <label htmlFor="email" className="text-base text-gray-700">
+              Email <span className="text-red-500">*</span>
             </label>
             <input
-              type="text"
-              id="lastName"
-              placeholder="Last Name"
-              required
-              className="py-2 px-4 border rounded-md border-gray-300"
-            />
-          </div>
-        </div>
-        <div className="flex my-3 flex-col gap-8 md:flex-row md:justify-between">
-          <div className="flex flex-col gap-2 w-full">
-            <label htmlFor="email" className="text-lg">
-              Email <span className="text-red-700">*</span>
-            </label>
-            <input
-              type="email"
               id="email"
-              placeholder="Email"
-              required
-              onChange={(e) => setMail(e.target.value)}
-              className="py-2 px-4 border rounded-md border-gray-300"
+              type="email"
+              placeholder="Your Email"
+              className="w-full p-2 rounded-md bg-white border border-gray-200"
             />
           </div>
         </div>
-        <div className="flex my-3 flex-col gap-8 md:flex-row md:justify-between">
-          <div className="flex gap-2 w-full">
-            <input
-              checked={isAnon}
-              onChange={(e) => setIsAnon(e.target.checked)}
-              type="checkbox"
-            />
-            <label className="">Keep me anonymous</label>
-          </div>
+
+        <div className="flex items-center gap-2">
+          <input
+            id="anonymous"
+            type="checkbox"
+            checked={isAnon}
+            onChange={(e) => setIsAnon(e.target.checked)}
+            className="w-4 h-4"
+          />
+          <label htmlFor="anonymous" className="text-sm sm:text-base">
+            Keep me anonymous
+          </label>
         </div>
       </div>
 
