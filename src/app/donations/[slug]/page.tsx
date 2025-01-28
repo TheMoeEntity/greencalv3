@@ -16,7 +16,7 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
   const progress = (donation.raised / donation.goal) * 100;
   const width = `w-[${progress}%]`;
   return (
-    <section className="mx-auto text-[#405777] p-3 md:p-5 flex flex-col gap-8">
+    <section className="mx-auto text-[#405777] p-2 md:p-5 flex flex-col gap-8">
       <div className="py-3 xl:w-[75%] mx-auto flex flex-col gap-8">
         <div className="w-full">
           <Image
@@ -30,7 +30,7 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
             className="object-cover rounded-xl w-full h-auto "
           />
         </div>
-        <div className="-mt-20 flex flex-col mx-auto gap-8 max-w-full md:w-[80%] w-[95%]">
+        <div className="-mt-0 md:-mt-28 flex flex-col mx-auto gap-8 max-w-full md:w-[80%] w-[95%]">
           <div className="w-full bg-white md:px-5 rounded-lg shadow-lg z-[99]">
             <div className="w-full flex flex-wrap flex-col gap-3 mx-auto bg-white py-10 px-3 md:px-10 rounded-lg">
               <h1 className="font-semibold text-3xl md:text-4xl text-[var(--greencal-main)]">
@@ -56,7 +56,7 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
               <DonationsForm />
             </div>
           </div>
-          <div className="mt-10 flex flex-col gap-10">
+          <div className="my-10 flex flex-col gap-10">
             <div className="flex flex-col gap-3">
               <h2 className="text-4xl font-semibold text-[var(--greencal-main)]">
                 Challenge
