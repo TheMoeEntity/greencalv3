@@ -14,6 +14,11 @@ import toast from "react-hot-toast";
 
 interface PaymentModalProps {
   isOpen: boolean;
+  loading: boolean;
+  methods: PaymentMethod[];
+  selectedMethod: PaymentMethod;
+  setSelectedMethod: React.Dispatch<React.SetStateAction<PaymentMethod>>;
+  submit?: () => Promise<void>;
   onClose: () => void;
 }
 
@@ -21,7 +26,6 @@ interface PaymentMethod {
   icon: React.ElementType;
   label: string;
 }
-
 interface CryptoOption {
   name: string;
   address: string;
@@ -37,15 +41,16 @@ const cryptoOptions: CryptoOption[] = [
   },
 ];
 
-export default function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
+export default function PaymentModal({
+  isOpen,
+  onClose,
+  loading,
+  submit,
+  methods,
+  selectedMethod,
+  setSelectedMethod,
+}: PaymentModalProps) {
   const [selectedBank, setSelectedBank] = useState("");
-  const [methods] = useState<PaymentMethod[]>([
-    { icon: CreditCard, label: "Bank" },
-    { icon: Bitcoin, label: "Crypto" },
-  ]);
-  const [selectedMethod, setSelectedMethod] = useState<PaymentMethod>(
-    methods[0]
-  );
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -57,10 +62,11 @@ export default function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
 
   return (
     <div className="fixed z-[999999999] inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg max-w-md w-full">
+      <div className="bg-white overflow-hidden rounded-lg max-w-md w-full">
         <div className="flex justify-between items-center p-4 border-b">
           <h2 className="text-lg font-semibold">PAY TO</h2>
           <button
+            type="button"
             onClick={onClose}
             className="text-gray-500 hover:text-gray-700"
           >
@@ -129,6 +135,7 @@ export default function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
                   <div className="flex items-center justify-between">
                     <span className="font-medium">{option.name}</span>
                     <button
+                      type="button"
                       onClick={() => copyToClipboard(option.address)}
                       className="text-blue-500 hover:text-blue-700"
                     >
@@ -142,6 +149,15 @@ export default function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
               ))}
             </div>
           )}
+        </div>
+        <div className="w-full px-3 pb-3">
+          <button
+            type="button"
+            onClick={submit}
+            className="w-full rounded-md px-3 py-3 text-white bg-[var(--greencal-primary)]"
+          >
+            {loading ? "Submitting..." : "I've made payment"}
+          </button>
         </div>
       </div>
     </div>

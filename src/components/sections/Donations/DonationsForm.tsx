@@ -1,29 +1,37 @@
 "use client";
 import PaymentModal from "@/components/shared/PaymentModal";
+import { sendDonorEmail } from "@/helpers/emailSender";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { FormEvent, useRef, useState } from "react";
 import toast from "react-hot-toast";
+import {
+  CreditCard,
+  ArrowRightLeft,
+  Hash,
+  X,
+  Bitcoin,
+  Copy,
+} from "lucide-react";
+import { Helpers } from "@/helpers";
+interface PaymentMethod {
+  icon: React.ElementType;
+  label: string;
+}
 
 const DonationsForm = () => {
   const [selectedAmount, setSelectedAmount] = useState<string>("₦10K");
   const [customAmount, setCustomAmount] = useState<string>("");
-  const btcWallet = "your_btc_wallet_address";
-  const solWallet = "your_sol_wallet_address";
+  const submitBtn = useRef<HTMLButtonElement | null>(null);
   const [isAnon, setIsAnon] = useState<boolean>(false);
 
   const handleAmountClick = (amount: string) => {
     setSelectedAmount(amount);
-    setCustomAmount(""); // Clear custom input if a preset amount is selected
+    setCustomAmount("");
   };
 
   const handleCustomAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedAmount("");
     setCustomAmount(e.target.value);
-  };
-  const [mail, setMail] = useState<string>("");
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert(`Donation amount: ${customAmount || selectedAmount}`);
   };
   const [donations, _] = useState<{ amount: number; text: string }[]>([
     {
@@ -55,17 +63,57 @@ const DonationsForm = () => {
     amount: 10000,
     text: "₦10K",
   });
+  const [methods] = useState<PaymentMethod[]>([
+    { icon: CreditCard, label: "Bank" },
+    { icon: Bitcoin, label: "Crypto" },
+  ]);
+  const [selectedMethod, setSelectedMethod] = useState<PaymentMethod>(
+    methods[0]
+  );
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const submitForm = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setLoading(true);
+    const target = event.target as HTMLFormElement;
+    const formData = new FormData(target);
+
+    const donorDetails = {
+      firstName: formData.get("firstName") as string,
+      lastName: formData.get("lastName") as string,
+      email: formData.get("email") as string,
+      amount: selectedAmount,
+      paymentMethod: selectedMethod.label,
+    };
+
+    try {
+      const emailSent = await sendDonorEmail(donorDetails);
+      if (emailSent) {
+        toast.success("Donation details sent successfully");
+        setIsModalOpen(false);
+      } else {
+        toast.error("Failed to send email");
+      }
+    } catch (error) {
+      toast.error("Error in form submission: " + error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  const submitAction = async () => {
+    if (submitBtn.current) {
+      submitBtn.current.click();
+    }
+  };
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setIsModalOpen(true);
-      }}
-      className="flex flex-col gap-6"
-    >
+    <form onSubmit={submitForm} className="flex flex-col gap-6">
       <PaymentModal
+        methods={methods}
+        setSelectedMethod={setSelectedMethod}
+        selectedMethod={selectedMethod}
+        loading={loading}
         isOpen={isModalOpen}
+        submit={submitAction}
         onClose={() => setIsModalOpen(false)}
       />
       {/* Donation Amount Section */}
@@ -109,7 +157,9 @@ const DonationsForm = () => {
                 First Name <span className="text-red-500">*</span>
               </label>
               <input
+                required
                 id="firstName"
+                name="firstName"
                 placeholder="First Name"
                 className="w-full p-2 rounded-md bg-white border border-gray-200"
               />
@@ -120,6 +170,7 @@ const DonationsForm = () => {
                 Last Name
               </label>
               <input
+                name="lastName"
                 id="lastName"
                 placeholder="Last Name"
                 className="w-full p-2 rounded-md bg-white border border-gray-200"
@@ -134,6 +185,7 @@ const DonationsForm = () => {
             <input
               id="email"
               type="email"
+              name="email"
               placeholder="Your Email"
               className="w-full p-2 rounded-md bg-white border border-gray-200"
             />
@@ -155,9 +207,13 @@ const DonationsForm = () => {
       </div>
 
       {/* Submit and Total Section */}
+      <button ref={submitBtn} type="submit" className="hidden">
+        Donate Now 💚
+      </button>
       <div className="flex flex-wrap space-y-5 items-center justify-between">
         <button
-          type="submit"
+          type="button"
+          onClick={() => setIsModalOpen(true)}
           className="py-3 w-full md:w-fit px-6 bg-[var(--greencal-primary)] text-white font-semibold rounded-md hover:bg-[var(--greencal-main)]"
         >
           Donate Now 💚
@@ -169,59 +225,6 @@ const DonationsForm = () => {
           </span>
         </div>
       </div>
-
-      {/* Wallet Addresses Section */}
-      {/* <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2">
-          <h2 className="text-xl font-semibold text-[var(--greencal-main)]">
-            Donate with Crypto
-          </h2>
-          <div className="w-10 h-10">
-            <Image
-              alt="Bitcoin Logo"
-              width={10}
-              height={10}
-              src={"https://www.vectorlogo.zone/logos/bitcoin/bitcoin-icon.svg"}
-              className="object-cover w-full h-auto"
-            />
-          </div>
-          <div className="w-20 flex items-center justify-center h-20">
-            <Image
-              alt="Solana Logo"
-              width={20}
-              height={20}
-              src={
-                "https://upload.wikimedia.org/wikipedia/commons/3/38/Solana-sol-logo-horizontal.svg"
-              }
-              className="object-cover w-full h-auto"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2">
-            <span className="font-medium">BTC Wallet:</span>
-            <span className="text-gray-700 break-all">{btcWallet}</span>
-            <button
-              type="button"
-              onClick={() => navigator.clipboard.writeText(btcWallet)}
-              className="py-1 px-3 text-sm bg-[var(--greencal-primary)] text-white rounded-md hover:bg-[var(--greencal-main)]"
-            >
-              Copy
-            </button>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="font-medium">SOL Wallet:</span>
-            <span className="text-gray-700 break-all">{solWallet}</span>
-            <button
-              type="button"
-              onClick={() => navigator.clipboard.writeText(solWallet)}
-              className="py-1 px-3 text-sm bg-[var(--greencal-primary)] text-white rounded-md hover:bg-[var(--greencal-main)]"
-            >
-              Copy
-            </button>
-          </div>
-        </div>
-      </div> */}
     </form>
   );
 };
