@@ -21,7 +21,6 @@
   top: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.764);
-  z-index: 1111119999;
   transition: 0.7s;
   display: none;
   overflow-y: scroll;
@@ -37,7 +36,6 @@
   background-color: white;
   top: 0;
   right: 0;
-  z-index: 201;
   padding: 20px 40px;
   color: black;
   min-height: 100vh;
@@ -127,7 +125,6 @@
   box-shadow:
     5px 9px 15px 0 rgba(143, 143, 143, 0.2),
     2.5px -9px 35px 0 rgba(143, 143, 143, 0.2);
-  z-index: 99;
 }
 
 .mores {
@@ -146,7 +143,6 @@
   box-shadow:
     5px 9px 15px 0 rgba(143, 143, 143, 0.2),
     2.5px -9px 35px 0 rgba(143, 143, 143, 0.2);
-  z-index: 99;
 }
 
 .links > ul > li > div ul li {
@@ -273,20 +269,10 @@
   justify-content: space-between;
   padding: 0 60px;
   /* box-shadow: 5px 9px 15px 0 rgba(143, 143, 143, 0.2); */
-  z-index: 999999999;
   top: 0;
   position: sticky;
-  z-index: 111111;
+  z-index: 999;
   transition: 0.5s;
-}
-
-.isSticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 111111;
-  animation: 500ms ease-in 0s normal none 1 running fadeInDown;
-  animation: bounce2 1.2s;
 }
 
 @keyframes bounce2 {

@@ -1,4 +1,5 @@
 "use client";
+import PaymentModal from "@/components/shared/PaymentModal";
 import Image from "next/image";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
@@ -54,13 +55,19 @@ const DonationsForm = () => {
     amount: 10000,
     text: "₦10K",
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
+        setIsModalOpen(true);
       }}
       className="flex flex-col gap-6"
     >
+      <PaymentModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
       {/* Donation Amount Section */}
       <div className="flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-10">
         <div className="flex flex-wrap gap-2 items-center">
