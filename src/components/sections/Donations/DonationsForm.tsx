@@ -84,6 +84,7 @@ const DonationsForm = () => {
       email: formData.get("email") as string,
       amount: selectedAmount,
       paymentMethod: selectedMethod.label,
+      isAnonymous: isAnon,
     };
 
     try {

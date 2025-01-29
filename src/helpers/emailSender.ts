@@ -7,6 +7,7 @@ interface DonorDetails {
   email: string;
   amount: string;
   paymentMethod: string;
+  isAnonymous: boolean;
 }
 
 export async function sendDonorEmail(donorDetails: DonorDetails) {
@@ -19,7 +20,9 @@ export async function sendDonorEmail(donorDetails: DonorDetails) {
       pass: process.env.NEXT_PUBLIC_PASS,
     },
   });
-
+  const donorStatus = donorDetails.isAnonymous
+    ? `Donor prefers to be anonymous`
+    : "";
   // Email content
   const mailOptions = {
     from: '"Greencal Foundation" <greencalfoundation@gmail.com>',
@@ -32,6 +35,7 @@ export async function sendDonorEmail(donorDetails: DonorDetails) {
       Donor Email: ${donorDetails.email}
       Donation Amount: ${donorDetails.amount}
       Payment Method: ${donorDetails.paymentMethod}
+      ${donorStatus}
     `,
     html: `
       <h1>New donation received!</h1>
@@ -39,6 +43,7 @@ export async function sendDonorEmail(donorDetails: DonorDetails) {
       <p><strong>Donor Email:</strong> ${donorDetails.email}</p>
       <p><strong>Donation Amount:</strong> ${donorDetails.amount}</p>
       <p><strong>Payment Method:</strong> ${donorDetails.paymentMethod}</p>
+      <p>${donorStatus}</p>
     `,
   };
 
