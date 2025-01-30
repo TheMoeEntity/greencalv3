@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import banner from "../../../../public/images/donation_charity_alt.jpg";
-import DonationForm from "@/components/shared/DonationsForm";
 import DonationsForm from "@/components/sections/Donations/DonationsForm";
 import { notFound } from "next/navigation";
 import { Helpers } from "@/helpers";
