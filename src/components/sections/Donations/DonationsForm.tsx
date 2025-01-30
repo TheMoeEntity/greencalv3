@@ -56,13 +56,6 @@ const DonationsForm = () => {
     },
   ]);
 
-  const [currAmount, setCurrAmount] = useState<{
-    amount: number;
-    text: string;
-  }>({
-    amount: 10000,
-    text: "₦10K",
-  });
   const [methods] = useState<PaymentMethod[]>([
     { icon: CreditCard, label: "Bank" },
     { icon: Bitcoin, label: "Crypto" },
@@ -72,6 +65,23 @@ const DonationsForm = () => {
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
+  const [details, setDetails] = useState<{ firstName: string; email: string }>({
+    firstName: "",
+    email: "",
+  });
+  const validateForm = () => {
+    if (!details.firstName) {
+      toast.error("Please fill in your name");
+      return;
+    } else if (
+      !Helpers.validateEmail(details.email) ||
+      details.email.trim() == ""
+    ) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    setIsModalOpen(true);
+  };
   const submitForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
@@ -159,6 +169,13 @@ const DonationsForm = () => {
               </label>
               <input
                 required
+                value={details.firstName}
+                onChange={(e) =>
+                  setDetails((state) => ({
+                    ...state,
+                    firstName: e.target.value,
+                  }))
+                }
                 id="firstName"
                 name="firstName"
                 placeholder="First Name"
@@ -184,6 +201,10 @@ const DonationsForm = () => {
               Email <span className="text-red-500">*</span>
             </label>
             <input
+              value={details.email}
+              onChange={(e) =>
+                setDetails((state) => ({ ...state, email: e.target.value }))
+              }
               id="email"
               type="email"
               name="email"
@@ -214,7 +235,7 @@ const DonationsForm = () => {
       <div className="flex flex-wrap space-y-5 items-center justify-between">
         <button
           type="button"
-          onClick={() => setIsModalOpen(true)}
+          onClick={validateForm}
           className="py-3 w-full md:w-fit px-6 bg-[var(--greencal-primary)] text-white font-semibold rounded-md hover:bg-[var(--greencal-main)]"
         >
           Donate Now 💚
