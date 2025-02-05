@@ -65,9 +65,6 @@ const Header = () => {
             </ul>
           </div>
           <div className={styles.search}>
-            {/* <div>
-            <i className="fa-solid fa-magnifying-glass"></i>
-          </div> */}
             <button>
               <a
                 rel="noopener noreferrer"
@@ -103,7 +100,9 @@ const Header = () => {
           <ul className="flex text-center font-semibold text-[white] flex-col gap-3">
             {links.map((x, i) => (
               <li
-                className={x.isActive ? styles.active : ""}
+                className={
+                  x.isActive ? "text-[var(--greencal-primary)] font-medium" : ""
+                }
                 onClick={() => linkAction(x.href)}
                 key={i}
               >
