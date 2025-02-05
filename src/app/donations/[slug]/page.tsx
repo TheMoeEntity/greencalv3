@@ -68,6 +68,22 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
               </h2>
               <p className="text-sm">{donation.description.work}</p>
             </div>
+            <div className="grid gap-3 place-items-center grid-cols-1 md:grid-cols-2 items-center">
+              {donation.media &&
+                donation.media.map((media) => (
+                  <div key={media} className="w-full">
+                    <Image
+                      src={media}
+                      alt={`Greencal donation titled ${donation.name}`}
+                      quality={100}
+                      priority={true}
+                      width={300}
+                      height={300}
+                      className="object-cover rounded-xl w-full h-auto "
+                    />
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       </div>

@@ -23,6 +23,7 @@ export type DonationsType = {
   location: string;
   time: string;
   goal: number;
+  media?: string[];
   slug: string;
   category: string;
   raised: number;
