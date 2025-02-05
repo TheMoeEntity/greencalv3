@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./globals.css";
 import AppLayout from "@/components/layout/AppLayout";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 const overpass = Montserrat({
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body>
         <AppLayout>{children}</AppLayout>
         <Script src="https://js.paystack.co/v1/inline.js" />
+        <Analytics />
       </body>
     </html>
   );
