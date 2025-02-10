@@ -174,7 +174,7 @@ const About_Us = () => {
           <div className="flex-1 flex flex-col gap-3">
             <div
               style={{
-                backgroundImage: "url('/images/Kepha_alt.jpg')",
+                backgroundImage: "url('/images/new_kepha.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

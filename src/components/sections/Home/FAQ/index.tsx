@@ -146,7 +146,7 @@ const FAQ = () => {
         <div className="basis-full order-1 md:order-2 overflow-hidden md:basis-[40%] flex justify-center items-center">
           <div
             style={{
-              backgroundImage: "url('/images/Kepha_alt.jpg')",
+              backgroundImage: "url('/images/new_kepha.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
