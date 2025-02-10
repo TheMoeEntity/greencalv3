@@ -65,8 +65,8 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
               <h2 className="text-4xl font-semibold mb-4 text-[var(--greencal-main)]">
                 Recent Donations
               </h2>
-              <div className="max-w-full no-scrollbar overflow-x-scroll">
-                <table className="max-w-full no-scrollbar overflow-x-scroll">
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
                   <thead>
                     <tr className="bg-[var(--greencal-primary)] text-white">
                       <th className="p-3 text-left">Donor</th>
@@ -82,7 +82,7 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
                         <td className="p-3 font-bold">
                           ₦{donor.amount.toLocaleString()}
                         </td>
-                        <td className="p-3 text-sm">{donor.date}</td>
+                        <td className="p-3">{donor.date}</td>
                         <td className="p-3">{donor.method}</td>
                       </tr>
                     ))}
