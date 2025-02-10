@@ -42,7 +42,8 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
               <div className="flex flex-wrap items-center space-between gap-1 md:space-x-10">
                 <div className="relative md:grow-[1.5] flex-1 my-4 w-full h-2 bg-[#f5f5f5] rounded-full">
                   <div
-                    className={`absolute top-0 left-0 h-full ${width} bg-[var(--greencal-primary)] rounded-full`}
+                    style={{ width: `${rounded}%` }}
+                    className={`absolute top-0 left-0 h-full bg-[var(--greencal-primary)] rounded-full`}
                   ></div>
                 </div>
                 <p className="text-sm basis-full md:basis-[20%] whitespace-nowrap text-gray-700">

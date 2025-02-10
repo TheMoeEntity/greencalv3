@@ -121,7 +121,8 @@ const All_Donations = ({ donations }: { donations: DonationsType[] }) => {
 
                       <div className="relative my-4 w-full h-3 bg-[var(--greencal-main)] rounded-full">
                         <div
-                          className={`absolute top-0 left-0 h-full ${width} bg-[var(--greencal-primary)] rounded-full`}
+                          style={{ width: `${rounded}%` }}
+                          className={`absolute top-0 left-0 h-full bg-[var(--greencal-primary)] rounded-full`}
                         ></div>
                       </div>
                       <div className="flex items-center justify-between">
