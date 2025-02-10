@@ -70,7 +70,7 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
                   <thead>
                     <tr className="bg-[var(--greencal-primary)] text-white">
                       <th className="p-3 text-left">Donor</th>
-                      <th className="p-3 text-left">Amount</th>
+                      <th className="p-3 text-left">Amount </th>
                       <th className="p-3 text-left">Date</th>
                       <th className="p-3 text-left">Method</th>
                     </tr>
