@@ -21,10 +21,12 @@ const All_Events: React.FC<{ events: IPost[]; donations: DonationsType[] }> = ({
             <div className="mt-10 w-full grid mb-20 gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {donations.map((x, i) => {
                 const donation = x;
-                const progress = (donation.raised / donation.goal) * 100;
+                const raised = donation.donors
+                  .map((x) => x.amount)
+                  .reduce((a, b) => a + b);
+                const progress = (raised / donation.goal) * 100;
                 const padded = progress + 0;
                 const rounded = Math.floor(padded);
-                const width = `w-[${rounded}%]`;
                 return (
                   <div
                     key={i}
@@ -83,7 +85,7 @@ const All_Events: React.FC<{ events: IPost[]; donations: DonationsType[] }> = ({
                       <div className="flex items-center justify-between">
                         <p className="text-sm text-gray-700">
                           <b className="text-black">
-                            ₦ {x.raised.toLocaleString()}
+                            ₦ {raised.toLocaleString()}
                           </b>{" "}
                           of ₦ {x.goal.toLocaleString()} goal
                         </p>

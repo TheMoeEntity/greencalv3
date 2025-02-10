@@ -10,7 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const All_Donations = ({ donations }: { donations: DonationsType[] }) => {
   const [buttons, setButtons] = useState([
     { label: "All", isActive: true },
-    { label: "Outreach", isActive: false },
+    // { label: "Outreach", isActive: false },
     { label: "Healthcare", isActive: false },
   ]);
 
@@ -60,10 +60,12 @@ const All_Donations = ({ donations }: { donations: DonationsType[] }) => {
             <AnimatePresence>
               {filteredEvents.map((x) => {
                 const donation = x;
-                const progress = (donation.raised / donation.goal) * 100;
+                const raised = donation.donors
+                  .map((x) => x.amount)
+                  .reduce((a, b) => a + b);
+                const progress = (raised / donation.goal) * 100;
                 const padded = progress + 0;
                 const rounded = Math.floor(padded);
-                const width = `w-[${rounded}%]`;
 
                 return (
                   <motion.div
@@ -128,7 +130,7 @@ const All_Donations = ({ donations }: { donations: DonationsType[] }) => {
                       <div className="flex items-center justify-between">
                         <p className="text-sm text-gray-700">
                           <b className="text-black">
-                            ₦ {x.raised.toLocaleString()}
+                            ₦ {raised.toLocaleString()}
                           </b>{" "}
                           of ₦ {x.goal.toLocaleString()} goal
                         </p>

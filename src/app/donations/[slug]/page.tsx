@@ -13,11 +13,10 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
     notFound();
   }
   const donation = response;
-  const progress = (donation.raised / donation.goal) * 100;
+  const raised = donation.donors.map((x) => x.amount).reduce((a, b) => a + b);
+  const progress = (raised / donation.goal) * 100;
   const padded = progress + 0;
   const rounded = Math.floor(padded);
-  const width = `w-[${rounded}%]`;
-
   return (
     <section className="mx-auto text-[#405777] p-2 md:p-5 flex flex-col gap-8">
       <div className="py-3 xl:w-[75%] mx-auto flex flex-col gap-8">
@@ -48,7 +47,7 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
                 </div>
                 <p className="text-sm basis-full md:basis-[20%] whitespace-nowrap text-gray-700">
                   <b className="text-[var(--greencal-primary)]">
-                    ₦ {donation.raised.toLocaleString()}
+                    ₦ {raised.toLocaleString()}
                   </b>{" "}
                   of{" "}
                   <b className="text-[var(--greencal-primary)]">
@@ -62,11 +61,11 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
           </div>
           <div className="my-10 flex flex-col gap-10">
             {/* Donors List */}
-            <div className="bg-white py-6 rounded-lg">
+            <div className="py-6 rounded-lg">
               <h2 className="text-4xl font-semibold mb-4 text-[var(--greencal-main)]">
                 Recent Donations
               </h2>
-              <div className="overflow-x-auto">
+              {/* <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="bg-[var(--greencal-primary)] text-white">
@@ -89,8 +88,35 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
                     ))}
                   </tbody>
                 </table>
+              </div> */}
+              <div className="w-full overflow-x-scroll">
+                <div className="overflow-x-scroll">
+                  <table className="w-full border-collapse overflow-x-scroll">
+                    <thead>
+                      <tr className="bg-[var(--greencal-primary)] text-white">
+                        <th className="p-3 text-left">Donor</th>
+                        <th className="p-3 text-left">Amount </th>
+                        <th className="p-3 text-left">Date</th>
+                        <th className="p-3 text-left">Method</th>
+                      </tr>
+                    </thead>
+                    <tbody className="w-full text-xs md:text-sm  overscroll-x-scroll">
+                      {donation.donors.map((donor, index) => (
+                        <tr key={index} className="border-b hover:bg-gray-100">
+                          <td className="p-3">{donor.name}</td>
+                          <td className="p-3 font-bold">
+                            ₦{donor.amount.toLocaleString()}
+                          </td>
+                          <td className="p-3">{donor.date}</td>
+                          <td className="p-3">{donor.method}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
+
             <div className="flex flex-col gap-3">
               <h2 className="text-4xl font-semibold text-[var(--greencal-main)]">
                 Challenge
