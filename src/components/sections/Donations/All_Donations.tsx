@@ -59,8 +59,12 @@ const All_Donations = ({ donations }: { donations: DonationsType[] }) => {
           <div className="mt-10 w-full grid mb-20 gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <AnimatePresence>
               {filteredEvents.map((x) => {
-                const progress = 8 + (x.raised / x.goal) * 100;
-                const width = `w-[${progress}%]`;
+                const donation = x;
+                const progress = (donation.raised / donation.goal) * 100;
+                const padded = progress + 0;
+                const rounded = Math.floor(padded);
+                const width = `w-[${rounded}%]`;
+
                 return (
                   <motion.div
                     key={x.slug}

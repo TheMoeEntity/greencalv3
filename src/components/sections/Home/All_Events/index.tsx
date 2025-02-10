@@ -20,8 +20,11 @@ const All_Events: React.FC<{ events: IPost[]; donations: DonationsType[] }> = ({
           <div className="container">
             <div className="mt-10 w-full grid mb-20 gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {donations.map((x, i) => {
-                const progress = 8 + (x.raised / x.goal) * 100;
-                const width = `w-[${progress}%]`;
+                const donation = x;
+                const progress = (donation.raised / donation.goal) * 100;
+                const padded = progress + 0;
+                const rounded = Math.floor(padded);
+                const width = `w-[${rounded}%]`;
                 return (
                   <div
                     key={i}

@@ -4,6 +4,7 @@ import banner from "../../../../public/images/donation_charity_alt.jpg";
 import DonationsForm from "@/components/sections/Donations/DonationsForm";
 import { notFound } from "next/navigation";
 import { Helpers } from "@/helpers";
+import { donors } from "@/types";
 
 const DonationPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
@@ -13,7 +14,10 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
   }
   const donation = response;
   const progress = (donation.raised / donation.goal) * 100;
-  const width = `w-[${progress}%]`;
+  const padded = progress + 0;
+  const rounded = Math.floor(padded);
+  const width = `w-[${rounded}%]`;
+
   return (
     <section className="mx-auto text-[#405777] p-2 md:p-5 flex flex-col gap-8">
       <div className="py-3 xl:w-[75%] mx-auto flex flex-col gap-8">
@@ -56,6 +60,36 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
             </div>
           </div>
           <div className="my-10 flex flex-col gap-10">
+            {/* Donors List */}
+            <div className="bg-white py-6 rounded-lg">
+              <h2 className="text-4xl font-semibold mb-4 text-[var(--greencal-main)]">
+                Recent Donations
+              </h2>
+              <div className="max-w-full no-scrollbar overflow-x-scroll">
+                <table className="max-w-full no-scrollbar overflow-x-scroll">
+                  <thead>
+                    <tr className="bg-[var(--greencal-primary)] text-white">
+                      <th className="p-3 text-left">Donor</th>
+                      <th className="p-3 text-left">Amount</th>
+                      <th className="p-3 text-left">Date</th>
+                      <th className="p-3 text-left">Method</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {donation.donors.map((donor, index) => (
+                      <tr key={index} className="border-b hover:bg-gray-100">
+                        <td className="p-3">{donor.name}</td>
+                        <td className="p-3 font-bold">
+                          ₦{donor.amount.toLocaleString()}
+                        </td>
+                        <td className="p-3 text-sm">{donor.date}</td>
+                        <td className="p-3">{donor.method}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
             <div className="flex flex-col gap-3">
               <h2 className="text-4xl font-semibold text-[var(--greencal-main)]">
                 Challenge
@@ -68,6 +102,7 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
               </h2>
               <p className="text-sm">{donation.description.work}</p>
             </div>
+
             <div className="grid gap-3 place-items-center grid-cols-1 md:grid-cols-2 items-center">
               {donation.media &&
                 donation.media.map((media) => (

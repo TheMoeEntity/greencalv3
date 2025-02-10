@@ -17,7 +17,9 @@ export const metadata: Metadata = {
     "Greencal Foundation provides hope and support through medical assistance, education, and community outreach.",
   keywords:
     "Greencal Foundation, Adum Obinna,  Mrs. Juliana Calista Adum, charity, education, outreach, scholarships, Abakaliki, Ebonyi State, Nigeria",
-  authors: [{ name: "Moses Chukwudi Nwigberi" }],
+  authors: [
+    { name: "Moses Chukwudi Nwigberi", url: "https://moewebverse.vercel.app" },
+  ],
   creator: "Moses Chukwudi Nwigberi",
   applicationName: "Greencal Foundation",
 };

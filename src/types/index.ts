@@ -12,9 +12,10 @@ export type FAQType = {
 };
 export type donors = {
   name: string;
-  email: string;
+  email?: string;
   amount: number;
-  isAnonymous: true;
+  date: string;
+  method: "Bank Transfer" | "Crypto";
 };
 export type DonationsType = {
   name: string;
