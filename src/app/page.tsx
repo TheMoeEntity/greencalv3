@@ -1,15 +1,17 @@
+"use server";
 import About from "@/components/sections/Home/About";
 import All_Events from "@/components/sections/Home/All_Events";
 import FAQ from "@/components/sections/Home/FAQ";
 import Hero_V2 from "@/components/sections/Home/Hero";
 import Objectives from "@/components/sections/Home/Objectives";
+import { Helpers } from "@/helpers";
 // import Hero from "@/components/shared/Hero";
 import { getDocuments, getDonations } from "@/helpers/lib/firebase";
 import { DonationsType, donationType, IPost } from "@/types";
 
 export default async function Home() {
   const events = await getDocuments();
-  const dons = await getDonations();
+  const dons = await Helpers.getAllDonations();
   const allEvents = events as IPost[];
   const allDonations = dons as DonationsType[];
   return (

@@ -145,6 +145,11 @@ export class Helpers {
     }
     return post;
   };
+  static getAllDonations = async () => {
+    const events = (await getDonations()) as DonationsType[];
+
+    return events;
+  };
   static getSingleDonation = async (slug: string) => {
     const events = (await getDonations()) as DonationsType[];
     const post = events.find((event) => event.slug === slug);
