@@ -5,6 +5,7 @@ import DonationsForm from "@/components/sections/Donations/DonationsForm";
 import { notFound } from "next/navigation";
 import { Helpers } from "@/helpers";
 import { donors } from "@/types";
+import DonorsTable from "@/components/sections/Donations/DonorsTable";
 
 const DonationPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
@@ -18,8 +19,8 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
   const padded = progress + 0;
   const rounded = Math.floor(padded);
   return (
-    <section className="mx-auto text-[#405777] p-2 md:p-5 flex flex-col gap-8">
-      <div className="py-3 xl:w-[75%] mx-auto flex flex-col gap-8">
+    <section className="mx-auto text-[#405777]  p-2 md:p-5 flex flex-col gap-8">
+      <div className="py-3 xl:w-[75%] flex-wrap mx-auto flex flex-col gap-8">
         <div className="w-full">
           <Image
             src={donation.image}
@@ -65,54 +66,12 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
               <h2 className="text-4xl font-semibold mb-4 text-[var(--greencal-main)]">
                 Recent Donations
               </h2>
-              {/* <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr className="bg-[var(--greencal-primary)] text-white">
-                      <th className="p-3 text-left">Donor</th>
-                      <th className="p-3 text-left">Amount </th>
-                      <th className="p-3 text-left">Date</th>
-                      <th className="p-3 text-left">Method</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {donation.donors.map((donor, index) => (
-                      <tr key={index} className="border-b hover:bg-gray-100">
-                        <td className="p-3">{donor.name}</td>
-                        <td className="p-3 font-bold">
-                          ₦{donor.amount.toLocaleString()}
-                        </td>
-                        <td className="p-3">{donor.date}</td>
-                        <td className="p-3">{donor.method}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div> */}
-              <div className="w-full overflow-x-scroll">
-                <div className="overflow-x-scroll">
-                  <table className="w-full border-collapse overflow-x-scroll">
-                    <thead>
-                      <tr className="bg-[var(--greencal-primary)] text-xs md:text-sm text-white">
-                        <th className="p-3 text-left">Donor</th>
-                        <th className="p-3 text-left">Amount </th>
-                        <th className="p-3 text-left">Date</th>
-                        <th className="p-3 text-left">Method</th>
-                      </tr>
-                    </thead>
-                    <tbody className="w-full text-xs md:text-sm  overscroll-x-scroll">
-                      {donation.donors.map((donor, index) => (
-                        <tr key={index} className="border-b hover:bg-gray-100">
-                          <td className="p-3">{donor.name}</td>
-                          <td className="p-3 font-bold">
-                            ₦{donor.amount.toLocaleString()}
-                          </td>
-                          <td className="p-3">{donor.date}</td>
-                          <td className="p-3">{donor.method}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+              <div className="w-full">
+                <div
+                  className="div overflow-x-hidden"
+                  style={{ maxWidth: "100%" }}
+                >
+                  <DonorsTable donation={donation} />
                 </div>
               </div>
             </div>
