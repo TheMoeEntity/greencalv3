@@ -1,4 +1,4 @@
-"use server";
+export const revalidate = 0;
 import About from "@/components/sections/Home/About";
 import All_Events from "@/components/sections/Home/All_Events";
 import FAQ from "@/components/sections/Home/FAQ";

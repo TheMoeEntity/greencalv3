@@ -1,3 +1,4 @@
+export const revalidate = 0;
 import All_Donations from "@/components/sections/Donations/All_Donations";
 import Hero_Shared from "@/components/shared/Hero_Shared";
 import { getDonations } from "@/helpers/lib/firebase";
