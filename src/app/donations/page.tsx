@@ -12,7 +12,7 @@ const Donate = async () => {
       <Hero_Shared text={"Donations"} page="donate" />
       <div className="container p-3 md:p-8">
         <h2 className="text-2xl font-semibold md:text-3xl text-center">
-          Supporting causes that transform communities
+          Supporting causes that transform communities.
         </h2>
       </div>
       <All_Donations donations={allDonations} />

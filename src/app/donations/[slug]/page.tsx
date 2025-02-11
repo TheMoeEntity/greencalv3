@@ -93,7 +93,7 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
                 <div className="overflow-x-scroll">
                   <table className="w-full border-collapse overflow-x-scroll">
                     <thead>
-                      <tr className="bg-[var(--greencal-primary)] text-white">
+                      <tr className="bg-[var(--greencal-primary)] text-xs md:text-sm text-white">
                         <th className="p-3 text-left">Donor</th>
                         <th className="p-3 text-left">Amount </th>
                         <th className="p-3 text-left">Date</th>

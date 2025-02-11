@@ -12,39 +12,55 @@ interface DonorDetails {
 
 export async function sendDonorEmail(donorDetails: DonorDetails) {
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false, // Use TLS
+    service: "gmail",
     auth: {
       user: process.env.NEXT_PUBLIC_MAIL,
       pass: process.env.NEXT_PUBLIC_PASS,
     },
   });
+
   const donorStatus = donorDetails.isAnonymous
-    ? `Donor prefers to be anonymous`
+    ? `<p style="color: #f44336; font-weight: bold;">Donor prefers to be anonymous</p>`
     : "";
-  // Email content
-  const mailOptions = {
-    from: '"Greencal Foundation" <greencalfoundation@gmail.com>',
-    to: "greencalfoundation@gmail.com",
-    subject: "New Donation Received",
-    text: `
-      New donation received!
-      
-      Donor Name: ${donorDetails.firstName} ${donorDetails.lastName}
-      Donor Email: ${donorDetails.email}
-      Donation Amount: ${donorDetails.amount}
-      Payment Method: ${donorDetails.paymentMethod}
+
+  // Styled Email Template
+  const emailTemplate = `
+    <div style="max-width: 600px; margin: auto; font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
+      <h2 style="color: #009688; text-align: center;">🎉 New Donation Received!</h2>
+      <p style="font-size: 16px; color: #555;">Hello,</p>
+      <p style="font-size: 16px; color: #555;">We have received a new donation. Here are the details:</p>
+
+      <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><strong>Donor Name:</strong></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">${donorDetails.firstName} ${donorDetails.lastName}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><strong>Email:</strong></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">${donorDetails.email}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><strong>Amount:</strong></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">${donorDetails.amount}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;"><strong>Payment Method:</strong></td>
+          <td style="padding: 10px; border: 1px solid #ddd;">${donorDetails.paymentMethod}</td>
+        </tr>
+      </table>
+
       ${donorStatus}
-    `,
-    html: `
-      <h1>New donation received!</h1>
-      <p><strong>Donor Name:</strong> ${donorDetails.firstName} ${donorDetails.lastName}</p>
-      <p><strong>Donor Email:</strong> ${donorDetails.email}</p>
-      <p><strong>Donation Amount:</strong> ${donorDetails.amount}</p>
-      <p><strong>Payment Method:</strong> ${donorDetails.paymentMethod}</p>
-      <p>${donorStatus}</p>
-    `,
+
+      <p style="font-size: 16px; color: #555;">Thank you for your support!</p>
+      <p style="text-align: center; color: #009688; font-weight: bold;">- Greencal Foundation Team</p>
+    </div>
+  `;
+
+  const mailOptions = {
+    from: '"Greencal Foundation" <greencalfoundation1@gmail.com>',
+    to: "greencalfoundation1@gmail.com",
+    subject: "New Donation Received 🎉",
+    html: emailTemplate,
   };
 
   try {

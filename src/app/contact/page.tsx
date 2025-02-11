@@ -40,8 +40,8 @@ const Contact_Us = () => {
               </span>
               <div className="flex flex-col justify-center gap-2">
                 <h4 className="font-semibold text-xl">Mail Us</h4>
-                <a href="mailto:greencalfoundation@gmail.com">
-                  greencalfoundation@gmail.com
+                <a href="mailto:greencalfoundation1@gmail.com">
+                  greencalfoundation1@gmail.com
                 </a>
               </div>
             </div>
