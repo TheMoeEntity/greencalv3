@@ -3,6 +3,19 @@ import React from "react";
 import outreach from "../../../public/images/sickle-cell-outreach-3.jpg";
 import Image from "next/image";
 import Icon from "@/components/shared/Icons";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Greencal Foundation - About Us",
+  description:
+    "Discover the mission and vision of Greencal Foundation, dedicated to empowering lives through medical assistance, education, and community outreach. Learn about our history, values, and the team behind our efforts.",
+  keywords:
+    "Greencal Foundation, about us, mission, vision, charity, non-profit, community outreach",
+  authors: [
+    { name: "Moses Chukwudi Nwigberi", url: "https://moewebverse.vercel.app" },
+  ],
+  creator: "Moses Chukwudi Nwigberi",
+  applicationName: "Greencal Foundation",
+};
 
 const About_Us = () => {
   return (

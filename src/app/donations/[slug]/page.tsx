@@ -6,6 +6,32 @@ import { notFound } from "next/navigation";
 import { Helpers } from "@/helpers";
 import { donors } from "@/types";
 import DonorsTable from "@/components/sections/Donations/DonorsTable";
+import { Metadata } from "next";
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const { slug } = params;
+  const campaign = await Helpers.getSingleDonation(slug);
+  // Fallback values in case campaign data is missing
+  const campaignTitle = campaign?.name || slug.replace(/-/g, " ");
+  const campaignDescription = `Learn more about the ${campaignTitle} campaign and how your donation can make a difference in empowering lives.`;
+
+  return {
+    title: `Donate: ${campaignTitle} - Greencal Foundation`,
+    description: campaignDescription,
+    keywords: `Greencal Foundation, donations, ${campaignTitle}, charity, support, fundraising`,
+    authors: [
+      {
+        name: "Moses Chukwudi Nwigberi",
+        url: "https://moewebverse.vercel.app",
+      },
+    ],
+    creator: "Moses Chukwudi Nwigberi",
+    applicationName: "Greencal Foundation",
+  };
+}
 
 const DonationPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;

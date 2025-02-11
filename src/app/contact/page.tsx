@@ -4,7 +4,19 @@ import Icon from "@/components/shared/Icons";
 import Image from "next/image";
 import React from "react";
 import gradient from "../../../public/images/Ellipse.png";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Greencal Foundation - Contact Us",
+  description:
+    "Reach out to Greencal Foundation for inquiries, support, or more information about our initiatives in education, medical assistance, and community outreach.",
+  keywords:
+    "Greencal Foundation, contact, support, inquiries, charity, community outreach",
+  authors: [
+    { name: "Moses Chukwudi Nwigberi", url: "https://moewebverse.vercel.app" },
+  ],
+  creator: "Moses Chukwudi Nwigberi",
+  applicationName: "Greencal Foundation",
+};
 const Contact_Us = () => {
   return (
     <div>
