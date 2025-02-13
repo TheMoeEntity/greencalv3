@@ -13,6 +13,7 @@ import {
   Copy,
 } from "lucide-react";
 import { Helpers } from "@/helpers";
+
 interface PaymentMethod {
   icon: React.ElementType;
   label: string;
@@ -33,27 +34,13 @@ const DonationsForm = () => {
     setSelectedAmount("");
     setCustomAmount(e.target.value);
   };
-  const [donations, _] = useState<{ amount: number; text: string }[]>([
-    {
-      amount: 10000,
-      text: "₦10K",
-    },
-    {
-      amount: 50000,
-      text: "₦50K",
-    },
-    {
-      amount: 100000,
-      text: "₦100K",
-    },
-    {
-      amount: 500000,
-      text: "₦500K",
-    },
-    {
-      amount: 1000000,
-      text: "₦1M",
-    },
+
+  const [donations] = useState<{ amount: number; text: string }[]>([
+    { amount: 10000, text: "₦10K" },
+    { amount: 50000, text: "₦50K" },
+    { amount: 100000, text: "₦100K" },
+    { amount: 500000, text: "₦500K" },
+    { amount: 1000000, text: "₦1M" },
   ]);
 
   const [methods] = useState<PaymentMethod[]>([
@@ -69,30 +56,51 @@ const DonationsForm = () => {
     firstName: "",
     email: "",
   });
+
   const validateForm = () => {
     if (!details.firstName) {
       toast.error("Please fill in your name");
       return;
     } else if (
       !Helpers.validateEmail(details.email) ||
-      details.email.trim() == ""
+      details.email.trim() === ""
     ) {
       toast.error("Please enter a valid email address");
       return;
     }
+
+    // Ensure a donation amount is selected or entered.
+    if (!selectedAmount && !customAmount) {
+      toast.error("Please select a donation amount or enter a custom amount");
+      return;
+    }
+
+    // If a custom amount is provided, validate that it's a valid number > 0.
+    if (customAmount) {
+      const amountNumber = Number(customAmount);
+      if (isNaN(amountNumber) || amountNumber <= 0) {
+        toast.error("Please enter a valid donation amount");
+        return;
+      }
+    }
+
     setIsModalOpen(true);
   };
+
   const submitForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
     const target = event.target as HTMLFormElement;
     const formData = new FormData(target);
 
+    // Use the custom amount if provided; otherwise use the preset selectedAmount.
+    const donationAmount = customAmount ? customAmount : selectedAmount;
+
     const donorDetails = {
       firstName: formData.get("firstName") as string,
       lastName: formData.get("lastName") as string,
       email: formData.get("email") as string,
-      amount: selectedAmount,
+      amount: donationAmount,
       paymentMethod: selectedMethod.label,
       isAnonymous: isAnon,
     };
@@ -111,11 +119,13 @@ const DonationsForm = () => {
       setLoading(false);
     }
   };
+
   const submitAction = async () => {
     if (submitBtn.current) {
       submitBtn.current.click();
     }
   };
+
   return (
     <form onSubmit={submitForm} className="flex flex-col gap-6">
       <PaymentModal
