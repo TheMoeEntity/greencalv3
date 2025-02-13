@@ -7,10 +7,16 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Events_Client = ({ events }: { events: IPost[] }) => {
+  const uniqueCategories = Array.from(
+    new Set(events.map((event) => event.category))
+  );
+  const donationTypes = uniqueCategories.map((category) => ({
+    label: category,
+    isActive: false,
+  }));
   const [buttons, setButtons] = useState([
     { label: "All", isActive: true },
-    { label: "Education", isActive: false },
-    { label: "Healthcare", isActive: false },
+    ...donationTypes,
   ]);
 
   const [filteredEvents, setFilteredEvents] = useState<IPost[]>(events);

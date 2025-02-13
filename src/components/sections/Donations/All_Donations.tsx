@@ -8,10 +8,16 @@ import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const All_Donations = ({ donations }: { donations: DonationsType[] }) => {
+  const uniqueCategories = Array.from(
+    new Set(donations.map((event) => event.category))
+  );
+  const donationTypes = uniqueCategories.map((category) => ({
+    label: category,
+    isActive: false,
+  }));
   const [buttons, setButtons] = useState([
     { label: "All", isActive: true },
-    // { label: "Outreach", isActive: false },
-    { label: "Healthcare", isActive: false },
+    ...donationTypes,
   ]);
 
   const [filteredEvents, setFilteredEvents] =
