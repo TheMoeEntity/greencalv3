@@ -7,6 +7,7 @@ import { Helpers } from "@/helpers";
 import { donors } from "@/types";
 import DonorsTable from "@/components/sections/Donations/DonorsTable";
 import { Metadata } from "next";
+import DonationsClosed from "@/components/sections/Donations/DonationClosed";
 export async function generateMetadata({
   params,
 }: {
@@ -59,38 +60,49 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
             className="object-cover rounded-xl w-full h-auto "
           />
         </div>
-        <div className="-mt-0 md:-mt-28 flex flex-col mx-auto gap-8 max-w-full md:w-[80%] w-[95%]">
-          <div className="w-full bg-white md:px-5 rounded-lg shadow-lg z-[99]">
-            <div className="w-full flex flex-wrap flex-col gap-3 mx-auto bg-white py-10 px-3 md:px-10 rounded-lg">
-              <h1 className="font-semibold text-3xl md:text-4xl text-[var(--greencal-main)]">
-                {donation.name}
-              </h1>
-              <div className="flex flex-wrap items-center space-between gap-1 md:space-x-10">
-                <div className="relative md:grow-[1.5] flex-1 my-4 w-full h-2 bg-[#f5f5f5] rounded-full">
-                  <div
-                    style={{ width: `${rounded}%` }}
-                    className={`absolute top-0 left-0 h-full bg-[var(--greencal-primary)] rounded-full`}
-                  ></div>
+        <div className="-mt-0 md:-mt-20 flex flex-col mx-auto gap-8 max-w-full md:w-[80%] w-[95%]">
+          {donation.donationClosed ? (
+            <span className="-mt-0 text-lg md:mt-28">
+              <DonationsClosed
+                donation={donation}
+                raised={raised}
+                rounded={rounded}
+              />
+            </span>
+          ) : (
+            <div className="w-full bg-white md:px-5 rounded-lg shadow-lg z-[99]">
+              <div className="w-full flex flex-wrap flex-col gap-3 mx-auto bg-white py-10 px-3 md:px-10 rounded-lg">
+                <h1 className="font-semibold text-3xl md:text-4xl text-[var(--greencal-main)]">
+                  {donation.name}
+                </h1>
+                <div className="flex flex-wrap items-center space-between gap-1 md:space-x-10">
+                  <div className="relative md:grow-[1.5] flex-1 my-4 w-full h-2 bg-[#f5f5f5] rounded-full">
+                    <div
+                      style={{ width: `${rounded}%` }}
+                      className={`absolute top-0 left-0 h-full bg-[var(--greencal-primary)] rounded-full`}
+                    ></div>
+                  </div>
+                  <p className="text-sm basis-full md:basis-[20%] whitespace-nowrap text-gray-700">
+                    <b className="text-[var(--greencal-primary)]">
+                      ₦ {raised.toLocaleString()}
+                    </b>{" "}
+                    of{" "}
+                    <b className="text-[var(--greencal-primary)]">
+                      ₦ {Number(donation.goal).toLocaleString()}
+                    </b>{" "}
+                    goal
+                  </p>
                 </div>
-                <p className="text-sm basis-full md:basis-[20%] whitespace-nowrap text-gray-700">
-                  <b className="text-[var(--greencal-primary)]">
-                    ₦ {raised.toLocaleString()}
-                  </b>{" "}
-                  of{" "}
-                  <b className="text-[var(--greencal-primary)]">
-                    ₦ {Number(donation.goal).toLocaleString()}
-                  </b>{" "}
-                  goal
-                </p>
+                <DonationsForm />
               </div>
-              <DonationsForm />
             </div>
-          </div>
-          <div className="my-10 flex flex-col gap-10">
+          )}
+
+          <div className="my-5 flex flex-col gap-10">
             {/* Donors List */}
             <div className="py-6 rounded-lg">
               <h2 className="text-4xl font-semibold mb-4 text-[var(--greencal-main)]">
-                Recent Donations
+                {donation.donationClosed ? "All" : "Recent"} Donations
               </h2>
               <div className="w-full">
                 <div

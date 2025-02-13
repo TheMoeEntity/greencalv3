@@ -24,6 +24,7 @@ export type DonationsType = {
   location: string;
   time: string;
   goal: number;
+  donationClosed: boolean;
   media?: string[];
   slug: string;
   category: string;
