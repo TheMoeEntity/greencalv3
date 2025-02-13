@@ -1,6 +1,9 @@
 "use client";
 import PaymentModal from "@/components/shared/PaymentModal";
-import { sendDonorEmail } from "@/helpers/emailSender";
+import {
+  sendDonorConfirmationEmail,
+  sendDonorEmail,
+} from "@/helpers/emailSender";
 import Image from "next/image";
 import React, { FormEvent, useRef, useState } from "react";
 import toast from "react-hot-toast";
@@ -104,14 +107,24 @@ const DonationsForm = () => {
       paymentMethod: selectedMethod.label,
       isAnonymous: isAnon,
     };
+    const supportNumber = "+2348160988961";
 
     try {
       const emailSent = await sendDonorEmail(donorDetails);
-      if (emailSent) {
-        toast.success("Donation details sent successfully");
+      // Send confirmation email to the donor
+      const donorEmailSent = await sendDonorConfirmationEmail(
+        donorDetails,
+        supportNumber
+      );
+      if (emailSent && donorEmailSent) {
+        toast.success(
+          "Thank you for your donation! Your details have been submitted successfully, and a confirmation email has been sent to your inbox."
+        );
         setIsModalOpen(false);
       } else {
-        toast.error("Failed to send email");
+        toast.error(
+          "We're sorry, but there was an error sending your donation details. Please try again later or contact our support team for assistance."
+        );
       }
     } catch (error) {
       toast.error("Error in form submission: " + error);
