@@ -42,7 +42,7 @@ export const getDonations = async () => {
   docsSnap.forEach((doc) => {
     arr.push(doc.data());
   });
-  return arr;
+  return arr.reverse();
 };
 
 export default firebase_app;

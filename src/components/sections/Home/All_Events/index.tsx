@@ -12,7 +12,7 @@ const All_Events: React.FC<{ events: IPost[]; donations: DonationsType[] }> = ({
   return (
     <div>
       {donations.length > 0 && (
-        <div className="w-full bg-[var(--greencal-main)] p-4 md:p-10 flex gap-8 flex-col items-center text-center">
+        <div className="w-full bg-[var(--greencal-main)] p-2 md:p-10 flex gap-8 flex-col items-center text-center">
           <h2 className="text-4xl pt-5 pb-3 md:text-5xl font-semibold text-white">
             Upcoming Events
           </h2>

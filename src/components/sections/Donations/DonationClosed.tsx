@@ -1,6 +1,7 @@
 "use client";
+import useIsVisible from "@/hooks/useIsVisible";
 import { DonationsType } from "@/types";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
 
 const DonationsClosed: React.FC<{
@@ -8,6 +9,14 @@ const DonationsClosed: React.FC<{
   raised: number;
   rounded: number;
 }> = ({ donation, raised, rounded }) => {
+  const [shouldStart, setShouldStart] = useState<boolean>(false);
+  const { isVisible, ref } = useIsVisible(1);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShouldStart(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="flex flex-col items-center justify-center p-2 bg-white rounded-lg">
       <h2 className="text-4xl font-bold text-[var(--greencal-main)] mb-4">
@@ -19,20 +28,25 @@ const DonationsClosed: React.FC<{
       <div className="w-full max-w-md">
         <div className="flex justify-between items-center mb-2">
           <span className="text-lg font-medium">Amount Raised:</span>
-          <span className="text-xl font-bold text-[var(--greencal-primary)]">
-            <CountUp
-              start={0}
-              end={raised}
-              duration={2.5}
-              separator=","
-              prefix="₦"
-            />
+          <span
+            ref={ref}
+            className="text-xl font-bold text-[var(--greencal-primary)]"
+          >
+            {shouldStart && isVisible && (
+              <CountUp
+                start={0}
+                end={raised}
+                duration={35.5}
+                separator=","
+                prefix="₦"
+              />
+            )}
           </span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-4 mb-2">
+        <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
           <div
             style={{ width: `${rounded}%` }}
-            className="h-4 bg-[var(--greencal-primary)] rounded-full transition-all duration-500"
+            className="h-2 bg-[var(--greencal-primary)] rounded-full transition-all duration-500"
           ></div>
         </div>
         <p className="text-sm text-center text-gray-600">
