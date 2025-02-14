@@ -10,6 +10,7 @@ const DonationsClosed: React.FC<{
   rounded: number;
 }> = ({ donation, raised, rounded }) => {
   const [shouldStart, setShouldStart] = useState<boolean>(false);
+  const [showRaised, setShowRaised] = useState<boolean>(false);
   const { isVisible, ref } = useIsVisible(1);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -17,6 +18,7 @@ const DonationsClosed: React.FC<{
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
+
   return (
     <div className="flex flex-col items-center justify-center p-2 bg-white rounded-lg">
       <h2 className="text-4xl font-bold text-[var(--greencal-main)] mb-4">
@@ -39,6 +41,7 @@ const DonationsClosed: React.FC<{
                 duration={35.5}
                 separator=","
                 prefix="₦"
+                onEnd={() => setShowRaised(true)}
               />
             )}
           </span>
@@ -49,10 +52,12 @@ const DonationsClosed: React.FC<{
             className="h-2 bg-[var(--greencal-primary)] rounded-full transition-all duration-500"
           ></div>
         </div>
-        <p className="text-sm text-center text-gray-600">
-          ₦{raised.toLocaleString()} raised of ₦
-          {Number(donation.goal).toLocaleString()} goal.
-        </p>
+        {showRaised && (
+          <p className="text-sm text-center text-gray-600">
+            ₦{raised.toLocaleString()} raised of ₦
+            {Number(donation.goal).toLocaleString()} goal.
+          </p>
+        )}
       </div>
     </div>
   );
