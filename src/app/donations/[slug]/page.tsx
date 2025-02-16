@@ -41,8 +41,11 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
     notFound();
   }
   const donation = response;
-  const raised = donation.donors.map((x) => x.amount).reduce((a, b) => a + b);
-  const progress = (raised / donation.goal) * 100;
+  console.log(donation);
+  const raised = (donation.donors || [])
+    .map((donor) => donor.amount)
+    .reduce((a, b) => a + b, 0);
+  const progress = donation.goal > 0 ? (raised / donation.goal) * 100 : 0;
   const padded = progress + 0;
   const rounded = Math.floor(padded);
   return (
@@ -109,7 +112,7 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
                   className="div overflow-x-hidden"
                   style={{ maxWidth: "100%" }}
                 >
-                  <DonorsTable donation={donation} />
+                  {donation.donors && <DonorsTable donation={donation} />}
                 </div>
               </div>
             </div>
@@ -118,13 +121,21 @@ const DonationPage = async ({ params }: { params: { slug: string } }) => {
               <h2 className="text-4xl font-semibold text-[var(--greencal-main)]">
                 Challenge
               </h2>
-              <p className="text-sm">{donation.description.challenge}</p>
+              <p
+                className="text-sm"
+                dangerouslySetInnerHTML={{
+                  __html: donation.description.challenge,
+                }}
+              />
             </div>
             <div className="flex flex-col gap-3">
               <h2 className="text-4xl font-semibold text-[var(--greencal-main)]">
                 Our Work
               </h2>
-              <p className="text-sm">{donation.description.work}</p>
+              <p
+                className="text-sm"
+                dangerouslySetInnerHTML={{ __html: donation.description.work }}
+              />
             </div>
 
             <div className="grid gap-3 place-items-center grid-cols-1 md:grid-cols-2 items-center">

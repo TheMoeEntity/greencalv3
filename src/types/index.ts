@@ -34,7 +34,7 @@ export type DonationsType = {
     work: string;
   };
   isGoalReached: boolean;
-  donors: donors[];
+  donors?: donors[];
 };
 export type Props = {
   params: { slug: string };
@@ -47,6 +47,10 @@ export interface IPost {
   explainer: string;
   location: string;
   date: string;
+  video?: {
+    url: string;
+    thumbnail: string;
+  };
   content: {
     first: string;
     two: string;

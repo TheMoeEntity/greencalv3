@@ -31,6 +31,7 @@
     "react-intersection-observer": "^9.13.0",
     "react-multi-carousel": "^2.8.5",
     "react-paystack": "^6.0.0",
+    "react-player": "^2.16.0",
     "simple-icons": "^13.10.0"
   },
   "devDependencies": {

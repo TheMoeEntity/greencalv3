@@ -14,11 +14,12 @@ export default async function Home() {
   const dons = await Helpers.getAllDonations();
   const allEvents = events as IPost[];
   const allDonations = dons as DonationsType[];
+  const sortedPosts = Helpers.sortPostsByLatest(allEvents);
   return (
     <main className="min-h-screen">
       <Hero_V2 />
       <Objectives />
-      <All_Events events={allEvents} donations={allDonations} />
+      <All_Events events={sortedPosts} donations={allDonations} />
       <FAQ />
       {/* <About />
       <FundRaisers events={allEvents} /> */}

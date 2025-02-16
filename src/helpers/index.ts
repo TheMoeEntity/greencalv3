@@ -145,6 +145,16 @@ export class Helpers {
     }
     return post;
   };
+  static sortPostsByLatest = (posts: IPost[]): IPost[] => {
+    return posts.sort((a, b) => {
+      const parseDate = (date: string) => {
+        const [day, month, year] = date.split(" ");
+        return new Date(`${month} ${day}, ${year}`).getTime();
+      };
+
+      return parseDate(b.date) - parseDate(a.date);
+    });
+  };
   static getAllDonations = async () => {
     const events = (await getDonations()) as DonationsType[];
 

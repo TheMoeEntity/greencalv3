@@ -48,7 +48,10 @@ const DonationsClosed: React.FC<{
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
           <div
-            style={{ width: `${rounded}%` }}
+            style={{
+              width: isVisible ? `${rounded}%` : "1%",
+              transition: `35.5s`,
+            }}
             className="h-2 bg-[var(--greencal-primary)] rounded-full transition-all duration-500"
           ></div>
         </div>

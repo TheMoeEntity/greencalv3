@@ -66,10 +66,11 @@ const All_Donations = ({ donations }: { donations: DonationsType[] }) => {
             <AnimatePresence>
               {filteredEvents.map((x) => {
                 const donation = x;
-                const raised = donation.donors
-                  .map((x) => x.amount)
-                  .reduce((a, b) => a + b);
-                const progress = (raised / donation.goal) * 100;
+                const raised = (donation.donors || [])
+                  .map((donor) => donor.amount)
+                  .reduce((a, b) => a + b, 0);
+                const progress =
+                  donation.goal > 0 ? (raised / donation.goal) * 100 : 0;
                 const padded = progress + 0;
                 const rounded = Math.floor(padded);
 
@@ -136,7 +137,7 @@ const All_Donations = ({ donations }: { donations: DonationsType[] }) => {
                       <div className="flex items-center justify-between">
                         <p className="text-sm text-gray-700">
                           <b className="text-black">
-                            ₦ {raised.toLocaleString()}
+                            ₦ {(raised || 0).toLocaleString()}
                           </b>{" "}
                           of ₦ {x.goal.toLocaleString()} goal
                         </p>

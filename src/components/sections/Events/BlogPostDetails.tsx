@@ -3,40 +3,42 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { IPost } from "@/types";
 import Icon from "@/components/shared/Icons";
+import VideoPlayer from "@/components/shared/VideoPlayer"; // Make sure this component exists
 
 const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
   const [imgSrc, setImgSrc] = useState<string>("");
   const [viewImg, setViewImg] = useState<boolean>(false);
   const headedBy =
-    post.headedBy.toLowerCase() == "kepha"
+    post.headedBy.toLowerCase() === "kepha"
       ? "url('/images/Kepha_alt.jpg')"
       : "url('/images/brill.jpg')";
+
   return (
     <section className="mx-auto max-w-7xl text-[#405777] p-3 md:p-5 flex flex-col gap-8">
+      {/* Modal for Image Preview */}
       {viewImg && imgSrc && (
         <div
           onClick={() => setViewImg(false)}
-          className="fixed top-0  left-0 inset-0 z-[9999999] flex items-center justify-center bg-gray-800 bg-opacity-90"
+          className="fixed inset-0 z-[9999999] flex items-center justify-center bg-gray-800 bg-opacity-90 overflow-auto"
         >
-          <div className="flex justify-center relative items-center md:min-w-[60%] max-h-[80%] md:max-w-[60%] p-3 md:p-16 rounded">
-            {/* <div className="flex hidden absolute right-4 md:-right-5 -top-8 w-full justify-end text-3xl text-white">
-              <button onClick={() => setViewImg(false)}>&times;</button>
-            </div> */}
-            <div className="rounded-lg md:w-[85%]">
+          <div className="relative p-3 md:p-16 w-full max-w-[90%] max-h-[90vh]">
+            {/* Set a container with relative positioning and defined height */}
+            <div className="relative w-full h-[80vh]">
               <Image
                 src={imgSrc}
                 alt="Banner of event"
-                width={400}
-                height={300}
                 quality={100}
-                sizes={"100vw"}
-                className="object-cover rounded-md w-full h-auto"
+                sizes="100vw"
+                fill
+                className="object-contain rounded-md"
               />
             </div>
           </div>
         </div>
       )}
-      <div className="py-10 xl:w-[75%] mx-auto flex flex-col gap-8 ">
+
+      <div className="py-10 xl:w-[75%] mx-auto flex flex-col gap-8">
+        {/* Banner Image */}
         <div className="w-full">
           <Image
             src={post.media.banner}
@@ -45,19 +47,21 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
             priority={true}
             width={300}
             height={300}
-            sizes={"100vw"}
-            className="object-cover rounded-xl w-full h-auto "
+            sizes="100vw"
+            className="object-cover rounded-xl w-full h-auto"
           />
         </div>
-        <div className="w-full flex-wrap flex flex-col gap-y-4 md:flex-row gap-3">
-          <div className="flex w-fit items-center gap-2">
+
+        {/* Post Meta */}
+        <div className="w-full flex flex-wrap items-center gap-3">
+          <div className="flex items-center gap-2">
             <div
               style={{
                 backgroundImage: headedBy,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              className="w-8 h-8 md:w-10 mx-auto rounded-full md:h-10"
+              className="w-8 h-8 md:w-10 md:h-10 rounded-full"
             ></div>
             <span>
               Headed By{" "}
@@ -67,100 +71,114 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
             </span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1">
-              <Icon
-                name="bx-calendar"
-                color="var(--greencal-primary)"
-                size="30px"
-              />
-              <span className="whitespace-nowrap">{post.date}</span>
-            </span>
+            <Icon
+              name="bx-calendar"
+              color="var(--greencal-primary)"
+              size="30px"
+            />
+            <span className="whitespace-nowrap">{post.date}</span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1">
-              <Icon name="bx-map" color="var(--greencal-primary)" size="30px" />
-              <span className="lg:te">{post.location}</span>
-            </span>
+            <Icon name="bx-map" color="var(--greencal-primary)" size="30px" />
+            <span>{post.location}</span>
           </div>
         </div>
-        <h1 className=" text-2xl text-black md:text-[35px] font-medium leading-[1.15]">
+
+        {/* Post Title */}
+        <h1 className="text-2xl text-black md:text-[35px] font-medium leading-[1.15]">
           {post.title}
         </h1>
-        <div className="flex gap-2 items-center">
-          {post.category.toLowerCase() == "education" ? (
-            <div className="flex items-center justify-center">
-              <Icon
-                name="bxs-graduation"
-                color="var(--greencal-primary)"
-                size="30px"
-              />
-            </div>
+
+        {/* Category */}
+        <div className="flex items-center gap-2">
+          {post.category.toLowerCase() === "education" ? (
+            <Icon
+              name="bxs-graduation"
+              color="var(--greencal-primary)"
+              size="30px"
+            />
           ) : (
-            <div className="flex items-center justify-center">
-              <Icon
-                name="bxs-first-aid"
-                color="var(--greencal-primary)"
-                size="30px"
-              />
-            </div>
+            <Icon
+              name="bxs-first-aid"
+              color="var(--greencal-primary)"
+              size="30px"
+            />
           )}
           <span className="text-[var(--greencal-primary)] font-medium text-lg">
             {post.category}
           </span>
         </div>
 
+        {/* Content - First Section */}
         <div dangerouslySetInnerHTML={{ __html: post.content.first }} />
-        <div className="flex flex-col md:flex-row w-full gap-3">
-          {post.media.media_one.map((media) => (
-            <div
-              onClick={() => {
-                setImgSrc(media);
-                setViewImg(true);
-              }}
-              key={media}
-              className="flex-1 cursor-pointer"
-            >
-              <Image
-                src={media}
-                alt="Banner of event. Adum Obinna, founder of Greencal, with other volunteers AEFUTHA in celebration of world sickle cell day."
-                quality={100}
-                width={300}
-                height={300}
-                sizes={"100vw"}
-                className="object-cover w-full h-auto "
-              />
-            </div>
-          ))}
-        </div>
 
-        <div
-          className="p-1"
-          dangerouslySetInnerHTML={{ __html: post.content.two }}
-        />
+        {/* Conditional Video Section */}
+        {post.video && (
+          <div className="my-8 overflow-hidden">
+            <VideoPlayer
+              media={post.video.url}
+              thumbnail={post.video.thumbnail}
+            />
+          </div>
+        )}
 
-        <div className="flex flex-wrap flex-col md:flex-row w-full gap-3 gap-y-4">
-          {post.media.media_two.length > 1 &&
-            post.media.media_two.map((media) => (
+        {/* Media One Grid */}
+        {post.media.media_one && post.media.media_one.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {post.media.media_one.map((media) => (
               <div
                 key={media}
                 onClick={() => {
                   setImgSrc(media);
                   setViewImg(true);
                 }}
-                className="flex-1 cursor-pointer"
+                className="cursor-pointer"
               >
                 <Image
                   src={media}
-                  alt="Banner of event. Adum Obinna, founder of Greencal, with other volunteers AEFUTHA in celebration of world sickle cell day."
+                  alt="Media from event"
                   quality={100}
-                  sizes={"100vw"}
                   width={300}
                   height={300}
-                  className="object-cover w-full h-auto "
+                  sizes="100vw"
+                  className="object-cover w-full h-auto"
                 />
               </div>
             ))}
-        </div>
+          </div>
+        )}
+
+        {/* Content - Second Section */}
+        <div
+          className="p-1"
+          dangerouslySetInnerHTML={{ __html: post.content.two }}
+        />
+
+        {/* Media Two Grid */}
+        {post.media.media_two && post.media.media_two.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {post.media.media_two.map((media) => (
+              <div
+                key={media}
+                onClick={() => {
+                  setImgSrc(media);
+                  setViewImg(true);
+                }}
+                className="cursor-pointer"
+              >
+                <Image
+                  src={media}
+                  alt="Media from event"
+                  quality={100}
+                  width={300}
+                  height={300}
+                  sizes="100vw"
+                  className="object-cover w-full h-auto"
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
