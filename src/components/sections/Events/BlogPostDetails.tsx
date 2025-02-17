@@ -11,7 +11,9 @@ const BlogPostDetails: React.FC<{ post: IPost }> = ({ post }) => {
   const headedBy =
     post.headedBy.toLowerCase() === "kepha"
       ? "url('/images/Kepha_alt.jpg')"
-      : "url('/images/brill.jpg')";
+      : post.headedBy.toLowerCase() === "brill"
+        ? "url('/images/brill.jpg')"
+        : "url('/images/greencal_logo.png')";
 
   return (
     <section className="mx-auto max-w-7xl text-[#405777] p-3 md:p-5 flex flex-col gap-8">
