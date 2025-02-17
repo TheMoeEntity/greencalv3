@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import event from "../../../../../public/images/outreach.jpg";
 import event2 from "../../../../../public/images/medical.jpeg";

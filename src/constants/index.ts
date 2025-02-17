@@ -91,3 +91,65 @@ export const content: eventCard[] = [
     slug: "sickle-cell-day",
   },
 ];
+export const monthCodes = [
+  {
+    code: "Jan",
+    name: "January",
+    number: 1,
+  },
+  {
+    code: "Feb",
+    name: "February",
+    number: 2,
+  },
+  {
+    code: "Mar",
+    name: "March",
+    number: 3,
+  },
+  {
+    code: "Apr",
+    name: "April",
+    number: 4,
+  },
+  {
+    code: "May",
+    name: "May",
+    number: 5,
+  },
+  {
+    code: "Jun",
+    name: "June",
+    number: 6,
+  },
+  {
+    code: "Jul",
+    name: "July",
+    number: 7,
+  },
+  {
+    code: "Aug",
+    name: "August",
+    number: 8,
+  },
+  {
+    code: "Sep",
+    name: "September",
+    number: 9,
+  },
+  {
+    code: "Oct",
+    name: "October",
+    number: 10,
+  },
+  {
+    code: "Nov",
+    name: "November",
+    number: 11,
+  },
+  {
+    code: "Dec",
+    name: "December",
+    number: 12,
+  },
+];

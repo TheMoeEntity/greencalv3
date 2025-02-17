@@ -15,6 +15,8 @@ export default async function Home() {
   const allEvents = events as IPost[];
   const allDonations = dons as DonationsType[];
   const sortedPosts = Helpers.sortPostsByLatest(allEvents);
+  console.log(allEvents);
+  console.log("sorted arr:", sortedPosts);
   return (
     <main className="min-h-screen">
       <Hero_V2 />

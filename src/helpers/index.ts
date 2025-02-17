@@ -11,6 +11,7 @@ import {
   linkType,
 } from "@/types";
 import { getDocuments, getDonations } from "./lib/firebase";
+import { monthCodes } from "@/constants";
 
 export class Helpers {
   static leaders = [
@@ -146,15 +147,30 @@ export class Helpers {
     return post;
   };
   static sortPostsByLatest = (posts: IPost[]): IPost[] => {
-    return posts.sort((a, b) => {
-      const parseDate = (date: string) => {
-        const [day, month, year] = date.split(" ");
-        return new Date(`${month} ${day}, ${year}`).getTime();
-      };
+    return [...posts].sort((a, b) => {
+      const [dayA, monthA, yearA] = a.date.replace(",", "").split(" ");
+      const [dayB, monthB, yearB] = b.date.replace(",", "").split(" ");
 
-      return parseDate(b.date) - parseDate(a.date);
+      const monthNumberA =
+        monthCodes.find((m) => m.code === monthA)?.number || 0;
+      const monthNumberB =
+        monthCodes.find((m) => m.code === monthB)?.number || 0;
+
+      const dateA = new Date(
+        parseInt(yearA, 10),
+        monthNumberA - 1,
+        parseInt(dayA, 10)
+      );
+      const dateB = new Date(
+        parseInt(yearB, 10),
+        monthNumberB - 1,
+        parseInt(dayB, 10)
+      );
+
+      return dateB.getTime() - dateA.getTime(); // Latest first
     });
   };
+
   static getAllDonations = async () => {
     const events = (await getDonations()) as DonationsType[];
 
