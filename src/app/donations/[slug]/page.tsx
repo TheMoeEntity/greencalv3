@@ -8,6 +8,8 @@ import { donors } from "@/types";
 import DonorsTable from "@/components/sections/Donations/DonorsTable";
 import { Metadata } from "next";
 import DonationsClosed from "@/components/sections/Donations/DonationClosed";
+import { getDonations } from "@/helpers/lib/firebase";
+
 export async function generateMetadata({
   params,
 }: {
@@ -33,7 +35,13 @@ export async function generateMetadata({
     applicationName: "Greencal Foundation",
   };
 }
+export async function generateStaticParams() {
+  const posts = await getDonations();
 
+  return posts.map((post) => ({
+    slug: post.slug.current,
+  }));
+}
 const DonationPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
   const response = await Helpers.getSingleDonation(slug);

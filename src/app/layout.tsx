@@ -3,7 +3,7 @@ import { Inter, Didact_Gothic, Montserrat, Poppins } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.css";
 import "./globals.css";
 import AppLayout from "@/components/layout/AppLayout";
-import Script from "next/script";
+// import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AppLayout>{children}</AppLayout>
-        <Script src="https://js.paystack.co/v1/inline.js" />
+        {/* <Script src="https://js.paystack.co/v1/inline.js" /> */}
         <Analytics />
       </body>
     </html>

@@ -1,5 +1,6 @@
 import BlogPostDetails from "@/components/sections/Events/BlogPostDetails";
 import { Helpers } from "@/helpers";
+import { getDocuments } from "@/helpers/lib/firebase";
 import { Props } from "@/types";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -25,6 +26,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     creator: "Moses Chukwudi Nwigberi",
     applicationName: "Greencal Foundation",
   };
+}
+export async function generateStaticParams() {
+  const posts = await getDocuments();
+
+  return posts.map((post) => ({
+    slug: post.slug.current,
+  }));
 }
 const BlogPost = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
