@@ -16,9 +16,18 @@ import { monthCodes } from "@/constants";
 export class Helpers {
   static leaders = [
     {
-      name: "Adum Obinna",
-      position: "Founder",
-      info: "Adum Obinna, a passionate philanthropist, Economics student and owner of BrillX, in Ebonyi State, established Greencal Foundation in memory of his inspiring mother. Witnessing her dedication to helping others ignited a fire in him to continue her legacy of giving back to the community.",
+      name: "Adum Obinna Abraham",
+      position: "Founder | Web3 Strategist | Crypto Educator | Philanthropist",
+      info: 
+        `
+He is a Web3 strategist and content creator with a strong focus on translating complex blockchain concepts into actionable insights and helping projects connect with their communities.
+
+Beyond his online presence, He is the founder of a physical Education Hub DTCSI ACADEMY specialized in Tech, Web3 and AI with over 150 students trained and 10000 community members located in Ebonyi State. He organizes large-scale events like Technova, Southeast Nigeria’s premier tech and innovation showcase, bridging students, regulators, and global blockchain ecosystems.
+
+He combines technical know-how, strategic thinking, and an understanding of audience behavior to deliver real value for projects, brands, and communities in the digital space.
+
+As one of the founders of greencal his inspiration came as a result of the passing of his mom who was known to always lend assistance to anyone in need. He aims at stretching this kindness to the local community in Education and health through Greencal foundation
+        `,
     },
     {
       name: "Kepha",
