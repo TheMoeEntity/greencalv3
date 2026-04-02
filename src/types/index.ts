@@ -5,14 +5,52 @@ export type nomSingle = {
   nomination: string;
   isWinner?: boolean;
 };
- export type Props = {
+export type FAQType = {
+  isActive: boolean;
+  text: string;
+  reply: string;
+};
+export type donors = {
+  name: string;
+  email?: string;
+  amount: number;
+  date: string;
+  method: "Bank Transfer" | "Crypto";
+};
+export type DonationsType = {
+  name: string;
+  image: string;
+  date: string;
+  location: string;
+  time: string;
+  goal: number;
+  donationClosed: boolean;
+  media?: string[];
+  slug: string;
+  category: string;
+  raised: number;
+  description: {
+    challenge: string;
+    work: string;
+  };
+  isGoalReached: boolean;
+  donors?: donors[];
+};
+export type Props = {
   params: { slug: string };
-}
+};
 export interface IPost {
   slug: string;
   title: string;
-  explainer:string
+  headedBy: string;
+  category: string;
+  explainer: string;
+  location: string;
   date: string;
+  video?: {
+    url: string;
+    thumbnail: string;
+  };
   content: {
     first: string;
     two: string;

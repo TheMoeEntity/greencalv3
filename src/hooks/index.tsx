@@ -1,9 +1,17 @@
 import { usePathname, useRouter } from "next/navigation";
-import { CSSProperties, ChangeEvent, useEffect, useRef, useState } from "react";
+import {
+  CSSProperties,
+  ChangeEvent,
+  act,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Helpers } from "../helpers/index";
 import { linkType } from "@/types";
 
-export const useCustomHero = (Link: any,
+export const useCustomHero = (
+  Link: any,
   title: string,
   styles: {
     readonly [key: string]: string;
@@ -16,11 +24,10 @@ export const useCustomHero = (Link: any,
     backgroundPosition: "center",
     height: "550px",
   };
-  const slideImage =
-  {
+  const slideImage = {
     url: "/images/" + img,
     caption: "Slide 1",
-  }
+  };
   const customHero = (): JSX.Element => {
     return (
       <div className={styles.hero}>
@@ -33,11 +40,14 @@ export const useCustomHero = (Link: any,
             }}
           >
             <div className={styles.overlay}></div>
-            <span style={{
-              visibility: 'hidden'
-            }}>{slideImage.caption}</span>
-            {(
-
+            <span
+              style={{
+                visibility: "hidden",
+              }}
+            >
+              {slideImage.caption}
+            </span>
+            {
               <motion.div
                 initial="hidden"
                 animate="visible"
@@ -55,62 +65,59 @@ export const useCustomHero = (Link: any,
                     },
                   },
                 }}
-                style={{ float: "left", marginTop: '80px' }}
+                style={{ float: "left", marginTop: "80px" }}
                 className={styles.caption}
               >
                 <h3>Greencal Foundation</h3>
                 <h1> {title}</h1>
                 <p>
-                  We are dedicated to improving the lives of those facing illness, hardship, and limited opportunities.
+                  We are dedicated to improving the lives of those facing
+                  illness, hardship, and limited opportunities.
                 </p>
-                {
-                  title !== "DONATIONS" && <button>DONATE NOW</button>
-                }
-
+                {title !== "DONATIONS" && <button>DONATE NOW</button>}
               </motion.div>
-            )}
+            }
           </div>
         </div>
       </div>
-    )
-  }
-  return { customHero }
-}
+    );
+  };
+  return { customHero };
+};
 export const useLinks = () => {
-  const router = useRouter();
   const [sidebar, setSideBar] = useState(false);
   const [links, setLinks] = useState<linkType[]>(Helpers.links);
   const pathname = usePathname();
   useEffect(() => {
-    console.log(pathname.slice(1, pathname.length));
-    setLinks((currLink) => {
-      const newLink = currLink.map((x) =>
-        x.href === pathname.slice(1, pathname.length)
-          ? {
-            ...x,
-            isActive: true,
-          }
-          : {
-            ...x,
-            isActive: false,
-          }
-      );
-      return newLink;
+    setLinks((currLinks) => {
+      const newLinks = currLinks.map((link) => {
+        const isHome = link.href === ""; // Home corresponds to the root path "/"
+        const isActive =
+          (isHome && pathname === "/") ||
+          (!isHome && pathname.startsWith(`/${link.href}`));
+
+        return {
+          ...link,
+          isActive, // Update the isActive property
+        };
+      });
+      return newLinks;
     });
   }, [pathname]);
+
   const LinkAction = (page: string) => {
-    setSideBar(false)
+    setSideBar(false);
     setLinks((currLink) => {
       const newLink = currLink.map((x) =>
         x.href === page
           ? {
-            ...x,
-            isActive: true,
-          }
+              ...x,
+              isActive: true,
+            }
           : {
-            ...x,
-            isActive: false,
-          }
+              ...x,
+              isActive: false,
+            }
       );
       return newLink;
     });
@@ -203,7 +210,7 @@ export const useValidRoute = (pathname: string): boolean => {
     "/",
     "/about",
     "/works/[id]",
-    '/blog',
+    "/blog",
     "/blog" + params.slice(5, params.length),
     "/works" + params.slice(6, params.length),
   ];
@@ -221,6 +228,6 @@ export const useReveal = (useInView: any) => {
       setVisible(true);
     }
   }, [inView]);
-  const { push } = useRouter()
-  return { push, visible, ref }
-}
+  const { push } = useRouter();
+  return { push, visible, ref };
+};

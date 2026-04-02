@@ -35,5 +35,14 @@ export const getDocuments = async () => {
   });
   return arr;
 };
+export const getDonations = async () => {
+  const colRef = collection(db, "event-donations");
+  const docsSnap = await getDocs(colRef);
+  let arr: DocumentData[] = [];
+  docsSnap.forEach((doc) => {
+    arr.push(doc.data());
+  });
+  return arr.reverse();
+};
 
 export default firebase_app;

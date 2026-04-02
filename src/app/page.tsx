@@ -1,19 +1,31 @@
+export const revalidate = 0;
 import About from "@/components/sections/Home/About";
-import FundRaisers from "@/components/sections/Home/FundRaisers";
-import Testimonials from "@/components/sections/Home/Testimonials";
-import Hero from "@/components/shared/Hero";
-import { getDocuments } from "@/helpers/lib/firebase";
-import { IPost } from "@/types";
+import All_Events from "@/components/sections/Home/All_Events";
+import FAQ from "@/components/sections/Home/FAQ";
+import Hero_V2 from "@/components/sections/Home/Hero";
+import Objectives from "@/components/sections/Home/Objectives";
+import { Helpers } from "@/helpers";
+// import Hero from "@/components/shared/Hero";
+import { getDocuments, getDonations } from "@/helpers/lib/firebase";
+import { DonationsType, donationType, IPost } from "@/types";
 
 export default async function Home() {
   const events = await getDocuments();
-  const allEvents = events as IPost[]
+  const dons = await Helpers.getAllDonations();
+  const allEvents = events as IPost[];
+  const allDonations = dons as DonationsType[];
+  const sortedPosts = Helpers.sortPostsByLatest(allEvents);
+  console.log(allEvents);
+  console.log("sorted arr:", sortedPosts);
   return (
     <main className="min-h-screen">
-      <Hero />
-      <About />
-      <FundRaisers events={allEvents} />
-      <Testimonials />
+      <Hero_V2 />
+      <Objectives />
+      <All_Events events={sortedPosts} donations={allDonations} />
+      <FAQ />
+      {/* <About />
+      <FundRaisers events={allEvents} /> */}
+      {/* <Testimonials /> */}
     </main>
   );
 }
