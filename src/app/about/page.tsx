@@ -152,24 +152,19 @@ const About_Us = () => {
               }}
               className="w-[200px] mx-auto rounded-full h-[200px] lg:w-[350px] lg:h-[350px]"
             ></div>
-            <h2 className="text-center mt-3">Founder</h2>
+            <h2 className="text-center mt-3">Founder | Web3 Strategist | Crypto Educator | Philanthropist</h2>
             <h1 className="font-semibold text-center text-2xl">
               Adum Abraham Obinna
             </h1>
             <p className="text-sm leading-loose">
-              Adum Obinna, a passionate philanthropist, Economics student and
-              owner of{" "}
-              <a
-                className="font-bold underline"
-                href="https://brillxchange.com"
-                target="_blank"
-              >
-                BrillX
-              </a>
-              , in Ebonyi State, established Greencal Foundation in memory of
-              his inspiring mother. Witnessing her dedication to helping others
-              ignited a fire in him to continue her legacy of giving back to the
-              community.
+He is a Web3 strategist and content creator with a strong focus on translating complex blockchain concepts into actionable insights and helping projects connect with their communities.
+
+Beyond his online presence, He is the founder of a physical Education Hub DTCSI ACADEMY specialized in Tech, Web3 and AI with over 150 students trained and 10000 community members located in Ebonyi State. He organizes large-scale events like Technova, Southeast Nigeria’s premier tech and innovation showcase, bridging students, regulators, and global blockchain ecosystems.
+
+He combines technical know-how, strategic thinking, and an understanding of audience behavior to deliver real value for projects, brands, and communities in the digital space.
+<br />
+As one of the founders of greencal his inspiration came as a result of the passing of his mom who was known to always lend assistance to anyone in need. He aims at stretching this kindness to the local community in Education and health through Greencal foundation`
+  
             </p>
             <div className="flex justify-center items-center gap-3">
               {" "}
@@ -202,18 +197,6 @@ const About_Us = () => {
               firsthand fuels his drive to improve access to quality healthcare
               in underserved communities.
             </p>
-            {/* <div className="flex justify-center items-center gap-3">
-              {" "}
-              <a href="https://instagram.com/thenameisbrill" target="_blank">
-                <Icon name="bxl-instagram" color="#A0C861" size="40px" />
-              </a>{" "}
-              <a href="https://twitter.com/thenameisbrill" target="_blank">
-                <Icon name="bxl-twitter" color="#A0C861" size="40px" />
-              </a>
-              <a href="https://twitter.com/thenameisbrill" target="_blank">
-                <Icon name="bxl-facebook" color="#A0C861" size="40px" />
-              </a>
-            </div> */}
           </div>
         </div>
       </div>
