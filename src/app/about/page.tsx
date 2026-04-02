@@ -159,7 +159,7 @@ const About_Us = () => {
             <p className="text-sm leading-loose">
 He is a Web3 strategist and content creator with a strong focus on translating complex blockchain concepts into actionable insights and helping projects connect with their communities.
 
-Beyond his online presence, He is the founder of a physical Education Hub DTCSI ACADEMY specialized in Tech, Web3 and AI with over 150 students trained and 10000 community members located in Ebonyi State. He organizes large-scale events like Technova, Southeast Nigeria’s premier tech and innovation showcase, bridging students, regulators, and global blockchain ecosystems.
+Beyond his online presence, He is the founder of a physical Education Hub DTCSI ACADEMY specialized in Tech, Web3 and AI with over 150 students trained and 10000 community members located in Ebonyi State. He organizes large-scale events like <a className="underline semibold" href="https://technovasummit.com" target="_BLANK">Technova</a>, Southeast Nigeria’s premier tech and innovation showcase, bridging students, regulators, and global blockchain ecosystems.
 
 He combines technical know-how, strategic thinking, and an understanding of audience behavior to deliver real value for projects, brands, and communities in the digital space.
 <br />
